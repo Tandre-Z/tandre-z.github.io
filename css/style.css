@@ -152,8 +152,3 @@ ul {
         margin: 0;
     }
 }
-
-@font-face {
-    font-family: 'SmileySans';
-    src: url('SmileySans-Oblique.ttf') format('truetype');
-}
