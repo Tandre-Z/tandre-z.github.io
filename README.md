@@ -4,7 +4,7 @@
 
 ## 说明
 
-该网站内容更新可能不及时，文章优先更新到我的notion公开页面，可直接访问：[我的notion网站](https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266) 查看内容。
+网站仍在进一步优化与更新，该网站内容更新可能不及时，文章优先更新到我的notion公开页面，可直接访问：[我的notion网站](https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266) 查看内容。
 
 也可以通过我的[notion镜像仓库](https://github.com/Tandre-Z/TandreZ-Notion-Blog)访问 https://tandre-z.github.io/TandreZ-Notion-Blog/ 来跳转到我的notion网站
 
