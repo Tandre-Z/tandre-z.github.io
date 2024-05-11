@@ -81,6 +81,18 @@ p {
     transform: rotate(-0.3deg);
 }
 
+.post-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-group {
+    flex: 1 0 calc(50% - 40px);
+    /* grow | shrink | basis */
+    margin: 1px;
+}
+
 .post {
     display: flex;
     justify-content: space-between;

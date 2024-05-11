@@ -11,9 +11,27 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="img/icon.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
+<style>
+    .swiper {
+        --swiper-theme-color: 195, 195, 195;
+    }
+
+    .swiper-slide {
+        /* background-color: rgb(195, 195, 195); */
+        text-align: center;
+        text-decoration-line: center;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
 <body>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
     <img src="img/logo.png">
 
     <blockquote>
@@ -31,122 +49,24 @@
     </p>
 
     <br>
+    <br>
 
-    <h2>Unity</h2>
-    <p class="post">
-        <a href='https://tandrez.notion.site/EventBus-123c4a1bbb4e4061b6ee54399b8c077d#f086b50bbee84def800fd0a08ff8fb4d'>EventBus设计与优化</a>
-        <span class="time">2024-04-15</span>
-    </p>
-    <p class="post">
-        <a href='https://tandrez.notion.site/unity-6183dce496094b1ba62e82baf6ccfced'>unity中数据操作脚本库</a>
-        <span class="time">2024-03-18</span>
-    </p>
-    <p class="post">
-        <a href="https://www.notion.so/tandrez/Astar-38bea8423b554229bd597b4458f3abcf">Astar</a>
-        <span class="time">2023-11-10</span>
-    </p>
-    <p class="post">
-        <a href="https://www.notion.so/tandrez/Unity-2f02246f847e4d50ab1f576ba717b4a9">Unity动画系统</a>
-        <span class="time">2023-08-29</span>
-    </p>
-    <p class="post">
-        <a href='https://www.notion.so/tandrez/UTC-22c1fa1ec80b4e14a015243da8b50150'>日期时间与UTC时间戳的拓展脚本</a>
-        <span class="time">2023-04-12</span>
-    </p>
-    <p class="post">
-        <a
-            href='https://www.notion.so/tandrez/Get-Post-HttpWebRequest-UntiyWebRequest-53a281df8d8b4c529afc398bc6773349'>Get/Post请求脚本(HttpWebRequest/UntiyWebRequest)</a>
-        <span class="time">2023-04-11</span>
-    </p>
-    <p class="post">
-        <a href='https://www.notion.so/tandrez/Md5-Url-3d32277cd4fe42dbbb229dde38363610'>字符串的Md5加密拓展及Url的编解码工具</a>
-        <span class="time">2023-04-11</span>
-    </p>
-    <p class="post">
-        <a
-            href='https://tandrez.notion.site/Unity-Resource-3d6a45b002dd4b4283924cd047ed2cbc'>Unity项目资源管理框架（Resource）</a>
-        <span class="time">2023-01-08</span>
-    </p>
-    <p class="post">
-        <a href='https://tandrez.notion.site/Unity-07031b3050974190a36bc763ec8f1a41'>Unity项目数据表管理框架</a>
-        <span class="time">2023-01-08</span>
-    </p>
-    <p class="post">
-        <a href='https://tandrez.notion.site/Unity-720afc318b664729a3aa12bfc92ba8e7'>Unity项目场景的异步加载简易框架</a>
-        <span class="time">2023-01-08</span>
-    </p>
-    <p class="post">
-        <a href='https://tandrez.notion.site/Unity-UI-be4ae8f2e9b944908c87dda039fa60e7'>Unity项目UI管理简易框架</a>
-        <span class="time">2023-01-08</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/DoTween-0f13ece1519e4bb280664101286d7c65">DoTween插件基本操作总结</a>
-        <span class="time">2023-01-08</span>
-    </p>
-    <p class="post">
-        <a href="https://www.notion.so/tandrez/Cesium-for-unity-f9368ca325cb459d8057191e2868492b">Cesium for unity使用</a>
-        <span class="time">2022-12-30</span>
-    </p>
-
-    <h2>游戏设计理论</h2>
-    <p class="post">
-        <a href="https://tandrez.notion.site/Part-3-cfc9b0298e4b441bb7a714396c5fd5b6">《体验引擎-游戏设计全景探秘》（Part 3）</a>
-        <span class="time">2022-12-31</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/Part-2-52add32cf08f4ecaa2fbdc71af9eb332">《体验引擎-游戏设计全景探秘》（Part 2）</a>
-        <span class="time">2022-12-31</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/Part-1-753f92f31a624812a9193069bf34edab">《体验引擎-游戏设计全景探秘》（Part 1）</a>
-        <span class="time">2022-12-17</span>
-    </p>
-
-    <h2>其他技术</h2>
-    <p class="post">
-        <a href="https://www.notion.so/tandrez/Vscode-ad421974f54b42699858d1ef125ffff1">Vscode调教</a>
-        <span class="time">2024-03-14</span>
-    </p>
-    <p class="post">
-        <a href="https://www.notion.so/tandrez/Unity-WebGl-ab9c9ddd5dc342789fd307732903e9d6">Unity打包WebGl全屏设置</a>
-        <span class="time">2023-08-28</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/Markdown-a74a4288fc3c4a9da62fe828e36f9410">Markdown语法整理</a>
-        <span class="time">2023-01-01</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/jekyll-github-317211417ece489680b614a529566e00">jekyll+github搭建个人博客</a>
-        <span class="time">2022-10-04</span>
-    </p>
-
-    <h2>杂谈/写作</h2>
-    <p class="post">
-        <a href="https://tandrez.notion.site/71364600a7814772b1987e71d3bf5ced?pvs=4">安迪·威尔《蛋》-中文（转载）</a>
-        <span class="time">2024-04-10</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/3acb15561df442e3be19f2b6c30125a3?pvs=4">安迪·威尔《蛋》-原文（转载）</a>
-        <span class="time">2024-04-10</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/c300f298e70948bf9c1031ac200d95f5">内耗症候群自救指南（实践篇）</a>
-        <span class="time">2024-03-14</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/065dc968f5184d2fb49d1a56e29898d5">内耗症候群自救指南（理论篇）</a>
-        <span class="time">2022-03-08</span>
-    </p>
-    <p class="post">
-        <a href="https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f">Rain</a>
-        <span class="time">2022-10-04</span>
-    </p>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <h2 class="swiper-slide" style="text-align: center;">我的博客</h2>
+            <h2 class="swiper-slide" style="text-align: center;">我的游戏</h2>
+        </div>
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <div id="post-content" class="content"></div>
+    <div id="game-content" class="content" style="display: none;">我的游戏的内容</div>
 
     <br>
     <br>
 
     <h2>联系 Contact</h2>
-    <p>我的博客：<a href="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266">Tandre's Blog</a>
+    <p>我的博客：<a href="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266">Tandre's
+            Blog</a>
     </p>
     <p>Github: <a href="https://github.com/Tandre-Z">Tandre-Z</a></p>
     <p>CSDN：<a href="https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343">Tandre_Z</a></p>
@@ -165,6 +85,79 @@
             @Tandre 版权所有 转载请注明出处
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON('Data/posts.json', function (postGroups) {
+                //var referenceNode = $('.swiper');
+                var postgroupParent = $('<div>').addClass('post-parent');
+                $.each(postGroups, function (i, postGroup) {
+                    var postGroupElement = $('<div>').addClass('post-group');
+                    var groupNameElement = $('<h2>').text(postGroup.groupName);
+                    postGroupElement.append(groupNameElement);
+
+                    $.each(postGroup.posts, function (j, post) {
+                        var postElement = $('<p>').addClass('post');
+                        var linkElement = $('<a>').attr('href', post.link).text(post.title);
+                        var timeElement = $('<span>').addClass('time').text(post.date);
+                        postElement.append(linkElement, timeElement);
+                        postGroupElement.append(postElement);
+                    });
+
+                    var btn = $('<button>').addClass('expand-btn').text('展开').hide();
+                    postGroupElement.append(btn);
+                    postgroupParent.append(postGroupElement);
+                });
+                $('#post-content').append(postgroupParent).show();
+                $('#game-content').hide();
+                //referenceNode.after(postgroupParent);
+
+                $('.post-group').each(function (i, postGroup) {
+                    var posts = $(postGroup).find('.post');
+                    var btn = $(postGroup).find('.expand-btn');
+
+                    if (posts.length > 3) {
+                        posts.slice(3).hide();
+                        btn.show();
+                    }
+
+                    btn.click(function () {
+                        var isExpanded = $(this).text() === '收起';
+                        if (isExpanded) posts.slice(3).hide();
+                        else posts.slice(3).show();
+                        $(this).text(isExpanded ? '展开' : '收起');
+                    });
+                });
+            });
+
+            var mySwiper = new Swiper('.swiper', {
+                effect: 'coverflow', coverflowEffect: {
+                    rotate: 0,
+                    stretch: 10,
+                    depth: 60,
+                    modifier: 2,
+                    slideShadows: false
+                },
+                slideToClickedSlide: true,
+                slidesPerView: 2,
+                centeredSlides: true,
+                direction: 'horizontal',
+                on: {
+                    slideChange: function () {
+                        console.log('slideChange event triggered'); // 添加调试代码
+                        var index = this.activeIndex;
+                        $('.content').each(function (i, content) {
+                            if (i != index)
+                                $(content).hide();
+                            else
+                                $(content).show();
+                        });
+                    }
+                }
+
+            });
+        });
+    </script>
 </body>
 
 </html>
