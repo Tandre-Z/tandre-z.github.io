@@ -80,7 +80,7 @@
     <script>
         $(document).ready(function () {
 
-            $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/posts.json', function (postGroups) {
+            $.getJSON('Data/posts.json', function (postGroups) {
                 //var referenceNode = $('.swiper');
                 var postgroupParent = $('<div>').addClass('post-parent');
                 $.each(postGroups, function (i, postGroup) {
@@ -132,7 +132,7 @@
                 });
             });
 
-            $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/games.json', function (games) {
+            $.getJSON('Data/games.json', function (games) {
                 var gameParent = $('<div>').addClass('game-parent');
                 $.each(games, function (i, game) {
                     var gameElement = $('<div>').addClass('game');
