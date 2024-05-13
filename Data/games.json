@@ -1,19 +1,22 @@
 [
     {
         "name": "掩盖繁星的太阳：ReIgnition",
-        "desc": "2023年Booom Game Jam参赛作品。#RTS+AVG",
+        "type": "#RTS+AVG",
+        "desc": "2023年Booom Game Jam参赛作品。",
         "link": "https://tandrez.notion.site/ReIgnition-98d2812d5bfe47a0a2cf5e9c54caa98a?pvs=4",
         "date": "2023-05-29"
     },
     {
         "name": "出门",
-        "desc": "2023年Boom7天game jam参赛作品。通过对热门话题MBTI中的I人与E人的心理对比，主要表达I人心理状态的一部实验性作品。作品获机核白老师推荐，见https://www.gcores.com/radios/171646的86分15秒。#RPG",
+        "type": "#RPG",
+        "desc": "2023年Boom7天game jam参赛作品。通过对热门话题MBTI中的I人与E人的心理对比，主要表达I人心理状态的一部实验性作品。作品获机核白老师推荐，见https://www.gcores.com/radios/171646的86分15秒。",
         "link": "https://tandrez.notion.site/1a0085e32df94ef19a331126fee2d4e2?pvs=4",
         "date": "2023-08-25"
     },
     {
         "name": "迷失之旅（Lost Dream）",
-        "desc": "2024年Booom Game Jam参赛作品。#平台跳跃",
+        "type": "#平台跳跃",
+        "desc": "2024年Booom Game Jam参赛作品。",
         "link": "https://tandrez.notion.site/Lost-Dream-483638ab7dc74b56ba8f9bc7987740f5?pvs=4",
         "date": "2024-05-7"
     }
