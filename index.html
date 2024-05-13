@@ -130,7 +130,7 @@
                     var gameElement = $('<div>').addClass('game');
                     var nameElement = $('<h3>').append($('<a>').attr('href', game.link).text(game.name));
                     var descElement = $('<p>').html(game.desc + '<br>' + game.type);
-                    var timeElement = $('<p>').text('日期：' + game.date).attr('style', 'font-size: small;');
+                    var timeElement = $('<p>').text(game.date).attr('style', 'font-size: small;');
                     gameElement.append(nameElement, descElement, timeElement);
                     gameParent.append(gameElement);
                 });
