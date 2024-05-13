@@ -129,9 +129,9 @@
                 $.each(games, function (i, game) {
                     var gameElement = $('<div>').addClass('game');
                     var nameElement = $('<h3>').append($('<a>').attr('href', game.link).text(game.name));
-                    var timeElement = $('<p>').text('日期：' + game.date);
-                    var descElement = $('<p>').text('简介：' + game.desc);
-                    gameElement.append(nameElement, timeElement, descElement);
+                    var descElement = $('<p>').text(game.desc);
+                    var timeElement = $('<p>').text('日期：' + game.date).attr('style', 'font-size: small;');
+                    gameElement.append(nameElement, descElement, timeElement);
                     gameParent.append(gameElement);
                 });
                 $('#game-content').append(gameParent).show();
