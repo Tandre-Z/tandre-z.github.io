@@ -194,4 +194,16 @@ ul {
         width: 90%;
         margin: 0;
     }
+
+    .game-parent,
+    .post-parent {
+        flex-direction: column;
+    }
+
+    .game,
+    .post-group {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
