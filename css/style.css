@@ -116,7 +116,7 @@ p {
 }
 
 .game {
-    flex: 0 0 calc(25% - 41px);
+    flex: 0 0 calc(33% - 41px);
     margin: 0 1px;
     word-wrap: break-word;
     overflow-wrap: break-word;
