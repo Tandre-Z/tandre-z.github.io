@@ -100,7 +100,13 @@
                         postGroupElement.append(postElement);
                     });
 
-                    var btn = $('<button>').addClass('expand-btn').text('展开').hide();
+                    var btn = $('<button>').addClass('expand-btn').text('展开')
+                        .css({
+                            'border': 'none',
+                            'padding': '0 0 0 0',
+                            'background': 'none',
+                            'cursor': 'pointer'
+                        }).hide();
                     postGroupElement.append(btn);
                     postgroupParent.append(postGroupElement);
 

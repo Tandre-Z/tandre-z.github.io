@@ -110,14 +110,6 @@ p {
     margin-left: 10px;
 }
 
-.expand-btn {
-    /* 调整内边距 */
-    border: none;
-    padding: 0 0 0 0;
-    background: none;
-    cursor: pointer;
-}
-
 .game-parent {
     display: flex;
     flex-wrap: wrap;
