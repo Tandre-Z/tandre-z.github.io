@@ -116,12 +116,12 @@ p {
 }
 
 .game {
-    flex: 0 0 25%;
-    height: 300px;
+    flex: 0 0 calc(25% - 41px);
     margin: 0 1px;
-    background-color: aquamarine;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    margin-right: 30px;
+    margin-left: 10px;
 }
 
 .divider {
@@ -137,6 +137,7 @@ p {
 }
 
 .time {
+    transform: rotate(-0.3deg);
     text-align: right;
 }
 

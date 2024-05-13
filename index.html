@@ -77,13 +77,14 @@
 
     <script>
         $(document).ready(function () {
+
             $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/posts.json', function (postGroups) {
                 //var referenceNode = $('.swiper');
                 var postgroupParent = $('<div>').addClass('post-parent');
                 $.each(postGroups, function (i, postGroup) {
                     //左侧分割线
-                    var divider = $('<div>').addClass('divider');
-                    postgroupParent.append(divider);
+                    //var divider = $('<div>').addClass('divider');
+                    //postgroupParent.append(divider);
 
                     var postGroupElement = $('<div>').addClass('post-group');
                     var groupNameElement = $('<h3>').text(postGroup.groupName);
@@ -103,7 +104,6 @@
 
                 });
                 $('#post-content').append(postgroupParent).show();
-                $('#game-content');//.hide();
                 //referenceNode.after(postgroupParent);
 
                 $('.post-group').each(function (i, postGroup) {
@@ -123,15 +123,15 @@
                     });
                 });
             });
+
             $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/games.json', function (games) {
                 var gameParent = $('<div>').addClass('game-parent');
                 $.each(games, function (i, game) {
                     var gameElement = $('<div>').addClass('game');
-                    var nameElement = $('<h3>').text(game.name);
-                    var descElement = $('<p>').text(game.desc);
-                    var linkElement = $('<a>').attr('href', game.link).text('下载地址');
+                    var nameElement = $('<h3>').append($('<a>').attr('href', game.link).text(game.name));
                     var timeElement = $('<p>').text('日期：' + game.date);
-                    gameElement.append(nameElement, descElement, linkElement, timeElement);
+                    var descElement = $('<p>').text('简介：' + game.desc);
+                    gameElement.append(nameElement, timeElement, descElement);
                     gameParent.append(gameElement);
                 });
                 $('#game-content').append(gameParent).show();
