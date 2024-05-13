@@ -17,7 +17,7 @@
 </style>
 
 <body>
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/js/Jquery-3.7.1.min.js"></script>
     <!-- <script src="js/swiper-bundle.min.js"></script> -->
     <img src="img/logo.png">
 
@@ -123,8 +123,7 @@
                     });
                 });
             });
-            //'https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/games.json'
-            $.getJSON('Data/games.json', function (games) {
+            $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/games.json', function (games) {
                 var gameParent = $('<div>').addClass('game-parent');
                 $.each(games, function (i, game) {
                     var gameElement = $('<div>').addClass('game');
