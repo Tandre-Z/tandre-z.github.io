@@ -124,12 +124,6 @@ p {
     margin-left: 10px;
 }
 
-.divider {
-    background-color: #333;
-    flex: 0 0 calc(1px);
-    margin-top: 30px;
-}
-
 .post {
     display: flex;
     justify-content: space-between;
@@ -200,5 +194,17 @@ ul {
     body {
         width: 90%;
         margin: 0;
+    }
+
+    .game-parent,
+    .post-parent {
+        flex-direction: column;
+    }
+
+    .game,
+    .post-group {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-left: 0;
     }
 }

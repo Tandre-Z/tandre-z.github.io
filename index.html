@@ -40,12 +40,6 @@
     <br>
     <br>
 
-    <!-- <div class="swiper">
-        <div class="swiper-wrapper">
-            <h2 class="swiper-slide" style="text-align: center;">我的博客</h2>
-            <h2 class="swiper-slide" style="text-align: center;">我的游戏</h2>
-        </div>
-        <!-- <div class="swiper-scrollbar"></div> -->
     </div>
     <h2>博客 Blog</h2>
     <div id="post-content" class="content"></div>
@@ -81,12 +75,8 @@
         $(document).ready(function () {
 
             $.getJSON('Data/posts.json', function (postGroups) {
-                //var referenceNode = $('.swiper');
                 var postgroupParent = $('<div>').addClass('post-parent');
                 $.each(postGroups, function (i, postGroup) {
-                    //左侧分割线
-                    //var divider = $('<div>').addClass('divider');
-                    //postgroupParent.append(divider);
 
                     var postGroupElement = $('<div>').addClass('post-group');
                     var groupNameElement = $('<h3>').text(postGroup.groupName);
@@ -144,33 +134,6 @@
                 });
                 $('#game-content').append(gameParent).show();
             });
-
-            // var mySwiper = new Swiper('.swiper', {
-            //     effect: 'coverflow', coverflowEffect: {
-            //         rotate: 0,
-            //         stretch: 10,
-            //         depth: 60,
-            //         modifier: 2,
-            //         slideShadows: false
-            //     },
-            //     slideToClickedSlide: true,
-            //     slidesPerView: 2,
-            //     centeredSlides: true,
-            //     direction: 'horizontal',
-            //     on: {
-            //         slideChange: function () {
-            //             console.log('slideChange event triggered'); // 添加调试代码
-            //             var index = this.activeIndex;
-            //             $('.content').each(function (i, content) {
-            //                 if (i != index)
-            //                     $(content).hide();
-            //                 else
-            //                     $(content).show();
-            //             });
-            //         }
-            //     }
-
-            // });
         });
     </script>
 </body>
