@@ -30,7 +30,6 @@ code {
     background-color: beige;
 }
 
-/* è®¾ç½®æ‰€æœ‰å›¾ç‰‡çš„åŸºæœ¬æ ·å¼ */
 img {
     width: 20%;
     overflow: hidden;
@@ -194,17 +193,5 @@ ul {
     body {
         width: 90%;
         margin: 0;
-    }
-
-    .game-parent,
-    .post-parent {
-        flex-direction: column;
-    }
-
-    .game,
-    .post-group {
-        flex: 0 0 100%;
-        margin-right: 0;
-        margin-left: 0;
     }
 }
