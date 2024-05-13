@@ -70,15 +70,29 @@ h2 {
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
     margin-top: 1.75em;
     margin-bottom: 0;
     font-weight: normal;
 }
 
-
 p {
     transform: rotate(-0.3deg);
+}
+
+.swiper {
+    /*background-color: rgb(195, 195, 195);*/
+    --swiper-theme-color: 195, 195, 195;
+}
+
+.swiper-slide {
+    /* background-color: rgb(195, 195, 195); */
+    text-align: center;
+    text-decoration-line: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .post-parent {
@@ -88,9 +102,32 @@ p {
 }
 
 .post-group {
-    flex: 1 0 calc(50% - 40px);
-    /* grow | shrink | basis */
-    margin: 1px;
+    flex: 1 0 calc(50% - 41px);
+    /* grow | shrink | basis
+    background-color: rgb(0, 255, 170);*/
+    margin: 0 1px;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.game-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game {
+    flex: 0 0 25%;
+    height: 300px;
+    margin: 0 1px;
+    background-color: aquamarine;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.divider {
+    background-color: #333;
+    flex: 0 0 calc(1px);
+    margin-top: 30px;
 }
 
 .post {

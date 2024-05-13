@@ -14,24 +14,11 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 <style>
-    .swiper {
-        --swiper-theme-color: 195, 195, 195;
-    }
-
-    .swiper-slide {
-        /* background-color: rgb(195, 195, 195); */
-        text-align: center;
-        text-decoration-line: center;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 </style>
 
 <body>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
+    <!-- <script src="js/swiper-bundle.min.js"></script> -->
     <img src="img/logo.png">
 
     <blockquote>
@@ -51,15 +38,17 @@
     <br>
     <br>
 
-    <div class="swiper">
+    <!-- <div class="swiper">
         <div class="swiper-wrapper">
             <h2 class="swiper-slide" style="text-align: center;">我的博客</h2>
             <h2 class="swiper-slide" style="text-align: center;">我的游戏</h2>
         </div>
         <!-- <div class="swiper-scrollbar"></div> -->
     </div>
+    <h2>我的博客</h2>
     <div id="post-content" class="content"></div>
-    <div id="game-content" class="content" style="display: none;">我的游戏的内容</div>
+    <h2>我的游戏</h2>
+    <div id="game-content" class="content"></div>
 
     <br>
     <br>
@@ -88,12 +77,16 @@
 
     <script>
         $(document).ready(function () {
-            $.getJSON('Data/posts.json', function (postGroups) {
+            $.getJSON('https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/posts.json', function (postGroups) {
                 //var referenceNode = $('.swiper');
                 var postgroupParent = $('<div>').addClass('post-parent');
                 $.each(postGroups, function (i, postGroup) {
+                    //左侧分割线
+                    var divider = $('<div>').addClass('divider');
+                    postgroupParent.append(divider);
+
                     var postGroupElement = $('<div>').addClass('post-group');
-                    var groupNameElement = $('<h2>').text(postGroup.groupName);
+                    var groupNameElement = $('<h3>').text(postGroup.groupName);
                     postGroupElement.append(groupNameElement);
 
                     $.each(postGroup.posts, function (j, post) {
@@ -107,9 +100,10 @@
                     var btn = $('<button>').addClass('expand-btn').text('展开').hide();
                     postGroupElement.append(btn);
                     postgroupParent.append(postGroupElement);
+
                 });
                 $('#post-content').append(postgroupParent).show();
-                $('#game-content').hide();
+                $('#game-content');//.hide();
                 //referenceNode.after(postgroupParent);
 
                 $('.post-group').each(function (i, postGroup) {
@@ -129,33 +123,47 @@
                     });
                 });
             });
-
-            var mySwiper = new Swiper('.swiper', {
-                effect: 'coverflow', coverflowEffect: {
-                    rotate: 0,
-                    stretch: 10,
-                    depth: 60,
-                    modifier: 2,
-                    slideShadows: false
-                },
-                slideToClickedSlide: true,
-                slidesPerView: 2,
-                centeredSlides: true,
-                direction: 'horizontal',
-                on: {
-                    slideChange: function () {
-                        console.log('slideChange event triggered'); // 添加调试代码
-                        var index = this.activeIndex;
-                        $('.content').each(function (i, content) {
-                            if (i != index)
-                                $(content).hide();
-                            else
-                                $(content).show();
-                        });
-                    }
-                }
-
+            //'https://raw.githubusercontent.com/Tandre-Z/tandre-z.github.io/main/Data/games.json'
+            $.getJSON('Data/games.json', function (games) {
+                var gameParent = $('<div>').addClass('game-parent');
+                $.each(games, function (i, game) {
+                    var gameElement = $('<div>').addClass('game');
+                    var nameElement = $('<h3>').text(game.name);
+                    var descElement = $('<p>').text(game.desc);
+                    var linkElement = $('<a>').attr('href', game.link).text('下载地址');
+                    var timeElement = $('<p>').text('日期：' + game.date);
+                    gameElement.append(nameElement, descElement, linkElement, timeElement);
+                    gameParent.append(gameElement);
+                });
+                $('#game-content').append(gameParent).show();
             });
+
+            // var mySwiper = new Swiper('.swiper', {
+            //     effect: 'coverflow', coverflowEffect: {
+            //         rotate: 0,
+            //         stretch: 10,
+            //         depth: 60,
+            //         modifier: 2,
+            //         slideShadows: false
+            //     },
+            //     slideToClickedSlide: true,
+            //     slidesPerView: 2,
+            //     centeredSlides: true,
+            //     direction: 'horizontal',
+            //     on: {
+            //         slideChange: function () {
+            //             console.log('slideChange event triggered'); // 添加调试代码
+            //             var index = this.activeIndex;
+            //             $('.content').each(function (i, content) {
+            //                 if (i != index)
+            //                     $(content).hide();
+            //                 else
+            //                     $(content).show();
+            //             });
+            //         }
+            //     }
+
+            // });
         });
     </script>
 </body>
