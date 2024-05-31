@@ -19,7 +19,10 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- <script src="js/swiper-bundle.min.js"></script> -->
-    <img src="img/logo.png">
+    <header>
+        <img id="header-logo" src="img/logo.png">
+        <button id="theme-toggle">日/夜</button>
+    </header>
 
     <blockquote>
         <p><em>"在信息时代，客观障碍已不复存在，"他说："所谓障碍都是主观上的。如果你想动手开发什么全新的技术，你不需要几百万美元的资金，你只需要在冰箱里放满比萨和可乐，再有一台便宜的计算机，和为之献身的决心。我们在地板上睡过，我们从河水中趟过。"</em>
@@ -43,7 +46,7 @@
     </div>
     <h2>博客 Blog</h2>
     <div id="post-content" class="content"></div>
-    <h2>游戏 Game</h2>
+    <h2>项目 Project</h2>
     <div id="game-content" class="content"></div>
 
     <br>
@@ -60,7 +63,7 @@
     <p>&nbsp;</p>
     <br>
 
-    <p>更新于2024/5/13</p>
+    <p>更新于2024/5/31</p>
     <p>TandreZ</p>
     <p>&nbsp;</p>
 
@@ -95,7 +98,8 @@
                             'border': 'none',
                             'padding': '0 0 0 0',
                             'background': 'none',
-                            'cursor': 'pointer'
+                            'cursor': 'pointer',
+                            'color': '#C83131',
                         }).hide();
                     postGroupElement.append(btn);
                     postgroupParent.append(postGroupElement);
@@ -134,6 +138,16 @@
                 });
                 $('#game-content').append(gameParent).show();
             });
+
+            var isDark = false;
+            function SetTheme() {
+                isDark = !isDark;
+                $('html,body').toggleClass('dark', isDark);
+                var logo = $('#header-logo');
+                logo.attr('src', isDark ? 'img/logo-dark.png' : 'img/logo.png');
+            }
+            SetTheme();
+            $('#theme-toggle').click(SetTheme);
         });
     </script>
 </body>
