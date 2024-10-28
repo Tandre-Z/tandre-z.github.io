@@ -106,7 +106,7 @@ h2 {
 
 h3 {
     text-align: left;
-    margin-top: 1.75em;
+    margin-top: 0.75em;
     margin-bottom: 0;
     font-weight: normal;
 }
@@ -144,18 +144,19 @@ p {
     margin-left: 10px;
 }
 
-.game-parent {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .game {
-    flex: 0 0 calc(33% - 41px);
     margin: 0 1px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-right: 30px;
     margin-left: 10px;
+}
+
+.game-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .post {
