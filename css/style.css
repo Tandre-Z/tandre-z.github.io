@@ -44,11 +44,13 @@ body {
 body.dark {
     --color-bg: #1f1f1f;
     --color-text: #cccccc;
+    transition: background-color 0.2s ease;
 }
 
 html.dark {
     background-color: #1f1f1f;
     color: #ffffff;
+    transition: background-color 0.2s ease;
 }
 
 #theme-toggle {
