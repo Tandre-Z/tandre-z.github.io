@@ -10,7 +10,7 @@
     <meta content="utf-8" http-equiv="encoding">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="img/icon.png" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <style>
 </style>
@@ -18,10 +18,10 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <header>
-        <img id="header-logo" src="../img/logo.png">
+        <img id="header-logo" src="img/logo.png">
         <button id="theme-toggle">日/夜</button>
     </header>
-    <p> <a href='../index.html'>
+    <p> <a href='index.html'>
             <strong>返回 Back</strong>
         </a></p>
     <h1>关于我</h1>
@@ -132,7 +132,7 @@
             var logo = $('#header-logo');
             logo.attr('src', isDark ? '../img/logo-dark.png' : '../img/logo.png');
             // 使用 CSS 变量来设置背景颜色
-            document.documentElement.style.setProperty('--color-bg', isDark ? '#1f1f1f' : '#ffffff');
+            document.documentElement.style.setProperty('--color-bg', isDark ? '#1f1f1f' : '#e6e1d8');
             document.documentElement.style.setProperty('--color-text', isDark ? '#ffffff' : '#333333');
         }
 

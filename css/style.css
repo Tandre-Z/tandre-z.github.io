@@ -17,7 +17,7 @@ code {
     height: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #fff;
+    background: #e6e1d8;
     color: #333;
     font-family: Helvetica, Tahoma, Arial, STXihei, "åŽæ–‡ç»†é»‘", "Microsoft YaHei", "å¾®è½¯é›…é»‘", SimSun, "å®‹ä½“", Heiti, "é»‘ä½“", sans-serif;
     font-size: 15px;
@@ -32,7 +32,7 @@ header {
 }
 
 :root {
-    --color-bg: #ffffff;
+    --color-bg: #e6e1d8;
     --color-text: #333333;
 }
 
