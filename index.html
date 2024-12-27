@@ -12,6 +12,26 @@
     <link rel="icon" type="image/png" href="img/icon.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script>
+        // 检测系统主题并设置初始主题
+        const storedTheme = localStorage.getItem('isDark');
+        if (storedTheme === null) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            localStorage.setItem('isDark', prefersDark);
+        }
+        const isDark = storedTheme === 'true';
+        document.documentElement.classList.add('js-loaded');
+        if (isDark) {
+            document.documentElement.style.setProperty('--color-bg', '#1f1f1f');
+            document.documentElement.style.setProperty('--color-text', '#ffffff');
+            document.documentElement.classList.add('dark');
+        }
+        else {
+            document.documentElement.style.setProperty('--color-bg', '#e6e1d8');
+            document.documentElement.style.setProperty('--color-text', '#333333');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
 <style>
 </style>
@@ -30,12 +50,13 @@
         </p>
         <p style="font-size: 12px;">——[美] 大卫·卡什诺《DOOM启示录》</p>
     </blockquote>
-    <br>
     <p>
-        <a href='about.html'>
+        <a href='about.html' class="about-link">
             <strong>关于我 About</strong>
-        </a><br>
+        </a>
+    <div class="intro-text">
         我是<strong>Tandre</strong>，一个有点理想主义，时而内卷时而躺平的<strong>游戏开发爱好者</strong>，目前在一家上市公司做虚拟仿真、数字孪生相关的unity开发工作。通过该博客记录个人关于<strong>游戏创作</strong>、<strong>技术成长</strong>及对<strong>生活的思考</strong>。
+    </div>
     </p>
 
     </div>
@@ -45,16 +66,21 @@
     <div id="game-content" class="content"></div>
 
     <h2>联系 Contact</h2>
-    <p>我的博客：<a href="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266">Tandre's
-            Blog</a>
-    </p>
-    <p>Github: <a href="https://github.com/Tandre-Z">Tandre-Z</a></p>
-    <p>CSDN：<a href="https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343">Tandre_Z</a></p>
-    <p>公众号：Tandre的游戏笔记</p>
-    <img src="./images/tandrewechat.jpg" class="small">
-    <p>&nbsp;</p>
+    <div class="contact-section">
+        <div class="contact-links">
+            <p>我的博客：<a href="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266">Tandre's
+                    Blog</a></p>
+            <p>Github: <a href="https://github.com/Tandre-Z">Tandre-Z</a></p>
+            <p>CSDN：<a href="https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343">Tandre_Z</a></p>
+            <p>公众号：Tandre的游戏笔记</p>
+        </div>
+        <img src="./images/tandrewechat.jpg" class="small">
+    </div>
 
-    <p>更新于2024/5/31</p>
+    <br>
+    <br>
+    <br>
+    <p>更新于2024/12/27</p>
     <p>TandreZ</p>
     <p>&nbsp;</p>
 
@@ -67,16 +93,28 @@
 
     <script>
         $(document).ready(function () {
+            // 添加js-loaded类，启用过渡效果
+            document.documentElement.classList.add('js-loaded');
+
+            // 从 localStorage 获取主题状态
+            var isDark = localStorage.getItem('isDark') === 'true';
 
             $.getJSON('Data/posts.json', function (postGroups) {
                 var postgroupParent = $('<div>').addClass('post-parent');
-                $.each(postGroups, function (i, postGroup) {
 
+                $.each(postGroups, function (i, postGroup) {
                     var postGroupElement = $('<div>').addClass('post-group');
                     var groupNameElement = $('<h3>').text(postGroup.groupName);
-                    postGroupElement.append(groupNameElement);
 
-                    $.each(postGroup.posts, function (j, post) {
+                    // 添加展开按钮
+                    var expandButton = $('<button>')
+                        .addClass('expand-button')
+                        .html('<svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>');
+
+                    postGroupElement.append(groupNameElement, expandButton);
+
+                    // 只显示前三条
+                    $.each(postGroup.posts.slice(0, 3), function (j, post) {
                         var postElement = $('<p>').addClass('post');
                         var linkElement = $('<a>').attr('href', post.link).text(post.title);
                         var timeElement = $('<span>').addClass('time').text(post.date);
@@ -84,37 +122,55 @@
                         postGroupElement.append(postElement);
                     });
 
-                    var btn = $('<button>').addClass('expand-btn').text('展开')
-                        .css({
-                            'border': 'none',
-                            'padding': '0 0 0 0',
-                            'background': 'none',
-                            'cursor': 'pointer',
-                            'color': '#C83131',
-                        }).hide();
-                    postGroupElement.append(btn);
-                    postgroupParent.append(postGroupElement);
+                    // 创建模态窗口
+                    var modalHtml = `
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close-modal">&times;</span>
+                                <h2>${postGroup.groupName}</h2>
+                                <div class="modal-posts"></div>
+                            </div>
+                        </div>
+                    `;
+                    $('body').append(modalHtml);
 
-                });
-                $('#post-content').append(postgroupParent).show();
-                //referenceNode.after(postgroupParent);
+                    var modal = $('.modal').last();
+                    var modalPosts = modal.find('.modal-posts');
 
-                $('.post-group').each(function (i, postGroup) {
-                    var posts = $(postGroup).find('.post');
-                    var btn = $(postGroup).find('.expand-btn');
-
-                    if (posts.length > 3) {
-                        posts.slice(3).hide();
-                        btn.show();
-                    }
-
-                    btn.click(function () {
-                        var isExpanded = $(this).text() === '收起';
-                        if (isExpanded) posts.slice(3).hide();
-                        else posts.slice(3).show();
-                        $(this).text(isExpanded ? '展开' : '收起');
+                    // 添加所有文章到模态窗口
+                    $.each(postGroup.posts, function (j, post) {
+                        var postElement = $('<p>').addClass('post');
+                        var linkElement = $('<a>').attr('href', post.link).text(post.title);
+                        var timeElement = $('<span>').addClass('time').text(post.date);
+                        postElement.append(linkElement, timeElement);
+                        modalPosts.append(postElement);
                     });
+
+                    // 只有点击展开按钮时才显示模态窗口
+                    expandButton.click(function (e) {
+                        e.stopPropagation(); // 阻止事件冒泡
+                        modal.fadeIn(300);
+                        $('body').css('overflow', 'hidden');
+                    });
+
+                    // 点击关闭按钮关闭模态窗口
+                    modal.find('.close-modal').click(function () {
+                        modal.fadeOut(300);
+                        $('body').css('overflow', '');
+                    });
+
+                    // 点击模态窗口外部区域关闭
+                    modal.click(function (e) {
+                        if ($(e.target).is('.modal')) {
+                            modal.fadeOut(300);
+                            $('body').css('overflow', '');
+                        }
+                    });
+
+                    postgroupParent.append(postGroupElement);
                 });
+
+                $('#post-content').append(postgroupParent).show();
             });
 
             $.getJSON('Data/games.json', function (games) {
@@ -132,16 +188,16 @@
                 $('#game-content').append(gameParent).show();
             });
 
-            // 从 localStorage 获取主题状态
-            var isDark = localStorage.getItem('isDark') === 'true';
-
             function SetTheme() {
                 $('html,body').toggleClass('dark', isDark);
                 var logo = $('#header-logo');
                 logo.attr('src', isDark ? 'img/logo-dark.png' : 'img/logo.png');
-                // 使用 CSS 变量来设置背景颜色
+                // 使用更柔和的深色模式颜色
                 document.documentElement.style.setProperty('--color-bg', isDark ? '#1f1f1f' : '#e6e1d8');
-                document.documentElement.style.setProperty('--color-text', isDark ? '#ffffff' : '#333333');
+                document.documentElement.style.setProperty('--color-text', isDark ? '#e0e0e0' : '#333333');
+                document.documentElement.style.setProperty('--color-secondary', isDark ? '#a0a0a0' : '#666666');
+                // 移除初始主题类
+                $('html').removeClass('initial-theme');
             }
             // 页面加载时应用主题
             SetTheme();

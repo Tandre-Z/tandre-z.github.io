@@ -1,14 +1,22 @@
 a {
     color: #C83131;
     text-decoration: none;
-    position: relative;
-    top: 0px;
-    transition: 0.1s ease-in-out;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
 a:hover {
     color: #ff4040;
-    top: -1px;
+    border-bottom: 1px solid currentColor;
+    transform: translateY(-2px);
+}
+
+.dark a {
+    color: #ff6b6b;
+}
+
+.dark a:hover {
+    color: #ff8787;
 }
 
 html,
@@ -17,12 +25,14 @@ code {
     height: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #e6e1d8;
-    color: #333;
-    font-family: Helvetica, Tahoma, Arial, STXihei, "åŽæ–‡ç»†é»‘", "Microsoft YaHei", "å¾®è½¯é›…é»‘", SimSun, "å®‹ä½“", Heiti, "é»‘ä½“", sans-serif;
+    background: var(--color-bg);
+    /* 使用CSS变量替代固定颜色 */
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
     font-weight: normal;
-    line-height: 1.625em;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
 }
 
 header {
@@ -34,33 +44,70 @@ header {
 :root {
     --color-bg: #e6e1d8;
     --color-text: #333333;
+    --color-secondary: #666666;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --transition-duration: 0.2s;
+    --spacing-xs: 6px;
+    /* 最小间距 */
+    --spacing-sm: 12px;
+    /* 小间距 */
+    --spacing-md: 18px;
+    /* 中等间距 */
+    --spacing-lg: 24px;
+    /* 大间距 */
+    --spacing-xl: 36px;
+    /* 特大间距 */
+}
+
+/* 添加初始主题类 */
+html.initial-theme {
+    background-color: var(--color-bg);
+}
+
+/* 如果用户之前选择了深色模式，立即应用深色背景 */
+@media (prefers-color-scheme: dark) {
+    html.initial-theme {
+        background-color: #1f1f1f;
+    }
+}
+
+/* 移除html和body的单独过渡效果，统一在这里设置 */
+html {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all var(--transition-duration) ease-in-out;
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    background: transparent;
+    /* 使body背景透明，继承html的背景色 */
+    color: inherit;
+    /* 继承html的文字颜色 */
 }
 
-body.dark {
-    --color-bg: #1f1f1f;
-    --color-text: #cccccc;
-    transition: background-color 0.2s ease;
-}
-
+/* 深色模式时修改根变量 */
 html.dark {
-    background-color: #1f1f1f;
-    color: #ffffff;
-    transition: background-color 0.2s ease;
+    --color-bg: #1f1f1f;
+    --color-text: #e0e0e0;
+    --color-secondary: #a0a0a0;
+    --color-border: rgba(255, 255, 255, 0.1);
 }
 
 #theme-toggle {
-    right: 10px;
-    margin: 0%;
-    padding: 0%;
-    border: none;
-    background: none;
-    font-size: 1.2em;
+    padding: 8px 16px;
+    border: 2px solid #C83131;
+    border-radius: 20px;
+    background: transparent;
     color: #C83131;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    background: #C83131;
+    color: white;
+    transform: translateY(-2px);
 }
 
 code {
@@ -93,8 +140,10 @@ h1 {
     text-align: center;
     font-weight: bold;
     line-height: 100%;
-    margin-top: 2.5em;
-    margin-bottom: 1.5em;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.05em;
 }
 
 
@@ -102,15 +151,19 @@ h2 {
     transform: rotate(0.5deg);
     text-align: left;
     font-weight: bold;
-    margin-top: 2.5em;
-    margin-bottom: 0;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.05em;
 }
 
 h3 {
     text-align: left;
-    margin-top: 0.75em;
-    margin-bottom: 0;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
     font-weight: normal;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.05em;
 }
 
 p {
@@ -138,21 +191,35 @@ p {
 }
 
 .post-group {
-    flex: 1 0 calc(50% - 41px);
-    /* grow | shrink | basis
-    background-color: rgb(0, 255, 170);*/
-    margin: 0 1px;
-    margin-right: 30px;
-    margin-left: 10px;
+    position: relative;
+    flex: 1 0 calc(50% - 64px);
+    margin: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: var(--spacing-sm);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
+.post-group:hover {
+    transform: translateY(-5px);
+}
 
 .game {
-    margin: 15px 1px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    margin-right: 30px;
-    margin-left: 10px;
+    margin: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    /* 确保与博客模块间距一致 */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: var(--spacing-sm);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.game:hover {
+    transform: translateY(-5px);
 }
 
 .game-header {
@@ -165,11 +232,12 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3px;
+    /* padding: 2px 0; */
 }
 
 .time {
-    transform: rotate(-0.3deg);
-    text-align: right;
+    color: var(--color-secondary);
 }
 
 li {
@@ -231,9 +299,9 @@ ul {
     body {
         width: 90%;
         margin: 0;
+        padding: 15px;
     }
 
-    .game-parent,
     .post-parent {
         flex-direction: column;
     }
@@ -241,7 +309,359 @@ ul {
     .game,
     .post-group {
         flex: 0 0 100%;
-        margin-right: 0;
-        margin-left: 0;
+        margin: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    :root {
+        /* 移动端稍微缩小间距 */
+        --spacing-md: 16px;
+        --spacing-lg: 20px;
+        --spacing-xl: 28px;
+    }
+
+    .post {
+        margin-bottom: 3px;
+        /* padding: 2px 0; */
+    }
+}
+
+
+
+/* 添加模态窗口样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--color-bg);
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin;
+    scrollbar-color: #C83131 transparent;
+    z-index: 1000;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text);
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+/* Webkit 浏览器的滚动条样式 */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #C83131;
+    border-radius: 4px;
+}
+
+.dark .modal-content::-webkit-scrollbar-thumb {
+    background-color: #ff6b6b;
+}
+
+.expand-button {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #C83131;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.expand-button:hover {
+    color: #ff4040;
+    transform: scale(1.1);
+}
+
+.dark .expand-button {
+    color: #ff6b6b;
+}
+
+.dark .expand-button:hover {
+    color: #ff8787;
+}
+
+/* 只在js加载完成后添加过渡效果 */
+html.js-loaded {
+    transition: background-color var(--transition-duration) ease-in-out,
+        color var(--transition-duration) ease-in-out;
+}
+
+body {
+    background: transparent;
+    color: inherit;
+}
+
+
+
+/* About页面的教育经历和工作经历卡片 */
+.about-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+}
+
+/* 工作经历中的项目描述 */
+.project-item {
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-md);
+    border-left: 3px solid #C83131;
+    background: rgba(200, 49, 49, 0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+.dark .project-item {
+    border-left-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+}
+
+/* 技能标签 */
+.skill-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 4px;
+    background: rgba(200, 49, 49, 0.1);
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: #C83131;
+}
+
+.dark .skill-tag {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+}
+
+/* 时间线样式 */
+.timeline-item {
+    position: relative;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #C83131;
+    border-radius: 50%;
+}
+
+.dark .timeline-item::before {
+    background: #ff6b6b;
+}
+
+/* 引用块样式优化 */
+blockquote {
+    border-left: 4px solid #C83131;
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(200, 49, 49, 0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+.dark blockquote {
+    border-left-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .about-section {
+        padding: var(--spacing-sm);
+        margin: var(--spacing-sm) 0;
+    }
+
+    .project-item {
+        padding: var(--spacing-sm);
+        margin: var(--spacing-xs) 0;
+    }
+
+    .skill-tag {
+        padding: 3px 10px;
+        margin: 3px;
+    }
+}
+
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.header-line p,
+.header-line h3 {
+    margin: 0;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.header-line .time {
+    margin-left: auto;
+    white-space: nowrap;
+    color: var(--color-secondary);
+    min-width: 120px;
+    text-align: right;
+}
+
+/* 关于我部分样式 */
+.about-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+
+.intro-text {
+    position: relative;
+    padding: var(--spacing-sm);
+    background: rgba(200, 49, 49, 0.05);
+    border-radius: 12px;
+    margin: var(--spacing-xs) 0;
+    border-left: 3px solid #C83131;
+}
+
+.dark .intro-text {
+    background: rgba(255, 107, 107, 0.05);
+    border-left-color: #ff6b6b;
+}
+
+/* 联系方式部分布局调整 */
+.contact-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark .contact-section {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark .contact-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.contact-links {
+    flex: 1;
+    padding-right: var(--spacing-sm);
+}
+
+.contact-links p {
+    margin: var(--spacing-xs) 0;
+}
+
+/* 二维码图片样式 */
+.contact-section .small {
+    width: 150px;
+    height: auto;
+    margin: 0;
+    /* 移除外边距 */
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-links {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-section .small {
+        width: 200px;
+    }
+}
+
+/* 系统深色模式时的默认样式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #1f1f1f;
+        --color-text: #e0e0e0;
+        --color-secondary: #a0a0a0;
+        --color-border: rgba(255, 255, 255, 0.1);
+    }
+
+    html:not(.js-loaded) {
+        background-color: #1f1f1f;
     }
 }
