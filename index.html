@@ -99,7 +99,7 @@
             // 从 localStorage 获取主题状态
             var isDark = localStorage.getItem('isDark') === 'true';
 
-            $.getJSON('Data/posts.json', function (postGroups) {
+            $.getJSON('data/posts.json', function (postGroups) {
                 var postgroupParent = $('<div>').addClass('post-parent');
 
                 $.each(postGroups, function (i, postGroup) {
@@ -173,7 +173,7 @@
                 $('#post-content').append(postgroupParent).show();
             });
 
-            $.getJSON('Data/games.json', function (games) {
+            $.getJSON('data/games.json', function (games) {
                 var gameParent = $('<div>').addClass('game-parent');
                 $.each(games, function (i, game) {
                     var gameElement = $('<div>').addClass('game');
