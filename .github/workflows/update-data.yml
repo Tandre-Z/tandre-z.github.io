@@ -1,3 +1,11 @@
+
+      - name: Run Python script to update JSON
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          python3 update_json.py
+
 name: Update JSON and README
 
 on:
@@ -22,6 +30,10 @@ jobs:
         run: pip install requests
 
       - name: Fetch data from Notion API and update JSON
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+          BLOG_DATABASE_ID: ${{ secrets.BLOG_DATABASE_ID }}
+          PROJECT_DATABASE_ID: ${{ secrets.PROJECT_DATABASE_ID }}
         run: |
           python scripts/update_data.py
 
