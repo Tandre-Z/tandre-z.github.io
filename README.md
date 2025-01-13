@@ -43,7 +43,6 @@
 - [内耗症候群存在主义自救指南（实践篇）](https://tandrez.notion.site/c300f298e70948bf9c1031ac200d95f5) - 2024-03-14
 - [内耗症候群存在主义自救指南（理论篇）](https://tandrez.notion.site/065dc968f5184d2fb49d1a56e29898d5) - 2024-03-08
 - [Rain](https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f) - 2023-10-04
-- [About Me](https://tandrez.notion.site/About-Me-82c8c7ea23354317a2876319cc32de6c) -
 <!-- BLOG-LIST-END -->
 
 ## 项目文章列表
