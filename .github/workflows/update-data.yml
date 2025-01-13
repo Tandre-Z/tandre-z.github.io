@@ -30,9 +30,11 @@ jobs:
           python scripts/update_data.py
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/*.json README.md
           # 检查是否有更改，如果有则提交并推送
-          git diff --staged --quiet || (git commit -m 'Update JSON and README from Notion API' && git push)
+          git diff --staged --quiet || (git commit -m 'Update JSON and README from Notion API' && git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main)
