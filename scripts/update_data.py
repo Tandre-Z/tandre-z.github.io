@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import requests
 import json
 import os
+import re
 
 load_dotenv()  # 加载 .env 文件中的变量
 
@@ -106,7 +107,8 @@ def update_readme(blog_data, project_data, readme_path):
     # 生成博客列表
     blog_sections = []
     for group in blog_data:
-        group_content = [f"### {group['groupName']}"]
+        # 添加两个换行确保格式正确
+        group_content = [f"### {group['groupName']}\n"]
         for post in group['posts']:
             group_content.append(
                 f"- [{post['title']}]({post['link']}) - {post['date']}"
@@ -125,18 +127,22 @@ def update_readme(blog_data, project_data, readme_path):
     # 读取并更新README文件
     with open(readme_path, "r", encoding="utf-8") as file:
         readme = file.read()
-
-    # 替换标记内容
-    readme = readme.replace(
-        "<!-- BLOG-LIST-START -->\n<!-- BLOG-LIST-END -->", 
-        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->"
+    
+    # 使用更严格的替换模式并确保格式
+    blog_pattern = r"<!-- BLOG-LIST-START -->[\s\S]*?<!-- BLOG-LIST-END -->"
+    project_pattern = r"<!-- PROJECT-LIST-START -->[\s\S]*?<!-- PROJECT-LIST-END -->"
+    
+    readme = re.sub(
+        blog_pattern,
+        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->",
+        readme
     )
-    readme = readme.replace(
-        "<!-- PROJECT-LIST-START -->\n<!-- PROJECT-LIST-END -->", 
-        f"<!-- PROJECT-LIST-START -->\n{project_list}\n<!-- PROJECT-LIST-END -->"
+    readme = re.sub(
+        project_pattern,
+        f"<!-- PROJECT-LIST-START -->\n{project_list}\n<!-- PROJECT-LIST-END -->",
+        readme
     )
 
-    # 写入更新后的内容
     with open(readme_path, "w", encoding="utf-8") as file:
         file.write(readme)
 
