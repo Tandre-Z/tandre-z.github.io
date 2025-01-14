@@ -108,6 +108,11 @@
         "groupName": "其他技术",
         "posts": [
             {
+                "title": "Notion+githubworkflow+vercel博客工作流",
+                "link": "https://tandrez.notion.site/Notion-githubworkflow-vercel-17adbd6ed8ac808a9b04e26b627f8d7c",
+                "date": "2025-01-13"
+            },
+            {
                 "title": "Vscode调教",
                 "link": "https://tandrez.notion.site/Vscode-ad421974f54b42699858d1ef125ffff1",
                 "date": "2024-03-14"

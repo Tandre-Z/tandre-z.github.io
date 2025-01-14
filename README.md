@@ -31,6 +31,7 @@
 
 ### 其他技术
 
+- [Notion+githubworkflow+vercel博客工作流](https://tandrez.notion.site/Notion-githubworkflow-vercel-17adbd6ed8ac808a9b04e26b627f8d7c) - 2025-01-13
 - [Vscode调教](https://tandrez.notion.site/Vscode-ad421974f54b42699858d1ef125ffff1) - 2024-03-14
 - [Unity打包WebGl全屏设置](https://tandrez.notion.site/Unity-WebGl-ab9c9ddd5dc342789fd307732903e9d6) - 2023-08-28
 - [Markdown语法整理](https://tandrez.notion.site/Markdown-a74a4288fc3c4a9da62fe828e36f9410) - 2023-01-01
