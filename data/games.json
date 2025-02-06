@@ -1,5 +1,12 @@
 [
     {
+        "name": "《蛋》",
+        "type": "#独立游戏 #科幻 #幻想 #心理学",
+        "desc": "一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》",
+        "link": "https://tandrez.notion.site/0d3b0b51c98c4def83f949efc63b2371",
+        "date": "2024-12-26"
+    },
+    {
         "name": "迷失之旅（Lost Dream）",
         "type": "#独立游戏 #像素 #幻想 #现实 #心理学",
         "desc": "2024年Booom Game Jam参赛作品。",

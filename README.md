@@ -43,10 +43,13 @@
 - [安迪·威尔《蛋》-中文（转载）](https://tandrez.notion.site/71364600a7814772b1987e71d3bf5ced) - 2024-04-10
 - [内耗症候群存在主义自救指南（实践篇）](https://tandrez.notion.site/c300f298e70948bf9c1031ac200d95f5) - 2024-03-14
 - [内耗症候群存在主义自救指南（理论篇）](https://tandrez.notion.site/065dc968f5184d2fb49d1a56e29898d5) - 2024-03-08
+- [Rain](https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f) - 2023-10-04
 <!-- BLOG-LIST-END -->
 
 ## 项目文章列表
 <!-- PROJECT-LIST-START -->
+- [《蛋》](https://tandrez.notion.site/0d3b0b51c98c4def83f949efc63b2371) - #独立游戏 #科幻 #幻想 #心理学
+  一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》 (2024-12-26)
 - [迷失之旅（Lost Dream）](https://tandrez.notion.site/Lost-Dream-483638ab7dc74b56ba8f9bc7987740f5) - #独立游戏 #像素 #幻想 #现实 #心理学
   2024年Booom Game Jam参赛作品。 (2024-05-07)
 - [GNSS测量技术虚拟仿真教学系统(VR端应用)](https://tandrez.notion.site/GNSS-VR-704d8062ac1f4f19b229b5233b8d24ac) - #虚拟仿真
