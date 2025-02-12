@@ -37,7 +37,7 @@ export default function RootLayout({
           {...({} as React.ComponentProps<typeof ThemeProvider>)}
         >
           <div className="flex justify-center">
-            <div className="w-full max-w-[1200px] mx-auto">
+            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6">
               <header>
                 <Header />
               </header>

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Terminal } from "lucide-react"
+import { Separator } from "@/components/ui/separator";
 
 function ContactItem({ label, link, text }: { label: string; link: string; text: string }) {
   return (
@@ -69,8 +70,8 @@ export default function Home() {
       </h2>
       <ProjectList className="my-4 text-sm" />
 
-      {/* 增加间隔 */}
-      <div className="my-16" />
+      {/* 分割线 */}
+      <Separator className="my-12" />
 
       {/* 联系信息 */}
       <Card className="my-4 hover:shadow-md">
@@ -79,8 +80,8 @@ export default function Home() {
             联系 Contact
           </CardTitle>
         </CardHeader>
-        <CardContent className="flex justify-between items-start">
-          <div className="space-y-4 w-1/2 pr-8">
+        <CardContent className="flex flex-col md:flex-row justify-between items-start gap-4">
+          <div className="space-y-4 w-full md:w-1/2 pr-0 md:pr-8">
             <ContactItem
               label="我的博客"
               link="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266"
@@ -103,7 +104,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-1/2 pl-8 flex justify-end">
+          <div className="w-full md:w-1/2 pl-0 md:pl-8 flex justify-start md:justify-end">
             <div className="flex flex-col items-center justify-center">
               <Image
                 src="/img/tandrewechat.jpg"
@@ -112,7 +113,7 @@ export default function Home() {
                 width={140}
                 height={140}
               />
-              {/* <p className="text-xs text-muted-foreground mt-2">微信扫码订阅</p> */}
+              <p className="text-xs text-muted-foreground mt-2 md:hidden">微信扫码订阅</p>
             </div>
           </div>
         </CardContent>

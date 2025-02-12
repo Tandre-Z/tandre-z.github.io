@@ -55,7 +55,7 @@ const PostList: React.FC<PostListProps> = ({ className }) => {
                     </CardContent>
 
                     <Dialog open={openGroup === group.groupName} onOpenChange={handleClose}>
-                        <DialogContent className="max-w-2xl h-[60vh] flex flex-col">
+                        <DialogContent className="max-w-2xl h-[60vh] flex flex-col [&>button]:focus:ring-0 [&>button]:focus:ring-offset-0">
                             <DialogHeader>
                                 <DialogTitle>{group.groupName}</DialogTitle>
                             </DialogHeader>
