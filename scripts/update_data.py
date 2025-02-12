@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 import requests
 import json
 import os
-import re
 
 load_dotenv()  # 加载 .env 文件中的变量
 
@@ -47,6 +46,7 @@ def parse_post_data(data):
         
         # 获取文章信息
         post_info = {
+            "id": item["id"],
             "title": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
             "link": item["public_url"],
             "date": properties["创建时间"]["date"]["start"] if properties["创建时间"]["date"] else ""
@@ -81,6 +81,7 @@ def parse_project_data(data):
         
         # 提取游戏信息
         game_info = {
+            "id": item["id"],
             "name": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
             "type": type_string,
             "desc": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
@@ -107,8 +108,7 @@ def update_readme(blog_data, project_data, readme_path):
     # 生成博客列表
     blog_sections = []
     for group in blog_data:
-        # 添加两个换行确保格式正确
-        group_content = [f"### {group['groupName']}\n"]
+        group_content = [f"### {group['groupName']}"]
         for post in group['posts']:
             group_content.append(
                 f"- [{post['title']}]({post['link']}) - {post['date']}"
@@ -127,22 +127,18 @@ def update_readme(blog_data, project_data, readme_path):
     # 读取并更新README文件
     with open(readme_path, "r", encoding="utf-8") as file:
         readme = file.read()
-    
-    # 使用更严格的替换模式并确保格式
-    blog_pattern = r"<!-- BLOG-LIST-START -->[\s\S]*?<!-- BLOG-LIST-END -->"
-    project_pattern = r"<!-- PROJECT-LIST-START -->[\s\S]*?<!-- PROJECT-LIST-END -->"
-    
-    readme = re.sub(
-        blog_pattern,
-        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->",
-        readme
+
+    # 替换标记内容
+    readme = readme.replace(
+        "<!-- BLOG-LIST-START -->\n<!-- BLOG-LIST-END -->", 
+        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->"
     )
-    readme = re.sub(
-        project_pattern,
-        f"<!-- PROJECT-LIST-START -->\n{project_list}\n<!-- PROJECT-LIST-END -->",
-        readme
+    readme = readme.replace(
+        "<!-- PROJECT-LIST-START -->\n<!-- PROJECT-LIST-END -->", 
+        f"<!-- PROJECT-LIST-START -->\n{project_list}\n<!-- PROJECT-LIST-END -->"
     )
 
+    # 写入更新后的内容
     with open(readme_path, "w", encoding="utf-8") as file:
         file.write(readme)
 
@@ -156,8 +152,8 @@ if __name__ == "__main__":
     project_parsed = parse_project_data(project_data)
 
     # 更新 JSON 文件
-    update_json("data/posts.json", blog_parsed)
-    update_json("data/games.json", project_parsed)
+    update_json("src/data/posts.json", blog_parsed)
+    update_json("src/data/games.json", project_parsed)
 
     # 更新 README 文件
     update_readme(blog_parsed, project_parsed, "README.md")

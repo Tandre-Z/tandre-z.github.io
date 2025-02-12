@@ -4,10 +4,10 @@ on:
   schedule:
     - cron: "0 0 * * *" # 每天凌晨自动运行
   workflow_dispatch: # 手动触发
-  
+
 permissions:
   contents: write
-  
+
 jobs:
   update-json-readme:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           PROJECT_DATABASE_ID: ${{ secrets.PROJECT_DATABASE_ID }}
         run: |
           python scripts/update_data.py
-          
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
