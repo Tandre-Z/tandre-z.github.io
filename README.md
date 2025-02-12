@@ -2,7 +2,7 @@
 
 **博客链接**：[Tandre的博客](https://tandre-z.github.io/)
 
-## 博客文章列表
+## 博客 Blog
 <!-- BLOG-LIST-START -->
 ### Unity
 
@@ -46,7 +46,7 @@
 - [Rain](https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f) - 2023-10-04
 <!-- BLOG-LIST-END -->
 
-## 项目文章列表
+## 项目 Project
 <!-- PROJECT-LIST-START -->
 - [《蛋》](https://tandrez.notion.site/0d3b0b51c98c4def83f949efc63b2371) - #独立游戏 #科幻 #幻想 #心理学
   一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》 (2024-12-26)
@@ -64,4 +64,18 @@
   2023年Boom7日Game Jam参赛作品。通过对热门话题MBTI中的I人与E人的心理对比，主要表达I人心理状态的一部实验性作品。获机核白老师推荐。 (2023-08-25)
 - [掩盖繁星的太阳：ReIgnition](https://tandrez.notion.site/ReIgnition-98d2812d5bfe47a0a2cf5e9c54caa98a) - #独立游戏 #科幻 #后启示录 #战争
   2023年Booom Game Jam参赛作品。 (2023-05-29)
-<!-- PROJECT-LIST-END -->
+  <!-- PROJECT-LIST-END -->
+
+## 联系 Contact
+
+我的博客
+
+- 我的博客:  [Tandre's Blog](https://tandre.cn)
+- Github: [Tandre-Z](https://github.com/Tandre-Z)
+- CSDN: [CSDN](https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343)
+- 公众号: Tandre的游戏笔记
+  <img src="public/img/tandrewechat.jpg" alt="WeChat QR Code" width="140" height="140">
+
+更新于2024/12/27
+
+TandreZ
