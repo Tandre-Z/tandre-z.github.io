@@ -3,6 +3,21 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "关于作者",
+    description: "Tandre的个人简历",
+    keywords: ["开发者简介", "教育背景", "项目经验", "技术栈"],
+    openGraph: {
+        title: "关于Tandre",
+        description: "Tandre的个人简介、技术背景与项目经验等",
+        images: "/img/icon.png",
+    },
+    alternates: {
+        canonical: "/about",
+    },
+};
 
 export default function AboutPage() {
     return (

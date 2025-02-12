@@ -8,6 +8,19 @@ import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Terminal } from "lucide-react"
 import { Separator } from "@/components/ui/separator";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "首页",
+  description: "Tandre的博客主页",
+  openGraph: {
+    title: "首页 | Tandre's Blog",
+    description: "Tandre最新的博客、项目及联系方式",
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
 
 function ContactItem({ label, link, text }: { label: string; link: string; text: string }) {
   return (
