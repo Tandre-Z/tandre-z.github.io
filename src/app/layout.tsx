@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <meta name="baidu-site-verification" content="codeva-BdzudbN5ec" />
+        <meta name="baidu-site-verification" content="codeva-GtnA5uOKWx" />
         <style>{`
           :root {
             --color-primary: 59 130 246;
