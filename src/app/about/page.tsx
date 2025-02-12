@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import Header from "@/components/Header";
 import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -22,7 +20,7 @@ export default function AboutPage() {
             <Alert>
                 <Terminal className="h-4 w-4" />
                 <AlertDescription>
-                    Rookie's road to a better rookie!<br />
+                    Rookie&apos;s road to a better rookie!<br />
                     如果以前有人问我的工作，我会说做计算机的。后来我放弃了应对它们对计算机专业的刻板印象，便会说，我是做专业驱虫的。
                 </AlertDescription>
             </Alert>
@@ -146,17 +144,6 @@ export default function AboutPage() {
                 <p className="font-mono text-red-500">TandreZ</p>
             </div>
         </div >
-    );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <Card className="my-6 hover:shadow-md">
-            <CardHeader>
-                <CardTitle className="text-xl">{title}</CardTitle>
-            </CardHeader>
-            <CardContent>{children}</CardContent>
-        </Card>
     );
 }
 
