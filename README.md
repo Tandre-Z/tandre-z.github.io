@@ -74,7 +74,7 @@
 - Github: [Tandre-Z](https://github.com/Tandre-Z)
 - CSDN: [CSDN](https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343)
 - 公众号: Tandre的游戏笔记
-  <img src="public/img/tandrewechat.jpg" alt="WeChat QR Code" width="140" height="140">
+<img src="public/img/tandrewechat.jpg" alt="WeChat QR Code" width="140" height="140">
 
 更新于2024/12/27
 
