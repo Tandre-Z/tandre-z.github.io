@@ -39,5 +39,5 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add data/*.json README.md
+          git add src/data/*.json README.md
           git diff --staged --quiet || (git commit -m 'Update JSON and README from Notion API' && git push origin main)
