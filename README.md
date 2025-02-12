@@ -68,8 +68,6 @@
 
 ## 联系 Contact
 
-我的博客
-
 - 我的博客:  [Tandre's Blog](https://tandre.cn)
 - Github: [Tandre-Z](https://github.com/Tandre-Z)
 - CSDN: [CSDN](https://blog.csdn.net/weixin_46050495?spm=1010.2135.3001.5343)
