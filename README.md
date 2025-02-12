@@ -1,6 +1,6 @@
 # Tandre's Blog
 
-**博客链接**：[Tandre的博客](https://tandre.cn)
+**博客链接**：[Tandre's Blog](https://tandre.cn)
 
 ## 博客 Blog
 <!-- BLOG-LIST-START -->
