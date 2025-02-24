@@ -35,7 +35,7 @@ export default function AboutPage() {
             <Alert>
                 <Terminal className="h-4 w-4" />
                 <AlertDescription>
-                    Rookie&apos;s road to a better rookie!<br />
+                    Rookie's road to a better rookie!<br />
                     如果以前有人问我的工作，我会说做计算机的。后来我放弃了应对它们对计算机专业的刻板印象，便会说，我是做专业驱虫的。
                 </AlertDescription>
             </Alert>

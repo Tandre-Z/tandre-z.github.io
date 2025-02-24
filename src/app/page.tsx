@@ -47,7 +47,7 @@ export default function Home() {
       <Alert>
         <Terminal className="h-4 w-4" />
         <AlertDescription>
-          &quot;在信息时代，客观障碍已不复存在，&quot;他说：&quot;所谓障碍都是主观上的。如果你想动手开发什么全新的技术，你不需要几百万美元的资金，你只需要在冰箱里放满比萨和可乐，再有一台便宜的计算机，和为之献身的决心。我们在地板上睡过，我们从河水中趟过。&quot;<br />
+          "在信息时代，客观障碍已不复存在，"他说："所谓障碍都是主观上的。如果你想动手开发什么全新的技术，你不需要几百万美元的资金，你只需要在冰箱里放满比萨和可乐，再有一台便宜的计算机，和为之献身的决心。我们在地板上睡过，我们从河水中趟过。"<br />
           "In the information age, the barriers just aren't there," he said. "The barriers are self-imposed. If you want to set off and go develop some grand new thing, you don't need millions of dollars of capitalization. You need enough pizza and Diet Coke to stick in your refrigerator, a cheap PC to work on, and the dedication to go through with it. We slept on floors. We waded across rivers."<br />
           <br />
           ——[美] 大卫·卡什诺《DOOM启示录》 [American]Davidkushner《Masters of Doom》
