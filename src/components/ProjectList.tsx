@@ -23,7 +23,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ className }) => {
                         <span className="text-sm text-gray-500 dark:text-gray-400">{game.date}</span>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm">{game.desc}</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm whitespace-pre-line">{game.desc}</p>
                         <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">{game.type}</p>
                     </CardContent>
                 </Card>

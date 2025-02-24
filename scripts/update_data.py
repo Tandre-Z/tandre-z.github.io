@@ -28,10 +28,10 @@ def fetch_data(database_id):
 def parse_post_data(data):
     # 定义分组的tag映射
     group_tags = {
-        "Unity": ["插件", "性能优化", "框架", "代码库"],
-        "游戏设计理论": ["游戏设计理论"],
-        "其他技术": ["其它技术"],
-        "杂谈/写作": ["杂谈/写作"]
+        "Unity相关 UnityRel": ["插件", "性能优化", "框架", "代码库"],
+        "游戏设计理论 GameDesign": ["游戏设计理论"],
+        "其他技术 OtherTech": ["其它技术"],
+        "杂谈/写作 Chat&Write": ["杂谈/写作"]
     }
     
     # 初始化分组结果
@@ -48,7 +48,7 @@ def parse_post_data(data):
         post_info = {
             "id": item["id"],
             "title": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
-            "link": item["public_url"],
+            "link": properties["Link"]["url"] or item["public_url"],
             "date": properties["创建时间"]["date"]["start"] if properties["创建时间"]["date"] else ""
         }
         
@@ -85,7 +85,7 @@ def parse_project_data(data):
             "name": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
             "type": type_string,
             "desc": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
-            "link": item["public_url"],
+            "link": properties["Link"]["url"] or item["public_url"],
             "date": properties["发布时间"]["date"]["start"] if properties["发布时间"]["date"] else ""
         }
         

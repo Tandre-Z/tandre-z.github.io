@@ -1,0 +1,23 @@
+{
+    "header": {
+        "title": "首页",
+        "about": "关于"
+    },
+    "home": {
+        "title": "首页",
+        "description": "Tandre的博客主页",
+        "og_title": "首页 | Tandre's Blog",
+        "og_description": "Tandre最新的博客、项目及联系方式",
+        "about_me": "关于我",
+        "blog": "博客",
+        "projects": "项目",
+        "contact": "联系",
+        "last_updated": "更新于"
+    },
+    "contact": {
+        "blog": "我的博客",
+        "github": "Github",
+        "csdn": "CSDN",
+        "wechat": "公众号"
+    }
+}
