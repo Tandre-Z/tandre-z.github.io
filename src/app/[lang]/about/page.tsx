@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function AboutPage({ params }: { params: { lang: string } }) {
-    const dictionaries = await getDictionary(params.lang);
+export default async function AboutPage({ params: { lang } }: { params: { lang: string } }) {
+    const dictionaries = await getDictionary(lang);
     return (
         <div className="mx-auto">
 
             <div className="my-4">
-                <Link href={`/${params.lang}`} className="text-red-500 hover:text-red-600 hover:underline">
+                <Link href={`/${lang}`} className="text-red-500 hover:text-red-600 hover:underline">
                     <strong>{dictionaries.about.back_to_home}</strong>
                 </Link>
             </div>
