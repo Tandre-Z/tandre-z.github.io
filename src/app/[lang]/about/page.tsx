@@ -5,6 +5,7 @@ import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionaries";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "关于作者",
@@ -158,6 +159,8 @@ export default async function AboutPage({ params: { lang } }: { params: { lang: 
                 <p className="tracking-wide">{dictionaries.about.last_updated}2024/12/27</p>
                 <p className="font-mono text-red-500">TandreZ</p>
             </div>
+
+            <Footer params={{ lang }} />
         </div >
     );
 }
