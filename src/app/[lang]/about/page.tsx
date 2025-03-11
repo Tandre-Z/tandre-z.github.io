@@ -5,7 +5,6 @@ import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionaries";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "关于作者",
@@ -21,11 +20,14 @@ export const metadata: Metadata = {
     },
 };
 
+interface PageProps {
+    params: { lang: string };
+    searchParams?: Record<string, string | string[] | undefined>;
+}
+
 export default async function AboutPage({
     params: { lang },
-}: {
-    params: { lang: string }
-}) {
+}: PageProps) {
     const dictionaries = await getDictionary(lang);
     return (
         <div className="mx-auto">
