@@ -25,7 +25,7 @@ const Header = ({ lang }: { lang: string }) => {
     return (
         <header className="flex justify-between items-center max-w-[1200px]">
             <Image
-                src={resolvedTheme === 'dark' ? "img/logo-dark.png" : "img/logo.png"}
+                src={resolvedTheme === 'dark' ? "/img/logo-dark.png" : "/img/logo.png"}
                 alt={resolvedTheme === 'dark' ? "暗色模式网站标志" : "网站Logo"}
                 width={150}
                 height={50}
