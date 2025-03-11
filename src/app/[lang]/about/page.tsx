@@ -21,7 +21,11 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function AboutPage({ params: { lang } }: { params: { lang: string } }) {
+export default async function AboutPage({
+    params: { lang },
+}: {
+    params: { lang: string }
+}) {
     const dictionaries = await getDictionary(lang);
     return (
         <div className="mx-auto">
@@ -157,10 +161,8 @@ export default async function AboutPage({ params: { lang } }: { params: { lang: 
 
             <div className="my-16 text-sm text-gray-500 dark:text-gray-400 space-y-1">
                 <p className="tracking-wide">{dictionaries.about.last_updated}2024/12/27</p>
-                <p className="font-mono text-red-500">TandreZ</p>
+                <p className="font-mono text-primary dark:text-primary-dark">TandreZ</p>
             </div>
-
-            <Footer params={{ lang }} />
         </div >
     );
 }
