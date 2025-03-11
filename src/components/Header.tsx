@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from 'react'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-const Header = () => {
+const Header = ({ lang }: { lang: string }) => {
     const [mounted, setMounted] = useState(false)
     const { resolvedTheme } = useTheme()
 
@@ -31,7 +32,10 @@ const Header = () => {
                 className="h-auto max-h-[150px] w-auto"
                 priority
             />
-            <ThemeToggle />
+            <div className="flex items-center">
+                <LanguageSwitcher currentLang={lang} />
+                <ThemeToggle />
+            </div>
         </header>
     )
 }

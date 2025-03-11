@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Terminal } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import type { Metadata } from "next";
+import { getDictionary } from "@/lib/dictionaries";
 
 export const metadata: Metadata = {
     title: "关于作者",
@@ -19,37 +20,34 @@ export const metadata: Metadata = {
     },
 };
 
-export default function AboutPage() {
+export default async function AboutPage({ params: { lang } }: { params: { lang: string } }) {
+    const dictionaries = await getDictionary(lang);
     return (
         <div className="mx-auto">
 
             <div className="my-4">
-                <Link href="/" className="text-red-500 hover:text-red-600 hover:underline">
-                    <strong>← 返回首页</strong>
+                <Link href={`/${lang}`} className="text-red-500 hover:text-red-600 hover:underline">
+                    <strong>{dictionaries.about.back_to_home}</strong>
                 </Link>
             </div>
 
-            <h1 className="text-2xl my-8 font-bold text-center">关于我</h1>
+            <h1 className="text-2xl my-8 font-bold text-center">{dictionaries.about.title}</h1>
 
             {/* 引言区块 */}
             <Alert>
                 <Terminal className="h-4 w-4" />
                 <AlertDescription>
                     Rookie's road to a better rookie!<br />
-                    如果以前有人问我的工作，我会说做计算机的。后来我放弃了应对它们对计算机专业的刻板印象，便会说，我是做专业驱虫的。
                 </AlertDescription>
             </Alert>
 
-
-            {/* 个人介绍 - 使用shadcn Button组件 */}
             <Card className="my-4 hover:shadow-md">
                 <CardHeader>
                     <CardTitle>
-                        关于我
+                        {dictionaries.about.title}
                     </CardTitle>
                     <CardDescription>
-                        我是<strong className="text-red-500">Tandre</strong>，一个有点理想主义，时而内卷时而躺平的<strong>游戏开发爱好者</strong>，半个存在主义者。
-                        曾参与制作多个商业项目，多次参加GameJam线上/线下开发比赛，拥有多款独立游戏开发经验，可独立开发虚拟仿真、数字孪生等PC/VR项目。
+                        {dictionaries.about.description}
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -57,7 +55,7 @@ export default function AboutPage() {
             <Card className="my-4 hover:shadow-md">
                 <CardHeader>
                     <CardTitle>
-                        教育经历
+                        {dictionaries.about.education}
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -81,7 +79,9 @@ export default function AboutPage() {
 
             <Card className="my-4 hover:shadow-md">
                 <CardHeader>
-                    <CardTitle>荣誉奖项</CardTitle>
+                    <CardTitle>
+                        {dictionaries.about.honor}
+                    </CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div className="space-y-4 text-sm">
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
             <Card className="my-4 hover:shadow-md">
                 <CardHeader>
-                    <CardTitle>技能/证书及其他</CardTitle>
+                    <CardTitle>{dictionaries.about.skills}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div className="flex flex-wrap gap-2">
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
             <Card className="my-4 hover:shadow-md">
                 <CardHeader>
-                    <CardTitle>工作经历</CardTitle>
+                    <CardTitle>{dictionaries.about.work_experience}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <TimelineItem
@@ -155,7 +155,7 @@ export default function AboutPage() {
             </Card>
 
             <div className="my-16 text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <p className="tracking-wide">更新于2024/12/27</p>
+                <p className="tracking-wide">{dictionaries.about.last_updated}2024/12/27</p>
                 <p className="font-mono text-red-500">TandreZ</p>
             </div>
         </div >

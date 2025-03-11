@@ -67,7 +67,7 @@ export default function RootLayout({
           <div className="flex justify-center">
             <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6">
               <header>
-                <Header />
+                <Header lang={lang} />
               </header>
               {children}
               <footer className="mt-12 w-full text-center text-sm text-gray-600 dark:text-gray-400 space-y-2">

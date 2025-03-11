@@ -62,7 +62,7 @@ export default async function Home({
       <Card className="my-4 hover:shadow-md">
         <CardHeader>
           <CardTitle>
-            <Link href="/about" className="hover:underline text-red-500 hover:text-red-600">
+            <Link href={`/${lang}/about`} className="hover:underline text-red-500 hover:text-red-600">
               {dictionaries.home.about_me}
             </Link>
           </CardTitle>

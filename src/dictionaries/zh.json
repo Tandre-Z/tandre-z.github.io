@@ -28,5 +28,15 @@
     },
     "footer": {
         "copyright": "@Tandre 版权所有 转载请注明出处"
+    },
+    "about": {
+        "back_to_home": "← 返回首页",
+        "title": "关于我",
+        "description": "我叫Tandre，一个有点理想主义，时而内卷时而躺平的游戏开发爱好者，目前在一家上市公司做虚拟仿真、数字孪生相关的unity开发工作。通过该博客记录个人关于游戏创作、技术成长及对生活的思考。",
+        "education": "教育经历",
+        "honor": "荣誉奖项",
+        "skills": "技能/证书/其他",
+        "work_experience": "工作经历",
+        "last_updated": "更新于"
     }
 }

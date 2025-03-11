@@ -28,5 +28,15 @@
     },
     "footer": {
         "copyright": "@Tandre All rights reserved. Please indicate the source when reprinting."
+    },
+    "about": {
+        "back_to_home": "← Back to Home",
+        "title": "About Me",
+        "description": "I'm Tandre, a somewhat idealistic, sometimes-uncurled, sometimes-lay-flat game development enthusiast currently doing virtual simulation, digital twin-related unity development work for a publicly traded company. Through this blog, I record my personal thoughts about game creation, technical growth, and life in general.",
+        "education": "Education",
+        "honor": "Honor",
+        "skills": "Skills/Certificates/Others",
+        "work_experience": "Work Experience",
+        "last_updated": "Last Updated"
     }
 }

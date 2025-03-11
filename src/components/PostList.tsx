@@ -10,7 +10,7 @@ import posts from '../data/posts.json'
 
 interface PostListProps {
     className?: string;
-    dictionary: any; // 接收字典数据
+    dictionary: { [key: string]: any }; // 使用索引签名
 }
 
 const PostList: React.FC<PostListProps> = ({ className, dictionary }) => {
