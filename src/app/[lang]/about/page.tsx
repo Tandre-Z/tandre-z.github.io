@@ -20,14 +20,11 @@ export const metadata: Metadata = {
     },
 };
 
-interface PageProps {
-    params: { lang: string };
-    searchParams?: Record<string, string | string[] | undefined>;
-}
-
 export default async function AboutPage({
     params: { lang },
-}: PageProps) {
+}: {
+    params: { lang: string }
+}) {
     const dictionaries = await getDictionary(lang);
     return (
         <div className="mx-auto">

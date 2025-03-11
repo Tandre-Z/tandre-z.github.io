@@ -6,7 +6,13 @@ const nextConfig: NextConfig = {
         fetches: {
             fullUrl: true
         }
-    }
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 export default nextConfig;

@@ -9,6 +9,11 @@ const LanguageSwitcher = ({ currentLang }: { currentLang: string }) => {
     const pathname = usePathname();
 
     const handleLanguageChange = (locale: string) => {
+        // 如果目标语言与当前语言相同，不执行任何操作
+        if (locale === currentLang) {
+            return;
+        }
+
         // 获取当前路径并替换语言部分
         const currentPath = pathname || "";
         const newPath = currentPath.replace(`/${currentLang}`, `/${locale}`);
