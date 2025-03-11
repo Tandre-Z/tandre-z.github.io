@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 
 const LanguageSwitcher = ({ currentLang }: { currentLang: string }) => {
     const router = useRouter();
@@ -24,9 +24,15 @@ const LanguageSwitcher = ({ currentLang }: { currentLang: string }) => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button aria-label="切换语言">
-                    {currentLang === 'zh' ? '中文' : 'English'}
-                </Button>
+                <button
+                    className="flex items-center rounded-full p-2 transition-colors hover:bg-accent"
+                    aria-label="切换语言"
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Globe className="h-6 w-6" />
+                    <span className="ml-2">{currentLang.toUpperCase()}</span>
+                </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleLanguageChange('zh')} aria-label="切换到中文">
@@ -35,6 +41,7 @@ const LanguageSwitcher = ({ currentLang }: { currentLang: string }) => {
                 <DropdownMenuItem onClick={() => handleLanguageChange('en')} aria-label="Switch to English">
                     English
                 </DropdownMenuItem>
+                {/* 可以在这里添加更多语言选项 */}
             </DropdownMenuContent>
         </DropdownMenu>
     );

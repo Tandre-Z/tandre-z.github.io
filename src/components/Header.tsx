@@ -32,7 +32,7 @@ const Header = ({ lang }: { lang: string }) => {
                 className="h-auto max-h-[150px] w-auto"
                 priority
             />
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
                 <LanguageSwitcher currentLang={lang} />
                 <ThemeToggle />
             </div>
