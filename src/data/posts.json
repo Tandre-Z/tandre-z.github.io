@@ -1,6 +1,6 @@
 [
     {
-        "groupName": "Unity相关 UnityRel",
+        "groupName": "UnityRelated",
         "posts": [
             {
                 "id": "80648c2a-8e1f-4ec9-986c-538f292686aa",
@@ -101,7 +101,7 @@
         ]
     },
     {
-        "groupName": "游戏设计理论 GameDesign",
+        "groupName": "GameDesign",
         "posts": [
             {
                 "id": "cfc9b029-8e4b-441b-b7a7-14396c5fd5b6",
@@ -124,7 +124,7 @@
         ]
     },
     {
-        "groupName": "其他技术 OtherTech",
+        "groupName": "OtherTech",
         "posts": [
             {
                 "id": "17adbd6e-d8ac-808a-9b04-e26b627f8d7c",
@@ -159,7 +159,7 @@
         ]
     },
     {
-        "groupName": "杂谈/写作 Chat&Write",
+        "groupName": "Chat&Write",
         "posts": [
             {
                 "id": "3acb1556-1df4-42e3-be19-f2b6c30125a3",

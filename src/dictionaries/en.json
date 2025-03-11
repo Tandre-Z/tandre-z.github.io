@@ -1,0 +1,32 @@
+{
+    "header": {
+        "title": "Home",
+        "about": "About"
+    },
+    "home": {
+        "alert": "In the information age, the barriers just aren't there, the barriers are self-imposed. If you want to set off and go develop some grand new thing, you don't need millions of dollars of capitalization. You need enough pizza and Diet Coke to stick in your refrigerator, a cheap PC to work on, and the dedication to go through with it. We slept on floors. We waded across rivers.",
+        "alert_author": "——[American]Davidkushner《Masters of Doom》",
+        "about_me": "About Me",
+        "about_me_description": "I'm Tandre, a somewhat idealistic, sometimes-uncurled, sometimes-lay-flat game development enthusiast currently doing virtual simulation, digital twin-related unity development work for a publicly traded company. Through this blog, I record my personal thoughts about game creation, technical growth, and life in general.",
+        "projects": "Project",
+        "contact": "Contact",
+        "last_updated": "Last Updated",
+        "home_blog": {
+            "title": "Blog",
+            "unity_related": "Unity Related",
+            "game_design": "Game Design",
+            "other_tech": "Other Tech",
+            "chat_write": "Chat&Write"
+        }
+    },
+    "contact": {
+        "blog": "My Blog",
+        "github": "Github",
+        "csdn": "CSDN",
+        "wechat": "Wechat",
+        "wechat_description": "WeChat QR Code"
+    },
+    "footer": {
+        "copyright": "@Tandre All rights reserved. Please indicate the source when reprinting."
+    }
+}

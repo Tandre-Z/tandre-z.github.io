@@ -1,8 +1,10 @@
+import { getDictionary } from "@/lib/dictionaries";
 
-export default function Footer() {
+export default async function Footer({ params: { lang } }: { params: { lang: string } }) {
+    const dictionaries = await getDictionary(lang);
     return (
         <div>
-            <p>@Tandre 版权所有 转载请注明出处</p>
+            <p>{dictionaries.footer.copyright}</p>
         </div>
     )
 }

@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 interface ProjectListProps {
     className?: string;
+    lang: string;
 }
 
-const ProjectList: React.FC<ProjectListProps> = ({ className }) => {
+const ProjectList: React.FC<ProjectListProps> = ({ className, lang }) => {
     return (
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${className || ''}`}>
             {games.map((game) => (
@@ -23,7 +24,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ className }) => {
                         <span className="text-sm text-gray-500 dark:text-gray-400">{game.date}</span>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm whitespace-pre-line">{game.desc}</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm whitespace-pre-line">{lang === 'zh' ? game.desc_cn : game.desc_en}</p>
                         <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">{game.type}</p>
                     </CardContent>
                 </Card>

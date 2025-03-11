@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import requests
 import json
 import os
+import re
 
 load_dotenv()  # 加载 .env 文件中的变量
 
@@ -28,10 +29,10 @@ def fetch_data(database_id):
 def parse_post_data(data):
     # 定义分组的tag映射
     group_tags = {
-        "Unity相关 UnityRel": ["插件", "性能优化", "框架", "代码库"],
-        "游戏设计理论 GameDesign": ["游戏设计理论"],
-        "其他技术 OtherTech": ["其它技术"],
-        "杂谈/写作 Chat&Write": ["杂谈/写作"]
+        "UnityRelated": ["插件", "性能优化", "框架", "代码库"],
+        "GameDesign": ["游戏设计理论"],
+        "OtherTech": ["其它技术"],
+        "Chat&Write": ["杂谈/写作"]
     }
     
     # 初始化分组结果
@@ -84,7 +85,8 @@ def parse_project_data(data):
             "id": item["id"],
             "name": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
             "type": type_string,
-            "desc": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
+            "desc_cn": next((text["plain_text"] for text in properties["描述"]["rich_text"]), ""),
+            "desc_en": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
             "link": properties["Link"]["url"] or item["public_url"],
             "date": properties["发布时间"]["date"]["start"] if properties["发布时间"]["date"] else ""
         }
@@ -108,7 +110,7 @@ def update_readme(blog_data, project_data, readme_path):
     # 生成博客列表
     blog_sections = []
     for group in blog_data:
-        group_content = [f"### {group['groupName']}"]
+        group_content = [f"### {group['groupName']}\n"]
         for post in group['posts']:
             group_content.append(
                 f"- [{post['title']}]({post['link']}) - {post['date']}"
@@ -116,26 +118,34 @@ def update_readme(blog_data, project_data, readme_path):
         blog_sections.append("\n".join(group_content))
     blog_list = "\n\n".join(blog_sections)
 
-    # 生成项目列表
-    project_items = []
+    # 生成项目列表表格
+    project_table = "| 名称(Name) | 类型(Type) | 描述 | Description |\n"
+    project_table += "| ---- | ---- | ---- | ---- |\n"
+    
     for project in project_data:
-        project_items.append(
-            f"- [{project['name']}]({project['link']}) - {project['type']}\n  {project['desc']} ({project['date']})"
+        project_table += (
+            f"| [{project['name']}]({project['link']}) | {project['type']} | "
+            f"{project['desc_cn']} | {project['desc_en']} |\n"
         )
-    project_list = "\n".join(project_items)
-
+    
     # 读取并更新README文件
     with open(readme_path, "r", encoding="utf-8") as file:
         readme = file.read()
 
-    # 替换标记内容
-    readme = readme.replace(
-        "<!-- BLOG-LIST-START -->\n<!-- BLOG-LIST-END -->", 
-        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->"
+    # 使用正则表达式替换博客列表标记内容
+    readme = re.sub(
+        r"<!-- BLOG-LIST-START -->.*?<!-- BLOG-LIST-END -->",
+        f"<!-- BLOG-LIST-START -->\n{blog_list}\n<!-- BLOG-LIST-END -->",
+        readme,
+        flags=re.DOTALL
     )
-    readme = readme.replace(
-        "<!-- PROJECT-LIST-START -->\n<!-- PROJECT-LIST-END -->", 
-        f"<!-- PROJECT-LIST-START -->\n{project_list}\n<!-- PROJECT-LIST-END -->"
+
+    # 使用正则表达式替换项目列表标记内容
+    readme = re.sub(
+        r"<!-- PROJECT-LIST-START -->.*?<!-- PROJECT-LIST-END -->",
+        f"<!-- PROJECT-LIST-START -->\n{project_table}\n<!-- PROJECT-LIST-END -->",
+        readme,
+        flags=re.DOTALL
     )
 
     # 写入更新后的内容

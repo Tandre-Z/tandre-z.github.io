@@ -10,10 +10,19 @@ import posts from '../data/posts.json'
 
 interface PostListProps {
     className?: string;
+    dictionary: any; // 接收字典数据
 }
 
-const PostList: React.FC<PostListProps> = ({ className }) => {
+const PostList: React.FC<PostListProps> = ({ className, dictionary }) => {
+
     const [openGroup, setOpenGroup] = useState<string | null>(null);
+
+    const key2dict: { [key: string]: string } = {
+        "UnityRelated": dictionary.home.home_blog.unity_related,
+        "GameDesign": dictionary.home.home_blog.game_design,
+        "OtherTech": dictionary.home.home_blog.other_tech,
+        "Chat&Write": dictionary.home.home_blog.chat_write
+    }
 
     const handleOpen = (groupName: string) => {
         setOpenGroup(groupName);
@@ -28,7 +37,7 @@ const PostList: React.FC<PostListProps> = ({ className }) => {
             {posts.map((group) => (
                 <Card key={group.groupName} className=" hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out transform">
                     <CardHeader className="flex flex-row justify-between items-center">
-                        <CardTitle className="text-xl font-semibold">{group.groupName}</CardTitle>
+                        <CardTitle className="text-xl font-semibold">{key2dict[group.groupName]}</CardTitle>
                         <Button
                             variant="ghost"
                             size="sm"
@@ -57,7 +66,7 @@ const PostList: React.FC<PostListProps> = ({ className }) => {
                     <Dialog open={openGroup === group.groupName} onOpenChange={handleClose}>
                         <DialogContent className="max-w-2xl h-[60vh] flex flex-col [&>button]:focus:ring-0 [&>button]:focus:ring-offset-0">
                             <DialogHeader>
-                                <DialogTitle>{group.groupName}</DialogTitle>
+                                <DialogTitle>{key2dict[group.groupName]}</DialogTitle>
                             </DialogHeader>
                             <ScrollArea className="h-[calc(60vh-80px)] pr-4 rounded-md">
                                 <div className="space-y-4">

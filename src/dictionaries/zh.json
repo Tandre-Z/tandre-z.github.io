@@ -1,0 +1,32 @@
+{
+    "header": {
+        "title": "首页",
+        "about": "关于"
+    },
+    "home": {
+        "alert": "在信息时代，客观障碍已不复存在，所谓障碍都是主观上的。如果你想动手开发什么全新的技术，你不需要几百万美元的资金，你只需要在冰箱里放满比萨和可乐，再有一台便宜的计算机，和为之献身的决心。我们在地板上睡过，我们从河水中趟过。",
+        "alert_author": "——[美] 大卫·卡什诺《DOOM启示录》",
+        "about_me": "关于我",
+        "about_me_description": "我叫Tandre，一个有点理想主义，时而内卷时而躺平的游戏开发爱好者，目前在一家上市公司做虚拟仿真、数字孪生相关的unity开发工作。通过该博客记录个人关于游戏创作、技术成长及对生活的思考。",
+        "projects": "项目",
+        "contact": "联系",
+        "last_updated": "更新于",
+        "home_blog": {
+            "title": "博客",
+            "unity_related": "Unity相关",
+            "game_design": "游戏设计",
+            "other_tech": "其他技术",
+            "chat_write": "杂谈/写作"
+        }
+    },
+    "contact": {
+        "blog": "我的博客",
+        "github": "Github",
+        "csdn": "CSDN",
+        "wechat": "公众号",
+        "wechat_description": "微信扫码订阅"
+    },
+    "footer": {
+        "copyright": "@Tandre 版权所有 转载请注明出处"
+    }
+}

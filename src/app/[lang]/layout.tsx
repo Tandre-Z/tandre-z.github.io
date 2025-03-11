@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from '@/components/Header'
 import Footer from "@/components/Footer";
-import "../styles/globals.css";
+import "../../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 
 
@@ -37,8 +37,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { lang },
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: string };
 }>) {
   return (
     <html lang="zh-CN" className="scroll-smooth" suppressHydrationWarning>
@@ -69,7 +71,7 @@ export default function RootLayout({
               </header>
               {children}
               <footer className="mt-12 w-full text-center text-sm text-gray-600 dark:text-gray-400 space-y-2">
-                <Footer />
+                <Footer params={{ lang }} />
               </footer>
             </div>
           </div>

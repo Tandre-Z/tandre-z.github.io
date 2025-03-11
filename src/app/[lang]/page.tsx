@@ -9,6 +9,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Terminal } from "lucide-react"
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
+import { getDictionary } from "@/lib/dictionaries";
 
 export const metadata: Metadata = {
   title: "首页",
@@ -40,17 +41,20 @@ function ContactItem({ label, link, text }: { label: string; link: string; text:
   );
 }
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
+  const dictionaries = await getDictionary(lang);
   return (
     <div className="mx-auto">
       {/* 引言区块 */}
       <Alert>
         <Terminal className="h-4 w-4" />
         <AlertDescription>
-          "在信息时代，客观障碍已不复存在，"他说："所谓障碍都是主观上的。如果你想动手开发什么全新的技术，你不需要几百万美元的资金，你只需要在冰箱里放满比萨和可乐，再有一台便宜的计算机，和为之献身的决心。我们在地板上睡过，我们从河水中趟过。"<br />
-          "In the information age, the barriers just aren't there," he said. "The barriers are self-imposed. If you want to set off and go develop some grand new thing, you don't need millions of dollars of capitalization. You need enough pizza and Diet Coke to stick in your refrigerator, a cheap PC to work on, and the dedication to go through with it. We slept on floors. We waded across rivers."<br />
-          <br />
-          ——[美] 大卫·卡什诺《DOOM启示录》 [American]Davidkushner《Masters of Doom》
+          <p>{dictionaries.home.alert}</p>
+          <p className="text-right">{dictionaries.home.alert_author}</p>
         </AlertDescription>
       </Alert>
 
@@ -59,12 +63,11 @@ export default function Home() {
         <CardHeader>
           <CardTitle>
             <Link href="/about" className="hover:underline text-red-500 hover:text-red-600">
-              关于我 About
+              {dictionaries.home.about_me}
             </Link>
           </CardTitle>
           <CardDescription>
-            我是Tandre，一个有点理想主义，时而内卷时而躺平的游戏开发爱好者，目前在一家上市公司做虚拟仿真、数字孪生相关的unity开发工作。通过该博客记录个人关于游戏创作、技术成长及对生活的思考。<br />
-            I'm Tandre, a somewhat idealistic, sometimes-uncurled, sometimes-lay-flat game development enthusiast currently doing virtual simulation, digital twin-related unity development work for a publicly traded company. Through this blog, I record my personal thoughts about game creation, technical growth, and life in general.
+            {dictionaries.home.about_me_description}
           </CardDescription>
         </CardHeader>
       </Card>
@@ -72,18 +75,18 @@ export default function Home() {
 
       {/* 博客列表 */}
       <h2 className="my-4 text-2xl font-bold">
-        博客 Blog
+        {dictionaries.home.home_blog.title}
       </h2>
-      <PostList className="my-4 text-sm" />
+      <PostList className="my-4 text-sm" dictionary={dictionaries} />
 
       {/* 增加间隔 */}
       <div className="my-4" />
       {/* 项目列表 */}
 
       <h2 className="my-4 text-2xl font-bold">
-        项目 Project
+        {dictionaries.home.projects}
       </h2>
-      <ProjectList className="my-4 text-sm" />
+      <ProjectList className="my-4 text-sm" lang={lang} />
 
       {/* 分割线 */}
       <Separator className="my-12" />
@@ -92,13 +95,13 @@ export default function Home() {
       <Card className="my-4 hover:shadow-md">
         <CardHeader>
           <CardTitle>
-            联系 Contact
+            {dictionaries.home.contact}
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row justify-between items-start gap-4">
           <div className="space-y-4 w-full md:w-1/2 pr-0 md:pr-8">
             <ContactItem
-              label="我的博客"
+              label={dictionaries.contact.blog}
               link="https://tandrez.notion.site/Tandre-s-Blog-c377d7e1d63342408b0ed036e181a266"
               text="Tandre's Blog"
             />
@@ -113,7 +116,7 @@ export default function Home() {
               text="Tandre_Z"
             />
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="w-20 justify-center text-gray-500 dark:text-gray-400">公众号</Badge>
+              <Badge variant="outline" className="w-20 justify-center text-gray-500 dark:text-gray-400">{dictionaries.contact.wechat}</Badge>
               <p className="text-gray-500 dark:text-gray-400 p-0 h-auto">
                 Tandre的游戏笔记
               </p>
@@ -128,7 +131,7 @@ export default function Home() {
                 width={140}
                 height={140}
               />
-              <p className="text-xs text-muted-foreground mt-2 md:hidden">微信扫码订阅</p>
+              <p className="text-xs text-muted-foreground mt-2 md:hidden">{dictionaries.contact.wechat_description}</p>
             </div>
           </div>
         </CardContent>
@@ -136,8 +139,7 @@ export default function Home() {
 
       {/* 底部说明 - 优化排版 */}
       <div className="mt-16 text-left text-sm text-gray-500 dark:text-gray-400 space-y-1 opacity-75 hover:opacity-100 transition-opacity">
-        <p className="tracking-wide">更新于 2024/12/27</p>
-        <p className="tracking-wide">Last Updated 2024/12/27</p>
+        <p className="tracking-wide">{dictionaries.home.last_updated} 2024/12/27</p>
         <p className="font-mono text-primary dark:text-primary-dark">TandreZ</p>
       </div>
     </div>
