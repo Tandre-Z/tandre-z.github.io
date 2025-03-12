@@ -21,7 +21,12 @@ function getLocale(request: NextRequest): string {
 }
 
 export function middleware(request: NextRequest) {
-    if (request.nextUrl.pathname.startsWith("/_next")) return NextResponse.next();
+    // 跳过所有静态资源请求
+    if (
+        request.nextUrl.pathname.startsWith("/_next") ||
+        request.nextUrl.pathname.startsWith("/img") ||
+        request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|svg|ico)$/)
+    ) return NextResponse.next();
 
     // Check if there is any supported locale in the pathname
     const { pathname } = request.nextUrl;

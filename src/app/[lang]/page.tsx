@@ -10,6 +10,7 @@ import { Terminal } from "lucide-react"
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionaries";
+import { getBasePath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "首页",
