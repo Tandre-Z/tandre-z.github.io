@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
     images: {
         unoptimized: false,
     },
+    assetPrefix: '',
 };
 
 export default nextConfig;
