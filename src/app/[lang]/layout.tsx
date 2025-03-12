@@ -50,6 +50,7 @@ export default function RootLayout({
           :root {
             --color-primary: 59 130 246;
             --color-primary-dark: 99 102 241;
+            --phi-ratio: 1.618;
           }
           @font-face {
             font-family: 'HarmonyOS';
@@ -65,7 +66,7 @@ export default function RootLayout({
           {...({} as React.ComponentProps<typeof ThemeProvider>)}
         >
           <div className="flex justify-center">
-            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6">
+            <div className="w-full max-w-[1188px] mx-auto px-4 sm:px-6 md:px-8">
               <header>
                 <Header lang={lang} />
               </header>

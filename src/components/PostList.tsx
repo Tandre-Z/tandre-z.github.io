@@ -16,12 +16,11 @@ interface PostListProps {
 const PostList: React.FC<PostListProps> = ({ className, dictionary }) => {
 
     const [openGroup, setOpenGroup] = useState<string | null>(null);
-
     const key2dict: { [key: string]: string } = {
-        "UnityRelated": dictionary.home.home_blog.unity_related,
-        "GameDesign": dictionary.home.home_blog.game_design,
-        "OtherTech": dictionary.home.home_blog.other_tech,
-        "Chat&Write": dictionary.home.home_blog.chat_write
+        "Unity相关 | UnityRelated": dictionary.home.home_blog.unity_related,
+        "游戏设计 | GameDesign": dictionary.home.home_blog.game_design,
+        "其它技术 | OtherTech": dictionary.home.home_blog.other_tech,
+        "杂谈/写作 | Chat&Write": dictionary.home.home_blog.chat_write
     }
 
     const handleOpen = (groupName: string) => {
@@ -64,11 +63,11 @@ const PostList: React.FC<PostListProps> = ({ className, dictionary }) => {
                     </CardContent>
 
                     <Dialog open={openGroup === group.groupName} onOpenChange={handleClose}>
-                        <DialogContent className="max-w-2xl h-[60vh] flex flex-col [&>button]:focus:ring-0 [&>button]:focus:ring-offset-0">
-                            <DialogHeader>
-                                <DialogTitle>{key2dict[group.groupName]}</DialogTitle>
+                        <DialogContent className="w-[calc(100%-2rem)] sm:w-full max-w-[734px] max-h-[85vh] aspect-[1/1.2] flex flex-col [&>button]:focus:ring-0 [&>button]:focus:ring-offset-0 p-4 sm:p-6 overflow-hidden">
+                            <DialogHeader className="pb-2">
+                                <DialogTitle className="text-xl">{key2dict[group.groupName]}</DialogTitle>
                             </DialogHeader>
-                            <ScrollArea className="h-[calc(60vh-80px)] pr-4 rounded-md">
+                            <ScrollArea className="flex-1 pr-4 rounded-md">
                                 <div className="space-y-4">
                                     {group.posts.map((post) => (
                                         <div key={post.id} className="flex justify-between items-center py-2">

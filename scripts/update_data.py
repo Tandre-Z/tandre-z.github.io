@@ -29,10 +29,10 @@ def fetch_data(database_id):
 def parse_post_data(data):
     # 定义分组的tag映射
     group_tags = {
-        "UnityRelated": ["插件", "性能优化", "框架", "代码库"],
-        "GameDesign": ["游戏设计理论"],
-        "OtherTech": ["其它技术"],
-        "Chat&Write": ["杂谈/写作"]
+        "Unity相关 | UnityRelated": ["插件", "性能优化", "框架", "代码库"],
+        "游戏设计 | GameDesign": ["游戏设计理论"],
+        "其它技术 | OtherTech": ["其它技术"],
+        "杂谈/写作 | Chat&Write": ["杂谈/写作"]
     }
     
     # 初始化分组结果
