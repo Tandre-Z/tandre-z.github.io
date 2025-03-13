@@ -7,7 +7,7 @@
         "alert": "In the information age, the barriers just aren't there, the barriers are self-imposed. If you want to set off and go develop some grand new thing, you don't need millions of dollars of capitalization. You need enough pizza and Diet Coke to stick in your refrigerator, a cheap PC to work on, and the dedication to go through with it. We slept on floors. We waded across rivers.",
         "alert_author": "——[American]Davidkushner《Masters of Doom》",
         "about_me": "About Me",
-        "about_me_description": "I'm Tandre, a somewhat idealistic, sometimes-uncurled, sometimes-lay-flat game development enthusiast currently doing virtual simulation, digital twin-related unity development work for a publicly traded company. Through this blog, I record my personal thoughts about game creation, technical growth, and life in general.",
+        "about_me_description": "I am Tandre, an enthusiast of game development with years of experience in virtual simulation, digital twin, VR, and MR development. Through this blog, I document my personal journey in game creation, technical growth, and reflections on life. I am available for outsourcing projects related to virtual simulation, digital twin, and independent/commercial games for individuals or companies (I primarily work with Unity development, can assist with front-end and back-end tasks, and have a team capable of handling complete projects).",
         "projects": "Project",
         "contact": "Contact",
         "last_updated": "Last Updated",
@@ -32,11 +32,103 @@
     "about": {
         "back_to_home": "← Back to Home",
         "title": "About Me",
-        "description": "I'm Tandre, a somewhat idealistic, sometimes-uncurled, sometimes-lay-flat game development enthusiast currently doing virtual simulation, digital twin-related unity development work for a publicly traded company. Through this blog, I record my personal thoughts about game creation, technical growth, and life in general.",
-        "education": "Education",
-        "honor": "Honor",
-        "skills": "Skills/Certificates/Others",
-        "work_experience": "Work Experience",
+        "description": "I am Tandre, U3D development engineer, game development enthusiast, specializing in game development and virtual simulation/digital twin field. With 4+ years of Unity engine development experience, I have led the development of GNSS measurement technology virtual simulation teaching system, Zelang Wind Farm VR training system and other large-scale projects. Proficient in building technical frameworks from scratch, with cross-platform (PC/VR/mobile) development capabilities, familiar with SteamVR, HTC VIVE and other XR device integration. Technology stack covers Unity3D/C# full-cycle development, while mastering React/Next.js modern web development technologies.",
+        "education": {
+            "title": "Education",
+            "school": [
+                {
+                    "name": "Guangxi University of Science and Technology - Software Engineering (Virtual Reality Technology and Systems Engineering)",
+                    "time": "2019.09-2023.06",
+                    "honors": [
+                        "University Outstanding Individual",
+                        "University Outstanding Volunteer",
+                        "Outstanding League Cadre"
+                    ]
+                }
+            ]
+        },
+        "honor": {
+            "title": "Honors & Awards",
+            "honors": [
+                {
+                    "title": "5th 'PIESAT & Huawei Cloud Cup' PIE Software Developer Competition - National Third Prize",
+                    "time": "November 2022"
+                },
+                {
+                    "title": "National College Digital Art Design Competition - National Second Prize",
+                    "time": "June 2021"
+                },
+                {
+                    "title": "3D Digital Innovation Design Competition Campus Selection - University Special Prize",
+                    "time": "December 2020"
+                },
+                {
+                    "title": "8th National College Student Digital Media Technology Works & Creative Competition - National Second Prize",
+                    "time": "November 2020"
+                }
+            ]
+        },
+        "Other": {
+            "title": "Skills/Certifications/Others",
+            "skills": [
+                "Unity3D",
+                "C#",
+                "C++",
+                "Cocos2d-x",
+                "SteamVR",
+                "HTML/JS/CSS",
+                "Next.js",
+                "TypeScript",
+                "Python"
+            ],
+            "other": [
+                {
+                    "title": "Language:",
+                    "content": "English (CET-4 456分，CET-6 415分)"
+                },
+                {
+                    "title": "Interests:",
+                    "content": "Dance (hiphop/urban/poping), Reading (800h+ on WeRead)"
+                }
+            ]
+        },
+        "work_experience": {
+            "title": "Work Experience",
+            "experiences": [
+                {
+                    "title": "Guangdong PIESAT Information Technology Co., Ltd - U3D Software Engineer",
+                    "time": "2023.07-2024.07",
+                    "projects": [
+                        {
+                            "title": "Phase II Project of Virtual Simulation Teaching System for Guangdong Vocational College of Industry and Commerce",
+                            "content": "1. Responsible for all technical development work for PC and VR versions (including Unity-based framework design/implementation, UGUI and model animation interactions, performance optimization, packaging, and API testing/integration with management platform)\n2. Coordinated equipment installation and maintenance for virtual simulation training center\n3. Conducted system demonstrations and user training for leadership\n4. Collaborated with school stakeholders to implement requirements"
+                        },
+                        {
+                            "title": "Zelang Wind Farm VR Training System",
+                            "content": "1. Led technical development including Unity framework design, VR interactions with SteamVR/HTC VIVE\n2. Managed project development as technical lead\n3. Conducted on-site deployment and user training in Fujian\n4. Coordinated requirements with clients"
+                        },
+                        {
+                            "title": "Heilongjiang Institute of Technology Smart Screen Project",
+                            "content": "1. Adapted GNSS measurement system for smart screen deployment"
+                        },
+                        {
+                            "title": "Other Contributions",
+                            "content": "1. Participated in digital earth prototype development using Cesium for Unity\n2. Supported UE5 demo development and HoloLens 2 deployment\n3. Involved in project bidding and technical negotiations"
+                        }
+                    ]
+                },
+                {
+                    "title": "Beibu Gulf University - Project Team Leader, School of Resources and Environment",
+                    "time": "2022.06-2022.09",
+                    "projects": [
+                        {
+                            "title": "PIE EngineStudio Urban Expansion Visualization System",
+                            "content": "1. Led team to develop Guangxi urban expansion visualization system using PIE EngineStudio\n2. Implemented FVC/NDVI/NDBI index calculations and GM prediction algorithms\n3. Won national third prize in 5th PIE Developer Competition"
+                        }
+                    ]
+                }
+            ]
+        },
         "last_updated": "Last Updated"
     }
 }
