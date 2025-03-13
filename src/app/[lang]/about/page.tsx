@@ -66,7 +66,7 @@ export default async function AboutPage({
                 </CardHeader>
                 <CardContent>
                     {
-                        dictionaries.about.education.school.map((school) => (
+                        dictionaries.about.education.school.map((school: { name: string; time: string; honors: string[] }) => (
                             <div key={school.name}>
                                 <div className="flex justify-between items-center">
                                     <strong>{school.name}</strong>
@@ -98,7 +98,7 @@ export default async function AboutPage({
                 <CardContent>
                     <div className="space-y-4 text-sm">
                         {
-                            dictionaries.about.honor.honors.map((honor) => (
+                            dictionaries.about.honor.honors.map((honor: { title: string; time: string }) => (
                                 <TimeItem key={honor.title} title={honor.title} time={honor.time} />
                             ))
                         }
@@ -139,7 +139,7 @@ export default async function AboutPage({
                 </CardHeader>
                 <CardContent>
                     {
-                        dictionaries.about.work_experience.experiences.map((experience) => (
+                        dictionaries.about.work_experience.experiences.map((experience: { title: string; time: string; projects: Array<{ title: string; content: string }> }) => (
                             <TimelineItem
                                 key={experience.title}
                                 title={experience.title}
@@ -179,7 +179,7 @@ function TimelineItem({ title, time, badges = [], projects = [] }: TimelineItemP
             )}
             {projects.map((project, index) => (
                 <Alert key={index} className="hover:shadow-sm">
-                    <AlertTitle className="font-bold">{project.title}</AlertTitle>
+                    <AlertTitle className="text-sm font-bold">{project.title}</AlertTitle>
                     <AlertDescription className="p-4">
                         {project.content.split('\n').map((line, i) => (
                             <span key={i}>
