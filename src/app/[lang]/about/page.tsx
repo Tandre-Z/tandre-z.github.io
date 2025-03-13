@@ -66,8 +66,8 @@ export default async function AboutPage({
                 </CardHeader>
                 <CardContent>
                     {
-                        dictionaries.about.education.school.map((school: { name: string; time: string; honors: string[] }) => (
-                            <div>
+                        dictionaries.about.education.school.map((school) => (
+                            <div key={school.name}>
                                 <div className="flex justify-between items-center">
                                     <strong>{school.name}</strong>
                                     <span>{school.time}</span>
@@ -98,8 +98,8 @@ export default async function AboutPage({
                 <CardContent>
                     <div className="space-y-4 text-sm">
                         {
-                            dictionaries.about.honor.honors.map((honor: { title: string; time: string }) => (
-                                <TimeItem title={honor.title} time={honor.time} />
+                            dictionaries.about.honor.honors.map((honor) => (
+                                <TimeItem key={honor.title} title={honor.title} time={honor.time} />
                             ))
                         }
                     </div>
@@ -139,8 +139,9 @@ export default async function AboutPage({
                 </CardHeader>
                 <CardContent>
                     {
-                        dictionaries.about.work_experience.experiences.map((experience: { title: string; time: string; projects: Array<{ title: string; content: string }> }) => (
+                        dictionaries.about.work_experience.experiences.map((experience) => (
                             <TimelineItem
+                                key={experience.title}
                                 title={experience.title}
                                 time={experience.time}
                                 projects={experience.projects}
