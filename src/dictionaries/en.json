@@ -96,6 +96,20 @@
             "title": "Work Experience",
             "experiences": [
                 {
+                    "title": "Hangzhou Xunxi Technology Co., Ltd. (Outsourced to NetEase Games) - Game Client Development Engineer",
+                    "time": "2025.08-2026.03",
+                    "projects": [
+                        {
+                            "title": "Ace Racer Project Development",
+                            "content": "1. Worked onsite at NetEase Hangzhou campus as an outsourced engineer, contributing to live version iterations of Ace Racer; primarily used Python for client-side development on NetEase's Messiah engine, with a customized UI framework based on Cocos UI.\n2. Developed activity and system pages including the season-year system, Ace Delivery, discount shop, monthly card, Ganzi collaboration event page, Peak Tournament, and collectibles tabs, covering UI implementation, interaction behavior, data integration, and release support.\n3. Participated in feature and surrounding-system optimization for Paradise 1v1 Duel, Extreme Relay, mode selection, new-player experience, leaderboards, and wardrobe/action favorites plus sorting and filtering, improving delivery quality and player experience."
+                        },
+                        {
+                            "title": "Version Optimization and Engineering Productivity",
+                            "content": "1. Resolved a wide range of issues found during testing and live support, including chat UI, club information, inventory red dots, costume model display, photo mode UI overlap, and season mail reward issues; also optimized presentation details such as splash intro flow, page-flip animation, letter flashing effects, delayed skybox loading, scene switching, and inventory navigation.\n2. Collaborated with server and configuration teams on data integration and config field handling to ensure stable delivery of activity and gameplay features across release cycles.\n3. Researched and implemented AI-driven productivity improvements in the workflow, including AI-assisted code generation, a vector knowledge base for API / project / design document retrieval, and colorized console output enhancements that improved debugging efficiency."
+                        }
+                    ]
+                },
+                {
                     "title": "Guangdong PIESAT Information Technology Co., Ltd - U3D Software Engineer",
                     "time": "2023.07-2024.07",
                     "projects": [

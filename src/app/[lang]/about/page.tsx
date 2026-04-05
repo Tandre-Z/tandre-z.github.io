@@ -153,7 +153,7 @@ export default async function AboutPage({
 
             {/* 最后更新时间 */}
             <div className="my-16 text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <p className="tracking-wide">{dictionaries.about.last_updated}2024/12/27</p>
+                <p className="tracking-wide">{dictionaries.about.last_updated}  2024/12/27</p>
                 <p className="font-mono text-primary dark:text-primary-dark">TandreZ</p>
             </div>
         </div >
