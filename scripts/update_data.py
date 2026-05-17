@@ -135,22 +135,22 @@ def update_readme(blog_data, game_data, project_data, readme_path):
     blog_list = "\n\n".join(blog_sections)
 
     # 生成游戏列表表格
-    game_table = "| 名称(Name) | 类型(Type) | 描述 | Description |\n"
+    game_table = "| 名称(Name) | 标签(Tag) | 描述 | Description |\n"
     game_table += "| ---- | ---- | ---- | ---- |\n"
 
     for game in game_data:
         game_table += (
-            f"| [{game['name']}]({game['link']}) | {game['type']} | "
+            f"| [{game['name']}]({game['link']}) | {game['tag']} | "
             f"{game['desc_cn']} | {game['desc_en']} |\n"
         )
 
     # 生成项目列表表格
-    project_table = "| 名称(Name) | 类型(Type) | 描述 | Description |\n"
+    project_table = "| 名称(Name) | 标签(Tag) | 描述 | Description |\n"
     project_table += "| ---- | ---- | ---- | ---- |\n"
 
     for project in project_data:
         project_table += (
-            f"| [{project['name']}]({project['link']}) | {project['type']} | "
+            f"| [{project['name']}]({project['link']}) | {project['tag']} | "
             f"{project['desc_cn']} | {project['desc_en']} |\n"
         )
 

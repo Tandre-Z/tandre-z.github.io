@@ -77,28 +77,28 @@
 <!-- PROJECT-LIST-START -->
 ## 游戏 Game
 
-| 名称(Name) | 类型(Type) | 描述 | Description |
+| 名称(Name) | 标签(Tag) | 描述 | Description |
 | ---- | ---- | ---- | ---- |
-| [昼夜娃娃机（ClawMachine）](https://www.gcores.com/games/179953) | 独立游戏 | Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏 | Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping. |
-| [Signal Resonance](https://ldjam.com/events/ludum-dare/59/signal-resonance) | 独立游戏 | LudumDare59参赛作品，一个点击叙事解谜游戏 | LudumDare59 entry, a click-based narrative puzzle game. |
-| [流浪的UFO（Wandering UFO）](https://www.taptap.cn/app/782483?os=pc) | 独立游戏 | TapTap聚光灯2025年Gamejam作品。太空流浪题材飞行游戏。收集宇宙讯息和星尘碎片，在叙事与空间双重探索中探究真相。 | apTap Spotlight 2025 Gamejam Entry. A space drift-themed flight game. Collect cosmic messages and stardust fragments, exploring the truth through dual exploration of narrative and space. |
-| [No Cat Can GO Wrong](https://tandrez.notion.site/No-Cat-Can-GO-Wrong-1a5dbd6ed8ac80cca32dc5678de9796b) | 独立游戏 | 参加 Brackeys Gme Jam 2025.1 的作品。一个带有一定实验性的打字游戏。 | Entry to Brackeys Game Jam 2025.1. A typing game with some experimentation. |
-| [《蛋》（Egg）](https://tandrez.notion.site/Egg-0d3b0b51c98c4def83f949efc63b2371) | 独立游戏 | 一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》 | An experimental game of interaction based on notation block links and page references, adapted from Andy Weir's 《The Egg》 |
-| [迷失之旅（Lost Dream）](https://tandrez.notion.site/Lost-Dream-483638ab7dc74b56ba8f9bc7987740f5) | 独立游戏 | 2024年Booom Game Jam参赛作品。 | Entry for the 2024 Booom Game Jam. |
-| [出门（Leave Home）](https://tandrez.notion.site/Leave-Home-1a0085e32df94ef19a331126fee2d4e2) | 独立游戏 | 2023年Boom7日Game Jam参赛作品。通过对热门话题MBTI中的I人与E人的心理对比，主要表达I人心理状态的一部实验性作品。获机核白老师推荐。 | Game Jam entry for Boom 7, 2023. An experimental work that mainly expresses the psychological state of I-people by comparing the psychology of I-people and E-people in the popular topic MBTI. Recommended by Mr. Machine Core White. |
-| [掩盖繁星的太阳：ReIgnition](https://tandrez.notion.site/ReIgnition-98d2812d5bfe47a0a2cf5e9c54caa98a) | 独立游戏 | 2023年Booom Game Jam参赛作品。 | Entry for the 2023 Booom Game Jam. |
+| [昼夜娃娃机（ClawMachine）](https://www.gcores.com/games/179953) |  | Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏 | Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping. |
+| [Signal Resonance](https://ldjam.com/events/ludum-dare/59/signal-resonance) | #视觉小说 #文字 #点击解谜 | LudumDare59参赛作品，一个点击叙事解谜游戏 | LudumDare59 entry, a click-based narrative puzzle game. |
+| [流浪的UFO（Wandering UFO）](https://www.taptap.cn/app/782483?os=pc) | #文字 #单人 | TapTap聚光灯2025年Gamejam作品。太空流浪题材飞行游戏。收集宇宙讯息和星尘碎片，在叙事与空间双重探索中探究真相。 | apTap Spotlight 2025 Gamejam Entry. A space drift-themed flight game. Collect cosmic messages and stardust fragments, exploring the truth through dual exploration of narrative and space. |
+| [No Cat Can GO Wrong](https://tandrez.notion.site/No-Cat-Can-GO-Wrong-1a5dbd6ed8ac80cca32dc5678de9796b) | #单人 #RPG #文字 #现实 | 参加 Brackeys Gme Jam 2025.1 的作品。一个带有一定实验性的打字游戏。 | Entry to Brackeys Game Jam 2025.1. A typing game with some experimentation. |
+| [《蛋》（Egg）](https://tandrez.notion.site/Egg-0d3b0b51c98c4def83f949efc63b2371) | #单人 #RPG #文字 #科幻 #幻想 #心理学 | 一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》 | An experimental game of interaction based on notation block links and page references, adapted from Andy Weir's 《The Egg》 |
+| [迷失之旅（Lost Dream）](https://tandrez.notion.site/Lost-Dream-483638ab7dc74b56ba8f9bc7987740f5) | #单人 #平台跳跃 #幻想 #RPG | 2024年Booom Game Jam参赛作品。 | Entry for the 2024 Booom Game Jam. |
+| [出门（Leave Home）](https://tandrez.notion.site/Leave-Home-1a0085e32df94ef19a331126fee2d4e2) | #单人 #RPG #步行模拟 #文字 #像素 #幻想 #现实 #心理学 | 2023年Boom7日Game Jam参赛作品。通过对热门话题MBTI中的I人与E人的心理对比，主要表达I人心理状态的一部实验性作品。获机核白老师推荐。 | Game Jam entry for Boom 7, 2023. An experimental work that mainly expresses the psychological state of I-people by comparing the psychology of I-people and E-people in the popular topic MBTI. Recommended by Mr. Machine Core White. |
+| [掩盖繁星的太阳：ReIgnition](https://tandrez.notion.site/ReIgnition-98d2812d5bfe47a0a2cf5e9c54caa98a) | #视觉小说 #塔防 #单人 #RTS #科幻 #后启示录 #战争 | 2023年Booom Game Jam参赛作品。 | Entry for the 2023 Booom Game Jam. |
 
 
 ## 项目 Project
 
-| 名称(Name) | 类型(Type) | 描述 | Description |
+| 名称(Name) | 标签(Tag) | 描述 | Description |
 | ---- | ---- | ---- | ---- |
-| [工作室小型外包项目（Mini Outsource Projects）](https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74) | 虚拟仿真 | 一些个人工作室接的虚拟仿真/数字孪生外包项目 | Some personal studios undertake outsourced projects for virtual simulation/digital twins. |
-| [湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)](https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74) | 虚拟仿真 | 海洋水上水下一体数字化虚拟仿真平台 | Marine Surface and Underwater Integrated Digital Virtual Simulation Platform |
-| [GNSS测量技术虚拟仿真教学系统(VR端应用)](https://tandrez.notion.site/GNSS-VR-704d8062ac1f4f19b229b5233b8d24ac) | 虚拟仿真 | 基于Oculus Quest 2的VR端应用，用于GNSS测量技术虚拟仿真教学系统的VR端应用。 | VR application for Oculus Quest 2, designed for the VR-based virtual simulation teaching system of GNSS surveying technology. |
-| [开普勒三定律](https://tandrez.notion.site/f764d12cc78d4965a8d9e63da9ae353d) | 虚拟仿真 | 附属于《GNSS测量技术虚拟仿真教学系统》的开普勒三定律的独立项目。 | An independent project affiliated with the "GNSS Measurement Technology Virtual Simulation Teaching System" focusing on Kepler's Three Laws. |
-| [GNSS测量技术虚拟仿真教学系统](https://tandrez.notion.site/GNSS-300eafc669a8478ba128717dba2fa2e2) | 虚拟仿真 | 为广东工贸职业技术学院开发的GNSS测量技术虚拟仿真教学系统。 | The GNSS Surveying Technology Virtual Simulation Teaching System developed for Guangdong Polytechnic of Industry and Commerce. |
-| [泽朗风电场VR培训系统](https://tandrez.notion.site/VR-9be2fc940c6c4f7e8e75f0000ee6b736) | 虚拟仿真 | 基于HTC VIVE的VR培训系统，用于风电场安全培训。 | VR Training System Based on HTC VIVE for Wind Farm Safety Training. |
+| [工作室小型外包项目（Mini Outsource Projects）](https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74) | #教学系统 | 一些个人工作室接的虚拟仿真/数字孪生外包项目 | Some personal studios undertake outsourced projects for virtual simulation/digital twins. |
+| [湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)](https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74) | #数字孪生 | 海洋水上水下一体数字化虚拟仿真平台 | Marine Surface and Underwater Integrated Digital Virtual Simulation Platform |
+| [GNSS测量技术虚拟仿真教学系统(VR端应用)](https://tandrez.notion.site/GNSS-VR-704d8062ac1f4f19b229b5233b8d24ac) | #教学系统 | 基于Oculus Quest 2的VR端应用，用于GNSS测量技术虚拟仿真教学系统的VR端应用。 | VR application for Oculus Quest 2, designed for the VR-based virtual simulation teaching system of GNSS surveying technology. |
+| [开普勒三定律](https://tandrez.notion.site/f764d12cc78d4965a8d9e63da9ae353d) | #教学系统 | 附属于《GNSS测量技术虚拟仿真教学系统》的开普勒三定律的独立项目。 | An independent project affiliated with the "GNSS Measurement Technology Virtual Simulation Teaching System" focusing on Kepler's Three Laws. |
+| [GNSS测量技术虚拟仿真教学系统](https://tandrez.notion.site/GNSS-300eafc669a8478ba128717dba2fa2e2) | #教学系统 | 为广东工贸职业技术学院开发的GNSS测量技术虚拟仿真教学系统。 | The GNSS Surveying Technology Virtual Simulation Teaching System developed for Guangdong Polytechnic of Industry and Commerce. |
+| [泽朗风电场VR培训系统](https://tandrez.notion.site/VR-9be2fc940c6c4f7e8e75f0000ee6b736) | #教学系统 | 基于HTC VIVE的VR培训系统，用于风电场安全培训。 | VR Training System Based on HTC VIVE for Wind Farm Safety Training. |
 
 <!-- PROJECT-LIST-END -->
 
