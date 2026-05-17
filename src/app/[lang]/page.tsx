@@ -81,12 +81,22 @@ export default async function Home({
 
       {/* 增加间隔 */}
       <div className="my-4" />
+      {/* 游戏列表 */}
+
+      <h2 className="my-4 text-2xl font-bold">
+        {dictionaries.home.games}
+      </h2>
+      <ProjectList className="my-4 text-sm" lang={lang} listType="games" />
+
+      {/* 增加间隔 */}
+      <div className="my-4" />
+
       {/* 项目列表 */}
 
       <h2 className="my-4 text-2xl font-bold">
         {dictionaries.home.projects}
       </h2>
-      <ProjectList className="my-4 text-sm" lang={lang} />
+      <ProjectList className="my-4 text-sm" lang={lang} listType="projects" />
 
       {/* 分割线 */}
       <Separator className="my-12" />

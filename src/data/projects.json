@@ -1,0 +1,62 @@
+[
+    {
+        "id": "22ddbd6e-d8ac-800e-8654-d5ece97f6b93",
+        "name": "工作室小型外包项目（Mini Outsource Projects）",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "一些个人工作室接的虚拟仿真/数字孪生外包项目",
+        "desc_en": "Some personal studios undertake outsourced projects for virtual simulation/digital twins.",
+        "link": "https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74",
+        "date": "2025-07-11"
+    },
+    {
+        "id": "22ddbd6e-d8ac-8049-bded-e8806d127781",
+        "name": "湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)",
+        "type": "虚拟仿真",
+        "tag": "#数字孪生",
+        "desc_cn": "海洋水上水下一体数字化虚拟仿真平台",
+        "desc_en": "Marine Surface and Underwater Integrated Digital Virtual Simulation Platform",
+        "link": "https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74",
+        "date": "2025-07-11"
+    },
+    {
+        "id": "704d8062-ac1f-4f19-b229-b5233b8d24ac",
+        "name": "GNSS测量技术虚拟仿真教学系统(VR端应用)",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "基于Oculus Quest 2的VR端应用，用于GNSS测量技术虚拟仿真教学系统的VR端应用。",
+        "desc_en": "VR application for Oculus Quest 2, designed for the VR-based virtual simulation teaching system of GNSS surveying technology.",
+        "link": "https://tandrez.notion.site/GNSS-VR-704d8062ac1f4f19b229b5233b8d24ac",
+        "date": "2024-03-31"
+    },
+    {
+        "id": "f764d12c-c78d-4965-a8d9-e63da9ae353d",
+        "name": "开普勒三定律",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "附属于《GNSS测量技术虚拟仿真教学系统》的开普勒三定律的独立项目。",
+        "desc_en": "An independent project affiliated with the \"GNSS Measurement Technology Virtual Simulation Teaching System\" focusing on Kepler's Three Laws.",
+        "link": "https://tandrez.notion.site/f764d12cc78d4965a8d9e63da9ae353d",
+        "date": "2024-03-31"
+    },
+    {
+        "id": "300eafc6-69a8-478b-a128-717dba2fa2e2",
+        "name": "GNSS测量技术虚拟仿真教学系统",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "为广东工贸职业技术学院开发的GNSS测量技术虚拟仿真教学系统。",
+        "desc_en": "The GNSS Surveying Technology Virtual Simulation Teaching System developed for Guangdong Polytechnic of Industry and Commerce.",
+        "link": "https://tandrez.notion.site/GNSS-300eafc669a8478ba128717dba2fa2e2",
+        "date": "2024-03-31"
+    },
+    {
+        "id": "9be2fc94-0c6c-4f7e-8e75-f0000ee6b736",
+        "name": "泽朗风电场VR培训系统",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "基于HTC VIVE的VR培训系统，用于风电场安全培训。",
+        "desc_en": "VR Training System Based on HTC VIVE for Wind Farm Safety Training.",
+        "link": "https://tandrez.notion.site/VR-9be2fc940c6c4f7e8e75f0000ee6b736",
+        "date": "2023-11-25"
+    }
+]

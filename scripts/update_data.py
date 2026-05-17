@@ -9,6 +9,8 @@ load_dotenv()  # 加载 .env 文件中的变量
 NOTION_API_TOKEN = os.getenv("NOTION_API_TOKEN")
 BLOG_DATABASE_ID = os.getenv("BLOG_DATABASE_ID")
 PROJECT_DATABASE_ID = os.getenv("PROJECT_DATABASE_ID")
+GAME_TYPE = "独立游戏"
+PROJECT_TYPE = "虚拟仿真"
 
 HEADERS = {
     "Authorization": f"Bearer {NOTION_API_TOKEN}",
@@ -72,19 +74,26 @@ def parse_post_data(data):
 
 # 解析数据并生成Project JSON
 def parse_project_data(data):
-    parsed = []
+    games = []
+    projects = []
     for item in data["results"]:
         properties = item["properties"]
         
         # 提取所有tags并添加#前缀
-        tags = properties["Tags"]["multi_select"]
-        type_string = " ".join(f"#{tag['name']}" for tag in tags)
+        tags = properties.get("Tags", {}).get("multi_select", [])
+
+        # 获取类型列表（优先 multi_select，兼容 select）
+        type_names = [t.get("name", "") for t in properties.get("类型", {}).get("multi_select", []) if t.get("name")]
+        type_select = properties.get("类型", {}).get("select")
+        if type_select and type_select.get("name"):
+            type_names.append(type_select["name"])
         
         # 提取游戏信息
         game_info = {
             "id": item["id"],
             "name": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
-            "type": type_string,
+            "type": " / ".join(type_names),
+            "tag": " ".join(f"#{tag['name']}" for tag in tags),
             "desc_cn": next((text["plain_text"] for text in properties["描述"]["rich_text"]), ""),
             "desc_en": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
             "link": properties["Link"]["url"] or item["public_url"],
@@ -93,12 +102,19 @@ def parse_project_data(data):
         
         # 只添加有名称的条目
         if game_info["name"]:
-            parsed.append(game_info)
+            if GAME_TYPE in type_names:
+                games.append(game_info)
+            if PROJECT_TYPE in type_names:
+                projects.append(game_info)
     
     # 按发布时间降序排序
-    parsed.sort(key=lambda x: x["date"] or "", reverse=True)
+    games.sort(key=lambda x: x["date"] or "", reverse=True)
+    projects.sort(key=lambda x: x["date"] or "", reverse=True)
 
-    return parsed
+    return {
+        "games": games,
+        "projects": projects
+    }
 
 # 更新 JSON 文件
 def update_json(file_path, data):
@@ -106,7 +122,7 @@ def update_json(file_path, data):
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 # 更新 README 文件
-def update_readme(blog_data, project_data, readme_path):
+def update_readme(blog_data, game_data, project_data, readme_path):
     # 生成博客列表
     blog_sections = []
     for group in blog_data:
@@ -118,15 +134,28 @@ def update_readme(blog_data, project_data, readme_path):
         blog_sections.append("\n".join(group_content))
     blog_list = "\n\n".join(blog_sections)
 
+    # 生成游戏列表表格
+    game_table = "| 名称(Name) | 类型(Type) | 描述 | Description |\n"
+    game_table += "| ---- | ---- | ---- | ---- |\n"
+
+    for game in game_data:
+        game_table += (
+            f"| [{game['name']}]({game['link']}) | {game['type']} | "
+            f"{game['desc_cn']} | {game['desc_en']} |\n"
+        )
+
     # 生成项目列表表格
     project_table = "| 名称(Name) | 类型(Type) | 描述 | Description |\n"
     project_table += "| ---- | ---- | ---- | ---- |\n"
-    
+
     for project in project_data:
         project_table += (
             f"| [{project['name']}]({project['link']}) | {project['type']} | "
             f"{project['desc_cn']} | {project['desc_en']} |\n"
         )
+
+    # 按前端顺序组合：游戏在前，项目在后，且与博客同级
+    project_section = f"## 游戏 Game\n\n{game_table}\n\n## 项目 Project\n\n{project_table}"
     
     # 读取并更新README文件
     with open(readme_path, "r", encoding="utf-8") as file:
@@ -143,7 +172,7 @@ def update_readme(blog_data, project_data, readme_path):
     # 使用正则表达式替换项目列表标记内容
     readme = re.sub(
         r"<!-- PROJECT-LIST-START -->.*?<!-- PROJECT-LIST-END -->",
-        f"<!-- PROJECT-LIST-START -->\n{project_table}\n<!-- PROJECT-LIST-END -->",
+        f"<!-- PROJECT-LIST-START -->\n{project_section}\n<!-- PROJECT-LIST-END -->",
         readme,
         flags=re.DOTALL
     )
@@ -163,7 +192,8 @@ if __name__ == "__main__":
 
     # 更新 JSON 文件
     update_json("src/data/posts.json", blog_parsed)
-    update_json("src/data/games.json", project_parsed)
+    update_json("src/data/games.json", project_parsed["games"])
+    update_json("src/data/projects.json", project_parsed["projects"])
 
     # 更新 README 文件
-    update_readme(blog_parsed, project_parsed, "README.md")
+    update_readme(blog_parsed, project_parsed["games"], project_parsed["projects"], "README.md")
