@@ -10,6 +10,7 @@ import { Terminal } from "lucide-react"
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionaries";
+import LastUpdated from "@/components/LastUpdated";
 
 export const metadata: Metadata = {
   title: "首页",
@@ -147,11 +148,7 @@ export default async function Home({
         </CardContent>
       </Card>
 
-      {/* 底部说明 - 优化排版 */}
-      <div className="mt-16 text-left text-sm text-gray-500 dark:text-gray-400 space-y-1 opacity-75 hover:opacity-100 transition-opacity">
-        <p className="tracking-wide">{dictionaries.home.last_updated}  2026/04/06</p>
-        <p className="font-mono text-primary dark:text-primary-dark">TandreZ</p>
-      </div>
+      <LastUpdated lang={lang} />
     </div>
   );
 }
