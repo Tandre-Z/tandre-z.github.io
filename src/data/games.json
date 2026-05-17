@@ -1,5 +1,50 @@
 [
     {
+        "id": "363dbd6e-d8ac-8064-84c6-d9a1819a559f",
+        "name": "昼夜娃娃机",
+        "type": "#独立游戏",
+        "desc_cn": "Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏",
+        "desc_en": "Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping.",
+        "link": "https://www.gcores.com/games/179953",
+        "date": "2026-05-17"
+    },
+    {
+        "id": "363dbd6e-d8ac-80ca-aab9-ce61fe33e559",
+        "name": "Signal Resonance",
+        "type": "#独立游戏",
+        "desc_cn": "LudumDare59参赛作品，一个点击叙事解谜游戏",
+        "desc_en": "LudumDare59 entry, a click-based narrative puzzle game.",
+        "link": "https://ldjam.com/events/ludum-dare/59/signal-resonance",
+        "date": "2026-04-20"
+    },
+    {
+        "id": "363dbd6e-d8ac-80b3-b564-e94b81bd05d1",
+        "name": "流浪的UFO（Wandering UFO）",
+        "type": "#独立游戏",
+        "desc_cn": "TapTap聚光灯2025年Gamejam作品。太空流浪题材飞行游戏。收集宇宙讯息和星尘碎片，在叙事与空间双重探索中探究真相。",
+        "desc_en": "apTap Spotlight 2025 Gamejam Entry. A space drift-themed flight game. Collect cosmic messages and stardust fragments, exploring the truth through dual exploration of narrative and space.",
+        "link": "https://www.taptap.cn/app/782483?os=pc",
+        "date": "2025-10-30"
+    },
+    {
+        "id": "22ddbd6e-d8ac-800e-8654-d5ece97f6b93",
+        "name": "工作室小型外包项目（Mini Outsource Projects）",
+        "type": "#虚拟仿真",
+        "desc_cn": "一些个人工作室接的虚拟仿真/数字孪生外包项目",
+        "desc_en": "Some personal studios undertake outsourced projects for virtual simulation/digital twins.",
+        "link": "https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74",
+        "date": "2025-07-11"
+    },
+    {
+        "id": "22ddbd6e-d8ac-8049-bded-e8806d127781",
+        "name": "湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)",
+        "type": "#虚拟仿真",
+        "desc_cn": "海洋水上水下一体数字化虚拟仿真平台",
+        "desc_en": "Marine Surface and Underwater Integrated Digital Virtual Simulation Platform",
+        "link": "https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74",
+        "date": "2025-07-11"
+    },
+    {
         "id": "1a5dbd6e-d8ac-80cc-a32d-c5678de9796b",
         "name": "No Cat Can GO Wrong",
         "type": "#独立游戏 #现实",

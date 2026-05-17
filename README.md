@@ -78,6 +78,11 @@
 <!-- PROJECT-LIST-START -->
 | 名称(Name) | 类型(Type) | 描述 | Description |
 | ---- | ---- | ---- | ---- |
+| [昼夜娃娃机](https://www.gcores.com/games/179953) | #独立游戏 | Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏 | Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping. |
+| [Signal Resonance](https://ldjam.com/events/ludum-dare/59/signal-resonance) | #独立游戏 | LudumDare59参赛作品，一个点击叙事解谜游戏 | LudumDare59 entry, a click-based narrative puzzle game. |
+| [流浪的UFO（Wandering UFO）](https://www.taptap.cn/app/782483?os=pc) | #独立游戏 | TapTap聚光灯2025年Gamejam作品。太空流浪题材飞行游戏。收集宇宙讯息和星尘碎片，在叙事与空间双重探索中探究真相。 | apTap Spotlight 2025 Gamejam Entry. A space drift-themed flight game. Collect cosmic messages and stardust fragments, exploring the truth through dual exploration of narrative and space. |
+| [工作室小型外包项目（Mini Outsource Projects）](https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74) | #虚拟仿真 | 一些个人工作室接的虚拟仿真/数字孪生外包项目 | Some personal studios undertake outsourced projects for virtual simulation/digital twins. |
+| [湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)](https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74) | #虚拟仿真 | 海洋水上水下一体数字化虚拟仿真平台 | Marine Surface and Underwater Integrated Digital Virtual Simulation Platform |
 | [No Cat Can GO Wrong](https://tandrez.notion.site/No-Cat-Can-GO-Wrong-1a5dbd6ed8ac80cca32dc5678de9796b) | #独立游戏 #现实 | 参加 Brackeys Gme Jam 2025.1 的作品。一个带有一定实验性的打字游戏。 | Entry to Brackeys Game Jam 2025.1. A typing game with some experimentation. |
 | [《蛋》（Egg）](https://tandrez.notion.site/Egg-0d3b0b51c98c4def83f949efc63b2371) | #独立游戏 #科幻 #幻想 #心理学 | 一个基于notion块链接及页面引用进行交互的实验性游戏,改编自安迪·威尔的《蛋》 | An experimental game of interaction based on notation block links and page references, adapted from Andy Weir's 《The Egg》 |
 | [迷失之旅（Lost Dream）](https://tandrez.notion.site/Lost-Dream-483638ab7dc74b56ba8f9bc7987740f5) | #独立游戏 #像素 #幻想 #现实 #心理学 | 2024年Booom Game Jam参赛作品。 | Entry for the 2024 Booom Game Jam. |
