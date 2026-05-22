@@ -105,6 +105,57 @@ function mapGroupNameToEnum(groupName: string): BlogGroup {
     }
 }
 
+const GROUP_ENUM_TO_NAME: Record<BlogGroup, string> = {
+    unity_related: "Unity相关 | UnityRelated",
+    game_design: "游戏设计 | GameDesign",
+    other_tech: "其它技术 | OtherTech",
+    chat_write: "杂谈/写作 | Chat&Write",
+};
+
+const GROUP_EXPORT_ORDER: string[] = [
+    "Unity相关 | UnityRelated",
+    "游戏设计 | GameDesign",
+    "其它技术 | OtherTech",
+    "杂谈/写作 | Chat&Write",
+];
+
+function toLegacyPostJson(rows: Record<string, unknown>[]) {
+    const grouped: Record<string, Array<Record<string, unknown>>> = {
+        "Unity相关 | UnityRelated": [],
+        "游戏设计 | GameDesign": [],
+        "其它技术 | OtherTech": [],
+        "杂谈/写作 | Chat&Write": [],
+    };
+
+    for (const row of rows) {
+        const enumKey = (typeof row.group_key === "string" ? row.group_key : "other_tech") as BlogGroup;
+        const groupName = GROUP_ENUM_TO_NAME[enumKey] || "其它技术 | OtherTech";
+        grouped[groupName].push({
+            id: row.id,
+            title: row.title || "",
+            link: row.link || "",
+            date: row.published_date || "",
+        });
+    }
+
+    return GROUP_EXPORT_ORDER
+        .map((groupName) => ({ groupName, posts: grouped[groupName] }))
+        .filter((item) => item.posts.length > 0);
+}
+
+function toLegacyWorkJson(rows: Record<string, unknown>[]) {
+    return rows.map((row) => ({
+        id: row.id,
+        name: row.name || "",
+        type: row.type || "",
+        tag: row.tag || "",
+        desc_cn: row.desc_cn || "",
+        desc_en: row.desc_en || "",
+        link: row.link || "",
+        date: row.published_date || "",
+    }));
+}
+
 function normalizePostRows(input: unknown): Record<string, unknown>[] {
     if (!Array.isArray(input)) return [];
 
@@ -172,15 +223,15 @@ export async function GET(req: Request) {
     try {
         if (scope === "post") {
             const posts = await fetchPosts();
-            return NextResponse.json({ ok: true, scope, data: posts });
+            return NextResponse.json({ ok: true, scope, data: toLegacyPostJson(posts) });
         }
         if (scope === "game") {
             const games = await fetchWorks("game");
-            return NextResponse.json({ ok: true, scope, data: games });
+            return NextResponse.json({ ok: true, scope, data: toLegacyWorkJson(games) });
         }
         if (scope === "project") {
             const projects = await fetchWorks("project");
-            return NextResponse.json({ ok: true, scope, data: projects });
+            return NextResponse.json({ ok: true, scope, data: toLegacyWorkJson(projects) });
         }
 
         const [posts, games, projects] = await Promise.all([
@@ -189,7 +240,15 @@ export async function GET(req: Request) {
             fetchWorks("project"),
         ]);
 
-        return NextResponse.json({ ok: true, scope: "all", data: { posts, games, projects } });
+        return NextResponse.json({
+            ok: true,
+            scope: "all",
+            data: {
+                posts: toLegacyPostJson(posts),
+                games: toLegacyWorkJson(games),
+                projects: toLegacyWorkJson(projects),
+            },
+        });
     } catch (error) {
         return NextResponse.json({ ok: false, message: String(error) }, { status: 500 });
     }

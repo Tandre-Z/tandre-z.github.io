@@ -3,67 +3,101 @@ import requests
 import json
 import os
 import re
+from urllib.parse import urlencode
 
 load_dotenv()  # 加载 .env 文件中的变量
 
-NOTION_API_TOKEN = os.getenv("NOTION_API_TOKEN")
-BLOG_DATABASE_ID = os.getenv("BLOG_DATABASE_ID")
-PROJECT_DATABASE_ID = os.getenv("PROJECT_DATABASE_ID")
-GAME_TYPE = "独立游戏"
-PROJECT_TYPE = "虚拟仿真"
+SUPABASE_URL = (os.getenv("SUPABASE_URL") or os.getenv("NEXT_PUBLIC_SUPABASE_URL") or "").rstrip("/")
+SUPABASE_API_KEY = (
+    os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+    or os.getenv("SUPABASE_ANON_KEY")
+    or os.getenv("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+    or ""
+)
 
 HEADERS = {
-    "Authorization": f"Bearer {NOTION_API_TOKEN}",
+    "Authorization": f"Bearer {SUPABASE_API_KEY}",
+    "apikey": SUPABASE_API_KEY,
     "Content-Type": "application/json",
-    "Notion-Version": "2022-06-28"
 }
 
-# 获取 Notion 数据
-def fetch_data(database_id):
-    url = f"https://api.notion.com/v1/databases/{database_id}/query"
-    response = requests.post(url, headers=HEADERS)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        raise Exception(f"Failed to fetch data: {response.status_code}, {response.text}")
+GROUP_KEY_TO_NAME = {
+    "unity_related": "Unity相关 | UnityRelated",
+    "game_design": "游戏设计 | GameDesign",
+    "other_tech": "其它技术 | OtherTech",
+    "chat_write": "杂谈/写作 | Chat&Write",
+}
 
-# 解析数据并生成Post JSON
-def parse_post_data(data):
-    # 定义分组的tag映射
-    group_tags = {
-        "Unity相关 | UnityRelated": ["插件", "性能优化", "框架", "代码库"],
-        "游戏设计 | GameDesign": ["游戏设计理论"],
-        "其它技术 | OtherTech": ["其它技术"],
-        "杂谈/写作 | Chat&Write": ["杂谈/写作"]
-    }
-    
-    # 初始化分组结果
-    grouped_posts = {name: [] for name in group_tags.keys()}
-    
-    # 遍历结果进行分组
-    for item in data["results"]:
-        properties = item["properties"]
-        
-        # 获取文章tags
-        tags = [tag["name"] for tag in properties["Tags"]["multi_select"]]
-        
-        # 获取文章信息
+GROUP_ORDER = [
+    "Unity相关 | UnityRelated",
+    "游戏设计 | GameDesign",
+    "其它技术 | OtherTech",
+    "杂谈/写作 | Chat&Write",
+]
+
+
+def ensure_supabase_env():
+    if not SUPABASE_URL or not SUPABASE_API_KEY:
+        raise Exception(
+            "Missing Supabase env. Please set SUPABASE_URL (or NEXT_PUBLIC_SUPABASE_URL) and SUPABASE_SERVICE_ROLE_KEY (or ANON key)."
+        )
+
+
+def fetch_supabase_rows(table, filters=None, order=None, page_size=1000):
+    """从 Supabase REST API 拉取整表（自动分页）"""
+    filters = filters or {}
+    rows = []
+    offset = 0
+
+    while True:
+        params = {"select": "*"}
+        params.update(filters)
+        if order:
+            params["order"] = order
+
+        query = urlencode(params)
+        url = f"{SUPABASE_URL}/rest/v1/{table}?{query}"
+
+        headers = dict(HEADERS)
+        headers["Range"] = f"{offset}-{offset + page_size - 1}"
+
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            raise Exception(f"Failed to fetch {table}: {response.status_code}, {response.text}")
+
+        batch = response.json()
+        if not isinstance(batch, list):
+            raise Exception(f"Unexpected response format for {table}: {batch}")
+
+        rows.extend(batch)
+
+        if len(batch) < page_size:
+            break
+
+        offset += page_size
+
+    return rows
+
+def parse_post_data(rows):
+    grouped_posts = {name: [] for name in GROUP_ORDER}
+
+    for item in rows:
+        group_name = GROUP_KEY_TO_NAME.get(item.get("group_key", ""), "其它技术 | OtherTech")
+
         post_info = {
-            "id": item["id"],
-            "title": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
-            "link": properties["Link"]["url"] or item["public_url"],
-            "date": properties["创建时间"]["date"]["start"] if properties["创建时间"]["date"] else ""
+            "id": item.get("id", ""),
+            "title": item.get("title", ""),
+            "link": item.get("link", ""),
+            "date": item.get("published_date") or "",
         }
-        
-        # 根据tag分配到对应分组
-        for group_name, group_tags_list in group_tags.items():
-            if any(tag in group_tags_list for tag in tags):
-                grouped_posts[group_name].append(post_info)
-                break
-    
+
+        if post_info["id"] and post_info["title"]:
+            grouped_posts[group_name].append(post_info)
+
     # 构建最终输出格式
     result = []
-    for group_name, posts in grouped_posts.items():
+    for group_name in GROUP_ORDER:
+        posts = grouped_posts[group_name]
         if posts:  # 只添加有文章的分组
             result.append({
                 "groupName": group_name,
@@ -72,41 +106,28 @@ def parse_post_data(data):
 
     return result
 
-# 解析数据并生成Project JSON
-def parse_project_data(data):
+def parse_project_data(rows):
     games = []
     projects = []
-    for item in data["results"]:
-        properties = item["properties"]
-        
-        # 提取所有tags并添加#前缀
-        tags = properties.get("Tags", {}).get("multi_select", [])
-
-        # 获取类型列表（优先 multi_select，兼容 select）
-        type_names = [t.get("name", "") for t in properties.get("类型", {}).get("multi_select", []) if t.get("name")]
-        type_select = properties.get("类型", {}).get("select")
-        if type_select and type_select.get("name"):
-            type_names.append(type_select["name"])
-        
-        # 提取游戏信息
+    for item in rows:
         game_info = {
-            "id": item["id"],
-            "name": "".join([text["plain_text"] for text in properties["Name"]["title"]]),
-            "type": " / ".join(type_names),
-            "tag": " ".join(f"#{tag['name']}" for tag in tags),
-            "desc_cn": next((text["plain_text"] for text in properties["描述"]["rich_text"]), ""),
-            "desc_en": next((text["plain_text"] for text in properties["Description"]["rich_text"]), ""),
-            "link": properties["Link"]["url"] or item["public_url"],
-            "date": properties["发布时间"]["date"]["start"] if properties["发布时间"]["date"] else ""
+            "id": item.get("id", ""),
+            "name": item.get("name", ""),
+            "type": item.get("type", ""),
+            "tag": item.get("tag", ""),
+            "desc_cn": item.get("desc_cn", ""),
+            "desc_en": item.get("desc_en", ""),
+            "link": item.get("link", ""),
+            "date": item.get("published_date") or "",
         }
-        
+
         # 只添加有名称的条目
         if game_info["name"]:
-            if GAME_TYPE in type_names:
+            if item.get("list_type") == "game":
                 games.append(game_info)
-            if PROJECT_TYPE in type_names:
+            if item.get("list_type") == "project":
                 projects.append(game_info)
-    
+
     # 按发布时间降序排序
     games.sort(key=lambda x: x["date"] or "", reverse=True)
     projects.sort(key=lambda x: x["date"] or "", reverse=True)
@@ -182,13 +203,15 @@ def update_readme(blog_data, game_data, project_data, readme_path):
         file.write(readme)
 
 if __name__ == "__main__":
-    # 获取 Notion 数据
-    blog_data = fetch_data(BLOG_DATABASE_ID)
-    project_data = fetch_data(PROJECT_DATABASE_ID)
+    ensure_supabase_env()
+
+    # 获取 Supabase 数据
+    blog_rows = fetch_supabase_rows("blog_posts", order="published_date.desc")
+    work_rows = fetch_supabase_rows("work_items", order="published_date.desc")
 
     # 解析并生成 JSON
-    blog_parsed = parse_post_data(blog_data)
-    project_parsed = parse_project_data(project_data)
+    blog_parsed = parse_post_data(blog_rows)
+    project_parsed = parse_project_data(work_rows)
 
     # 更新 JSON 文件
     update_json("src/data/posts.json", blog_parsed)
