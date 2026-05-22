@@ -37,9 +37,13 @@ GROUP_ORDER = [
 
 
 def ensure_supabase_env():
-    if not SUPABASE_URL or not SUPABASE_API_KEY:
+    if not SUPABASE_URL:
         raise Exception(
-            "Missing Supabase env. Please set SUPABASE_URL (or NEXT_PUBLIC_SUPABASE_URL) and SUPABASE_SERVICE_ROLE_KEY (or ANON key)."
+            "Missing Supabase env. Please set SUPABASE_URL (or NEXT_PUBLIC_SUPABASE_URL) in your environment variables."
+        )
+    elif not SUPABASE_API_KEY:
+        raise Exception(
+            "Missing Supabase API key. Please set SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY (or their NEXT_PUBLIC_ variants) in your environment variables."
         )
 
 
