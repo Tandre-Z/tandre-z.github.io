@@ -41,13 +41,13 @@
 - [Astar](https://tandrez.notion.site/Astar-38bea8423b554229bd597b4458f3abcf) - 2023-11-10
 - [Unity动画系统](https://tandrez.notion.site/Unity-2f02246f847e4d50ab1f576ba717b4a9) - 2023-08-29
 - [日期时间与UTC时间戳的拓展脚本](https://tandrez.notion.site/UTC-22c1fa1ec80b4e14a015243da8b50150) - 2023-04-12
-- [Get/Post请求脚本(HttpWebRequest/UntiyWebRequest)](https://tandrez.notion.site/Get-Post-HttpWebRequest-UntiyWebRequest-53a281df8d8b4c529afc398bc6773349) - 2023-04-11
 - [字符串的Md5加密拓展及Url的编解码工具](https://tandrez.notion.site/Md5-Url-3d32277cd4fe42dbbb229dde38363610) - 2023-04-11
-- [Unity项目资源管理框架（Resource）](https://tandrez.notion.site/Unity-Resource-3d6a45b002dd4b4283924cd047ed2cbc) - 2023-01-08
-- [Unity项目数据表管理框架](https://tandrez.notion.site/Unity-07031b3050974190a36bc763ec8f1a41) - 2023-01-08
-- [Unity项目场景的异步加载简易框架](https://tandrez.notion.site/Unity-720afc318b664729a3aa12bfc92ba8e7) - 2023-01-08
-- [Unity项目UI管理简易框架](https://tandrez.notion.site/Unity-UI-be4ae8f2e9b944908c87dda039fa60e7) - 2023-01-08
+- [Get/Post请求脚本(HttpWebRequest/UntiyWebRequest)](https://tandrez.notion.site/Get-Post-HttpWebRequest-UntiyWebRequest-53a281df8d8b4c529afc398bc6773349) - 2023-04-11
 - [DoTween插件基本操作总结](https://tandrez.notion.site/DoTween-0f13ece1519e4bb280664101286d7c65) - 2023-01-08
+- [Unity项目UI管理简易框架](https://tandrez.notion.site/Unity-UI-be4ae8f2e9b944908c87dda039fa60e7) - 2023-01-08
+- [Unity项目场景的异步加载简易框架](https://tandrez.notion.site/Unity-720afc318b664729a3aa12bfc92ba8e7) - 2023-01-08
+- [Unity项目数据表管理框架](https://tandrez.notion.site/Unity-07031b3050974190a36bc763ec8f1a41) - 2023-01-08
+- [Unity项目资源管理框架（Resource）](https://tandrez.notion.site/Unity-Resource-3d6a45b002dd4b4283924cd047ed2cbc) - 2023-01-08
 - [Cesium for unity使用](https://tandrez.notion.site/Cesium-for-unity-f9368ca325cb459d8057191e2868492b) - 2022-12-30
 - [Unity控制物体显示与隐藏优化总结](https://tandrez.notion.site/Unity-7a7d4e16a54b440e8a4a5fcef151c818) - 2022-12-12
 
@@ -67,8 +67,8 @@
 
 ### 杂谈/写作 | Chat&Write
 
-- [安迪·威尔《蛋》-原文（转载）](https://tandrez.notion.site/3acb15561df442e3be19f2b6c30125a3) - 2024-04-10
 - [安迪·威尔《蛋》-中文（转载）](https://tandrez.notion.site/71364600a7814772b1987e71d3bf5ced) - 2024-04-10
+- [安迪·威尔《蛋》-原文（转载）](https://tandrez.notion.site/3acb15561df442e3be19f2b6c30125a3) - 2024-04-10
 - [内耗症候群存在主义自救指南（实践篇）](https://tandrez.notion.site/c300f298e70948bf9c1031ac200d95f5) - 2024-03-14
 - [内耗症候群存在主义自救指南（理论篇）](https://tandrez.notion.site/065dc968f5184d2fb49d1a56e29898d5) - 2024-03-08
 - [Rain](https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f) - 2023-10-04
@@ -93,8 +93,8 @@
 
 | 名称(Name) | 标签(Tag) | 描述 | Description |
 | ---- | ---- | ---- | ---- |
-| [工作室小型外包项目（Mini Outsource Projects）](https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74) | #教学系统 | 一些个人工作室接的虚拟仿真/数字孪生外包项目 | Some personal studios undertake outsourced projects for virtual simulation/digital twins. |
 | [湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)](https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74) | #数字孪生 | 海洋水上水下一体数字化虚拟仿真平台 | Marine Surface and Underwater Integrated Digital Virtual Simulation Platform |
+| [工作室小型外包项目（Mini Outsource Projects）](https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74) | #教学系统 | 一些个人工作室接的虚拟仿真/数字孪生外包项目 | Some personal studios undertake outsourced projects for virtual simulation/digital twins. |
 | [GNSS测量技术虚拟仿真教学系统(VR端应用)](https://tandrez.notion.site/GNSS-VR-704d8062ac1f4f19b229b5233b8d24ac?pvs=74) | #教学系统 | 基于Oculus Quest 2的VR端应用，用于GNSS测量技术虚拟仿真教学系统的VR端应用。 | VR application for Oculus Quest 2, designed for the VR-based virtual simulation teaching system of GNSS surveying technology. |
 | [开普勒三定律](https://tandrez.notion.site/f764d12cc78d4965a8d9e63da9ae353d?pvs=74) | #教学系统 | 附属于《GNSS测量技术虚拟仿真教学系统》的开普勒三定律的独立项目。 | An independent project affiliated with the "GNSS Measurement Technology Virtual Simulation Teaching System" focusing on Kepler's Three Laws. |
 | [GNSS测量技术虚拟仿真教学系统](https://tandrez.notion.site/GNSS-300eafc669a8478ba128717dba2fa2e2?pvs=74) | #教学系统 | 为广东工贸职业技术学院开发的GNSS测量技术虚拟仿真教学系统。 | The GNSS Surveying Technology Virtual Simulation Teaching System developed for Guangdong Polytechnic of Industry and Commerce. |

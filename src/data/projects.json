@@ -1,15 +1,5 @@
 [
     {
-        "id": "22ddbd6e-d8ac-800e-8654-d5ece97f6b93",
-        "name": "工作室小型外包项目（Mini Outsource Projects）",
-        "type": "虚拟仿真",
-        "tag": "#教学系统",
-        "desc_cn": "一些个人工作室接的虚拟仿真/数字孪生外包项目",
-        "desc_en": "Some personal studios undertake outsourced projects for virtual simulation/digital twins.",
-        "link": "https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74",
-        "date": "2025-07-11"
-    },
-    {
         "id": "22ddbd6e-d8ac-8049-bded-e8806d127781",
         "name": "湛江湾海洋牧场数字孪生系统(Ocean Ranch Digital System)",
         "type": "虚拟仿真",
@@ -17,6 +7,16 @@
         "desc_cn": "海洋水上水下一体数字化虚拟仿真平台",
         "desc_en": "Marine Surface and Underwater Integrated Digital Virtual Simulation Platform",
         "link": "https://tandrez.notion.site/Ocean-Ranch-Digital-System-22ddbd6ed8ac8049bdede8806d127781?pvs=74",
+        "date": "2025-07-11"
+    },
+    {
+        "id": "22ddbd6e-d8ac-800e-8654-d5ece97f6b93",
+        "name": "工作室小型外包项目（Mini Outsource Projects）",
+        "type": "虚拟仿真",
+        "tag": "#教学系统",
+        "desc_cn": "一些个人工作室接的虚拟仿真/数字孪生外包项目",
+        "desc_en": "Some personal studios undertake outsourced projects for virtual simulation/digital twins.",
+        "link": "https://tandrez.notion.site/Deep-sea-Mining-VisualSys-22ddbd6ed8ac800e8654d5ece97f6b93?pvs=74",
         "date": "2025-07-11"
     },
     {
