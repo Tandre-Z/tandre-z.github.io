@@ -43,19 +43,19 @@
 - [日期时间与UTC时间戳的拓展脚本](https://tandrez.notion.site/UTC-22c1fa1ec80b4e14a015243da8b50150) - 2023-04-12
 - [字符串的Md5加密拓展及Url的编解码工具](https://tandrez.notion.site/Md5-Url-3d32277cd4fe42dbbb229dde38363610) - 2023-04-11
 - [Get/Post请求脚本(HttpWebRequest/UntiyWebRequest)](https://tandrez.notion.site/Get-Post-HttpWebRequest-UntiyWebRequest-53a281df8d8b4c529afc398bc6773349) - 2023-04-11
-- [DoTween插件基本操作总结](https://tandrez.notion.site/DoTween-0f13ece1519e4bb280664101286d7c65) - 2023-01-08
-- [Unity项目UI管理简易框架](https://tandrez.notion.site/Unity-UI-be4ae8f2e9b944908c87dda039fa60e7) - 2023-01-08
-- [Unity项目场景的异步加载简易框架](https://tandrez.notion.site/Unity-720afc318b664729a3aa12bfc92ba8e7) - 2023-01-08
-- [Unity项目数据表管理框架](https://tandrez.notion.site/Unity-07031b3050974190a36bc763ec8f1a41) - 2023-01-08
+- [Unity项目UI管理简易框架](https://mp.weixin.qq.com/s/-vdgz9UcP0I9JU2xQBTD-w) - 2023-01-08
 - [Unity项目资源管理框架（Resource）](https://tandrez.notion.site/Unity-Resource-3d6a45b002dd4b4283924cd047ed2cbc) - 2023-01-08
+- [Unity项目场景的异步加载简易框架](https://tandrez.notion.site/Unity-720afc318b664729a3aa12bfc92ba8e7) - 2023-01-08
+- [DoTween插件基本操作总结](https://mp.weixin.qq.com/s/bOW3tMpN0z2VuiRPJvmEag) - 2023-01-08
+- [Unity项目数据表管理框架](https://mp.weixin.qq.com/s/32n-RfueYNJH5m9LHho9Yg) - 2023-01-08
 - [Cesium for unity使用](https://tandrez.notion.site/Cesium-for-unity-f9368ca325cb459d8057191e2868492b) - 2022-12-30
-- [Unity控制物体显示与隐藏优化总结](https://tandrez.notion.site/Unity-7a7d4e16a54b440e8a4a5fcef151c818) - 2022-12-12
+- [Unity控制物体显示与隐藏优化总结](https://mp.weixin.qq.com/s/gN4KZf32_QIz7JkBU3GndA) - 2022-12-12
 
 ### 游戏设计 | GameDesign
 
-- [《体验引擎-游戏设计全景探秘》（Part 3）](https://tandrez.notion.site/Part-3-cfc9b0298e4b441bb7a714396c5fd5b6) - 2022-12-31
-- [《体验引擎-游戏设计全景探秘》（Part 2）](https://tandrez.notion.site/Part-2-52add32cf08f4ecaa2fbdc71af9eb332) - 2022-12-31
-- [《体验引擎-游戏设计全景探秘》（Part 1）](https://tandrez.notion.site/Part-1-753f92f31a624812a9193069bf34edab) - 2022-12-17
+- [《体验引擎-游戏设计全景探秘》（Part 2）](https://mp.weixin.qq.com/s/PCUcmJTucaeFm918Ne8bRA) - 2022-12-31
+- [《体验引擎-游戏设计全景探秘》（Part 3）](https://mp.weixin.qq.com/s/PCUcmJTucaeFm918Ne8bRA) - 2022-12-31
+- [《体验引擎-游戏设计全景探秘》（Part 1）](https://mp.weixin.qq.com/s/wQhII9dUcz1CU11tXYONyA) - 2022-12-17
 
 ### 其它技术 | OtherTech
 
@@ -63,12 +63,12 @@
 - [Vscode调教](https://tandrez.notion.site/Vscode-ad421974f54b42699858d1ef125ffff1) - 2024-03-14
 - [Unity打包WebGl全屏设置](https://tandrez.notion.site/Unity-WebGl-ab9c9ddd5dc342789fd307732903e9d6) - 2023-08-28
 - [Markdown语法整理](https://tandrez.notion.site/Markdown-a74a4288fc3c4a9da62fe828e36f9410) - 2023-01-01
-- [jekyll+github搭建个人博客](https://tandrez.notion.site/jekyll-github-317211417ece489680b614a529566e00) - 2022-10-04
+- [jekyll+github搭建个人博客](https://mp.weixin.qq.com/s/f_juo4q6L2Mb8Jaifqt-wg) - 2022-10-04
 
 ### 杂谈/写作 | Chat&Write
 
-- [安迪·威尔《蛋》-中文（转载）](https://tandrez.notion.site/71364600a7814772b1987e71d3bf5ced) - 2024-04-10
 - [安迪·威尔《蛋》-原文（转载）](https://tandrez.notion.site/3acb15561df442e3be19f2b6c30125a3) - 2024-04-10
+- [安迪·威尔《蛋》-中文（转载）](https://tandrez.notion.site/71364600a7814772b1987e71d3bf5ced) - 2024-04-10
 - [内耗症候群存在主义自救指南（实践篇）](https://tandrez.notion.site/c300f298e70948bf9c1031ac200d95f5) - 2024-03-14
 - [内耗症候群存在主义自救指南（理论篇）](https://tandrez.notion.site/065dc968f5184d2fb49d1a56e29898d5) - 2024-03-08
 - [Rain](https://tandrez.notion.site/Rain-91093476056a4e75b6d0a25cb110697f) - 2023-10-04
@@ -79,7 +79,7 @@
 
 | 名称(Name) | 标签(Tag) | 描述 | Description |
 | ---- | ---- | ---- | ---- |
-| [昼夜娃娃机（ClawMachine）](https://www.gcores.com/games/179953) |  | Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏 | Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping. |
+| [昼夜娃娃机（ClawMachine）](https://www.gcores.com/games/179953) | #视觉小说 #打地鼠 #平台跳跃 #RPG #现实 | Booom2026参赛作品，一款融合了模拟经营，叙事和平台跳跃的游戏 | Booom2026 competition entry, a game that combines simulation management, narrative, and platform jumping. |
 | [Signal Resonance](https://ldjam.com/events/ludum-dare/59/signal-resonance) | #视觉小说 #文字 #点击解谜 | LudumDare59参赛作品，一个点击叙事解谜游戏 | LudumDare59 entry, a click-based narrative puzzle game. |
 | [流浪的UFO（Wandering UFO）](https://www.taptap.cn/app/782483?os=pc) | #文字 #单人 | TapTap聚光灯2025年Gamejam作品。太空流浪题材飞行游戏。收集宇宙讯息和星尘碎片，在叙事与空间双重探索中探究真相。 | apTap Spotlight 2025 Gamejam Entry. A space drift-themed flight game. Collect cosmic messages and stardust fragments, exploring the truth through dual exploration of narrative and space. |
 | [No Cat Can GO Wrong](https://tandrez.notion.site/No-Cat-Can-GO-Wrong-1a5dbd6ed8ac80cca32dc5678de9796b?pvs=74) | #单人 #RPG #文字 #现实 | 参加 Brackeys Gme Jam 2025.1 的作品。一个带有一定实验性的打字游戏。 | Entry to Brackeys Game Jam 2025.1. A typing game with some experimentation. |
