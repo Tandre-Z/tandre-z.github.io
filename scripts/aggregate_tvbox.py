@@ -2,11 +2,11 @@
 """
 聚合多个 TVBox / 影视仓 源，递归解析 + 校验后输出两个文件：
 
-  * tvbox/muti.json    —— 扁平多仓（{"urls": [...]}），只含「当前可访问且是单仓」的源，
+  * public/tvbox/muti.json    —— 扁平多仓（{"urls": [...]}），只含「当前可访问且是单仓」的源，
                           已展开所有嵌套多仓、去掉死链/HTML/证书错误，影视仓可直接订阅。
-  * tvbox/single.json  —— 合并单仓（{"sites": [...]}），把各单仓的 sites 去重合并成一个大源，
+  * public/tvbox/single.json  —— 合并单仓（{"sites": [...]}），把各单仓的 sites 去重合并成一个大源，
                           并为每个站点按来源绑定对应的 spider（jar），尽量保证跨源可用。
-  * tvbox/muti.txt     —— 扁平多仓的纯 URL 列表（每行一个，便于备份/肉眼查看）。
+  * public/tvbox/muti.txt     —— 扁平多仓的纯 URL 列表（每行一个，便于备份/肉眼查看）。
 
 解析兼容这些常见"脏数据"：
   * UTF-8 BOM（\\ufeff）
@@ -343,7 +343,7 @@ def build_single(leaves):
 
 def main():
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    out_dir = os.path.join(here, "tvbox")
+    out_dir = os.path.join(here, "public", "tvbox")
     os.makedirs(out_dir, exist_ok=True)
 
     print("正在递归解析并校验源图 ...")
@@ -379,13 +379,13 @@ def main():
     print("\n" + "=" * 60)
     print(f"有效单仓源：{len(unique)} 个")
     print(f"合并单仓 sites 数：{len(single['sites'])}")
-    print(f"失效/非单仓：{len(dead)} 个（详见 tvbox/dead.txt）")
-    print(f"已写入 tvbox/muti.json   （扁平多仓）")
-    print(f"已写入 tvbox/single.json （合并单仓）")
-    print(f"已写入 tvbox/muti.txt    （纯 URL 列表）")
-    print("\n订阅地址：")
-    print("  扁平多仓：https://tandre-z.github.io/tvbox/muti.json")
-    print("  合并单仓：https://tandre-z.github.io/tvbox/single.json")
+    print(f"失效/非单仓：{len(dead)} 个（详见 public/tvbox/dead.txt）")
+    print(f"已写入 public/tvbox/muti.json   （扁平多仓）")
+    print(f"已写入 public/tvbox/single.json （合并单仓）")
+    print(f"已写入 public/tvbox/muti.txt    （纯 URL 列表）")
+    print("\n订阅地址（tandre.cn）：")
+    print("  扁平多仓：https://tandre.cn/tvbox/muti.json")
+    print("  合并单仓：https://tandre.cn/tvbox/single.json")
 
 
 if __name__ == "__main__":

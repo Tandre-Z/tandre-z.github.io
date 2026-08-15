@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
         request.nextUrl.pathname.startsWith("/api") ||
         request.nextUrl.pathname.startsWith("/_next") ||
         request.nextUrl.pathname.startsWith("/img") ||
+        request.nextUrl.pathname.startsWith("/tvbox") ||
         request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|svg|ico)$/)
     ) return NextResponse.next();
 
