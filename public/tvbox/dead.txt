@@ -44,6 +44,7 @@ http://肥猫.net/tv	返回HTML(非JSON)
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
 https://4708.kstore.space/svip/svip.json	HTTPError
+https://6492.kstore.space/xnf/xnf.json	HTTPError
 https://9877.kstore.space/AnotherD/api.json	HTTPError
 https://9877.kstore.space/one.json	返回HTML(非JSON)
 https://api.hgyx.vip/hgyx.json	JSON解析失败(Expecting value: line 7 column 4 (char 655))
