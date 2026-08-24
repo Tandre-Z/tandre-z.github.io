@@ -17,7 +17,6 @@ http://mzjk.top/禁止贩卖	HTTPError
 http://ok321.top/ok	ConnectionError
 http://pandown.pro/tvbox/tvbox.json	ConnectTimeout
 http://qxyc.cc/自用测试	返回HTML(非JSON)
-http://rihou.cc:88/demo.php	ConnectTimeout
 http://tjf1100.serv00.net/	返回HTML(非JSON)
 http://tv.laohu.cool/tvbox.json	ConnectionError
 http://tv.nxog.top/m	HTTPError
@@ -35,7 +34,7 @@ http://xhztv.top	返回HTML(非JSON)
 http://xn--b9w.l5.ca/	ConnectTimeout
 http://z.qiqiv.cn/123	返回HTML(非JSON)
 http://z.qiqiv.cn/666	返回HTML(非JSON)
-http://影视仓.com/	ConnectionError
+http://影视仓.com/	返回HTML(非JSON)
 http://我不是.摸鱼儿.com	返回HTML(非JSON)
 http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
@@ -46,7 +45,7 @@ https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
 https://4708.kstore.space/svip/svip.json	HTTPError
 https://6492.kstore.space/xnf/xnf.json	HTTPError
 https://9877.kstore.space/AnotherD/api.json	HTTPError
-https://9877.kstore.space/one.json	返回HTML(非JSON)
+https://9877.kstore.space/one.json	HTTPError
 https://api.hgyx.vip/hgyx.json	JSON解析失败(Expecting value: line 7 column 4 (char 655))
 https://chuanshuo.77blog.cn/tv.json	SSLError
 https://cnb.cool/fish2018/pg/-/git/raw/master/jsm.json	HTTPError
