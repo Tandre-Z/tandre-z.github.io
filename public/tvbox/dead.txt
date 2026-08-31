@@ -7,7 +7,7 @@ http://dp.sxtv.top:88/img	ConnectionError
 http://fty.333232.xyz/tv	返回HTML(非JSON)
 http://fty.888484.xyz/tv	返回HTML(非JSON)
 http://fty.xxooo.cf/tv	返回HTML(非JSON)
-http://hb.小虎斑.site:25252/仅供测试	HTTPError
+http://hb.小虎斑.site:25252/仅供测试	返回HTML(非JSON)
 http://hucongrong.web3v.work/%E9%A3%8E%E6%B0%B4/fxz/fxz.json	JSON解析失败(Expecting value: line 1755 column 124 (char 52853))
 http://hucongrong.web3v.work/风水/fxz/fxz.json	JSON解析失败(Expecting value: line 1755 column 124 (char 52853))
 http://jiduo.3116598.xyz	返回HTML(非JSON)
@@ -20,9 +20,8 @@ http://qxyc.cc/自用测试	返回HTML(非JSON)
 http://tjf1100.serv00.net/	返回HTML(非JSON)
 http://tv.laohu.cool/tvbox.json	ConnectionError
 http://tv.nxog.top/m	HTTPError
-http://tv.nxog.top/m/	返回HTML(非JSON)
-http://tv.nxog.top/m/111.php?ou=公众号欧歌	返回HTML(非JSON)
-http://tvbox.xn--4kq62z5rby2qupq9ub.top/	返回HTML(非JSON)
+http://tv.nxog.top/m/	HTTPError
+http://tv.nxog.top/m/111.php?ou=公众号欧歌	HTTPError
 http://tvbox.王二小放牛娃.top	返回HTML(非JSON)
 http://www.lyyytv.cn/yt/yt.json	HTTPError
 http://www.mpanso.com/小米/DEMO.json	HTTPError
@@ -38,7 +37,7 @@ http://影视仓.com/	返回HTML(非JSON)
 http://我不是.摸鱼儿.com	返回HTML(非JSON)
 http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
-http://肥猫.com	ConnectionError
+http://肥猫.com	返回HTML(非JSON)
 http://肥猫.net/tv	返回HTML(非JSON)
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
@@ -80,16 +79,16 @@ https://www.iyouhun.com/tv/dc	返回HTML(非JSON)
 https://www.wya6.cn/tv/yc.json	HTTPError
 https://www.小不点.com/helper/	返回HTML(非JSON)
 https://xn--8owq8u.com/tv/	ConnectionError
-https://xn--biib-rp5imh.v.nxog.top/apitv.php	返回HTML(非JSON)
-https://xn--jory77o.v.nxog.top/m	HTTPError
-https://xn--jory77o.v.nxog.top/m/	返回HTML(非JSON)
+https://xn--biib-rp5imh.v.nxog.top/apitv.php	ConnectionError
+https://xn--jory77o.v.nxog.top/m	ConnectionError
+https://xn--jory77o.v.nxog.top/m/	ConnectionError
 https://yydsys.top/duo	HTTPError
 https://z.qiqiv.cn/666	返回HTML(非JSON)
 https://zthaa.top/th/api.json	ConnectionError
 https://zthaa.top/thzx/th.json	ConnectionError
 https://乐哥.xyz/TV/Zy.json	HTTPError
 https://乐哥.xyz/Ting/Tshu.json	HTTPError
-https://双龙.v.nxog.top/nxog/oua.php	返回HTML(非JSON)
-https://欧歌.v.nxog.top/m/	返回HTML(非JSON)
+https://双龙.v.nxog.top/nxog/oua.php	ConnectionError
+https://欧歌.v.nxog.top/m/	ConnectionError
 https://毒盒.com/tv	ConnectionError
 https://龙伊.top	返回HTML(非JSON)
