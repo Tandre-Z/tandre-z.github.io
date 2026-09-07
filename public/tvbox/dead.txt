@@ -25,7 +25,7 @@ http://tv.nxog.top/m/111.php?ou=公众号欧歌	HTTPError
 http://tvbox.王二小放牛娃.top	返回HTML(非JSON)
 http://www.lyyytv.cn/yt/yt.json	HTTPError
 http://www.mpanso.com/小米/DEMO.json	HTTPError
-http://www.饭太硬.art/tv	返回HTML(非JSON)
+http://www.饭太硬.art/tv	HTTPError
 http://www.饭太硬.cc/tv	返回HTML(非JSON)
 http://www.饭太硬.com/tv	ConnectionError
 http://www.饭太硬.net/tv	返回HTML(非JSON)
@@ -33,7 +33,7 @@ http://xhztv.top	返回HTML(非JSON)
 http://xn--b9w.l5.ca/	ConnectTimeout
 http://z.qiqiv.cn/123	返回HTML(非JSON)
 http://z.qiqiv.cn/666	返回HTML(非JSON)
-http://影视仓.com/	返回HTML(非JSON)
+http://影视仓.com/	HTTPError
 http://我不是.摸鱼儿.com	返回HTML(非JSON)
 http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
@@ -58,7 +58,6 @@ https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC
 https://gh-proxy.com/raw.githubusercontent.com/leevi0709/one/main/jsm.json	HTTPError
 https://gh-proxy.com/raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/XC.json	返回HTML(非JSON)
 https://gh-proxy.com/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/drpys/jsm.json	HTTPError
-https://gh-proxy.org/raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/refs/heads/main/json/demo.json	返回HTML(非JSON)
 https://ghproxy.cn/https://raw.githubusercontent.com/leevi0709/one/main/jsm.json	返回HTML(非JSON)
 https://git.acwing.com/999/tvbox/-/raw/main/%E5%BD%B1%E8%A7%86.json	HTTPError
 https://git.acwing.com/iduoduo/orange/-/raw/main/jsm.json	HTTPError
