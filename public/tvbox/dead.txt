@@ -1,6 +1,7 @@
 http://2883.kstore.space/nzk/nzk0722.json	HTTPError
 http://52pan.top:81/api/v3/file/get/174964/%E5%90%BE%E7%88%B1%E8%AF%84%E6%B5%8B.m3u?sign=rPssLoffquDXszCARt6UNF8MobSa1FA27XomzOluJBY%3D%3A0	ConnectionError
 http://74.120.175.78/JK/XYQTVBox/dj.json	ConnectTimeout
+http://box.ufuzi.com/tv/qq/短剧频道/api.json	ConnectTimeout
 http://bp.tvbox.cam	返回HTML(非JSON)
 http://cdn.qiaoji8.com/tvbox.json	ConnectionError
 http://dp.sxtv.top:88/img	ConnectionError
@@ -13,7 +14,8 @@ http://hucongrong.web3v.work/风水/fxz/fxz.json	JSON解析失败(Expecting valu
 http://jiduo.3116598.xyz	返回HTML(非JSON)
 http://meowtv.cn/tv	ConnectionError
 http://miqk.cc/小米/DEMO.json	ConnectionError
-http://mzjk.top/禁止贩卖	HTTPError
+http://mzjk.top/禁止贩卖	返回HTML(非JSON)
+http://mzrjk.top/VIP	TooManyRedirects
 http://ok321.top/ok	ConnectionError
 http://pandown.pro/tvbox/tvbox.json	ConnectTimeout
 http://qxyc.cc/自用测试	返回HTML(非JSON)
@@ -25,7 +27,7 @@ http://tv.nxog.top/m/111.php?ou=公众号欧歌	HTTPError
 http://tvbox.王二小放牛娃.top	返回HTML(非JSON)
 http://www.lyyytv.cn/yt/yt.json	HTTPError
 http://www.mpanso.com/小米/DEMO.json	HTTPError
-http://www.饭太硬.art/tv	HTTPError
+http://www.饭太硬.art/tv	返回HTML(非JSON)
 http://www.饭太硬.cc/tv	返回HTML(非JSON)
 http://www.饭太硬.com/tv	ConnectionError
 http://www.饭太硬.net/tv	返回HTML(非JSON)
@@ -35,18 +37,20 @@ http://z.qiqiv.cn/123	返回HTML(非JSON)
 http://z.qiqiv.cn/666	返回HTML(非JSON)
 http://影视仓.com/	HTTPError
 http://我不是.摸鱼儿.com	返回HTML(非JSON)
-http://我不是.摸鱼儿.top	返回HTML(非JSON)
+http://我不是.摸鱼儿.top	ConnectionError
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
-http://肥猫.com	返回HTML(非JSON)
-http://肥猫.net/tv	返回HTML(非JSON)
+http://肥猫.com	ConnectTimeout
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
+https://3043.kstore.space/bhvip/bh/bh2.json	返回HTML(非JSON)
+https://3043.kstore.space/bhvip/bh/box.json	返回HTML(非JSON)
 https://4708.kstore.space/svip/svip.json	HTTPError
 https://6492.kstore.space/xnf/xnf.json	HTTPError
 https://9877.kstore.space/AnotherD/api.json	HTTPError
 https://9877.kstore.space/one.json	HTTPError
 https://api.hgyx.vip/hgyx.json	JSON解析失败(Expecting value: line 7 column 4 (char 655))
-https://chuanshuo.77blog.cn/tv.json	SSLError
+https://bitbucket.org/xduo/duoapi/raw/master/xpg.json	返回HTML(非JSON)
+https://chuanshuo.77blog.cn/tv.json	ConnectionError
 https://cnb.cool/fish2018/pg/-/git/raw/master/jsm.json	HTTPError
 https://cnb.cool/fish2018/zx/-/git/raw/master/FongMi.json	HTTPError
 https://d.kstore.dev/download/8975/刺刺专用音乐接口.json	HTTPError
@@ -55,9 +59,11 @@ https://fmbox.cc	返回HTML(非JSON)
 https://gh-proxy.com/https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json	HTTPError
 https://gh-proxy.com/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/lemj.json	JSON解析失败(Invalid \escape: line 110 column 836 (char 82528))
 https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json	返回HTML(非JSON)
+https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/XC.json	返回HTML(非JSON)
 https://gh-proxy.com/raw.githubusercontent.com/leevi0709/one/main/jsm.json	HTTPError
 https://gh-proxy.com/raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/XC.json	返回HTML(非JSON)
 https://gh-proxy.com/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/drpys/jsm.json	HTTPError
+https://gh-proxy.org/raw.githubusercontent.com/ggrrttyyiii/CatVodSpider/refs/heads/main/json/demo.json	返回HTML(非JSON)
 https://ghproxy.cn/https://raw.githubusercontent.com/leevi0709/one/main/jsm.json	返回HTML(非JSON)
 https://git.acwing.com/999/tvbox/-/raw/main/%E5%BD%B1%E8%A7%86.json	HTTPError
 https://git.acwing.com/iduoduo/orange/-/raw/main/jsm.json	HTTPError
@@ -68,20 +74,25 @@ https://gitee.com/yiwu369/6758/raw/master/%E9%9D%92%E9%BE%99/1.json	HTTPError
 https://github.catvod.com/raw.githubusercontent.com/tushen6/Tomorrow/master/lmw.json	HTTPError
 https://github.moeyy.xyz/https://raw.githubusercontent.com/liu673cn/box/main/m.json	ConnectionError
 https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json	ConnectionError
+https://gitlab.com/duomv/dzhipy/-/raw/main/index.json	返回HTML(非JSON)
 https://gitlab.com/lzc1021lzc/hjfggzs.hjys/-/raw/main/hjys.free.json	返回HTML(非JSON)
 https://hb.xyyh.online/tvbox	ConnectionError
+https://iduo.us.ci/gt/leevi0709/one/main/config.bin	HTTPError
 https://jihulab.com/jyqhkd/kd/-/raw/main/kai.json	HTTPError
 https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json	HTTPError
+https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer	HTTPError
 https://qu.ax/uanw.json	返回HTML(非JSON)
+https://tv.nxog.top/m	HTTPError
 https://tv.菜妮丝.top	返回HTML(非JSON)
 https://www.iyouhun.com/tv/dc	返回HTML(非JSON)
 https://www.wya6.cn/tv/yc.json	HTTPError
-https://www.小不点.com/helper/	返回HTML(非JSON)
+https://www.小不点.com/helper/	ConnectionError
 https://xn--8owq8u.com/tv/	ConnectionError
 https://xn--biib-rp5imh.v.nxog.top/apitv.php	ConnectionError
 https://xn--jory77o.v.nxog.top/m	ConnectionError
 https://xn--jory77o.v.nxog.top/m/	ConnectionError
-https://yydsys.top/duo	HTTPError
+https://ym.wya6.cn/	HTTPError
+https://yydsys.top/duo	ConnectionError
 https://z.qiqiv.cn/666	返回HTML(非JSON)
 https://zthaa.top/th/api.json	ConnectionError
 https://zthaa.top/thzx/th.json	ConnectionError
