@@ -10,7 +10,6 @@ http://fty.333232.xyz/tv	返回HTML(非JSON)
 http://fty.888484.xyz/tv	返回HTML(非JSON)
 http://fty.xxooo.cf/tv	ConnectionError
 http://hb.小虎斑.site:25252/仅供测试	返回HTML(非JSON)
-http://hucongrong.web3v.work/%E9%A3%8E%E6%B0%B4/fxz/fxz.json	JSON解析失败(Expecting value: line 1755 column 124 (char 52853))
 http://hucongrong.web3v.work/风水/fxz/fxz.json	JSON解析失败(Expecting value: line 1755 column 124 (char 52853))
 http://jiduo.3116598.xyz	返回HTML(非JSON)
 http://meowtv.cn/tv	ConnectionError
@@ -19,7 +18,7 @@ http://mzjk.top/禁止贩卖	ConnectionError
 http://ok321.top/ok	ConnectionError
 http://pandown.pro/tvbox/tvbox.json	ConnectTimeout
 http://qxyc.cc/自用测试	HTTPError
-http://rihou.cc:88/demo.php	ConnectionError
+http://rihou.cc:88/demo.php	ConnectTimeout
 http://tjf1100.serv00.net/	返回HTML(非JSON)
 http://tv.laohu.cool/tvbox.json	ConnectionError
 http://tv.nxog.top/m	HTTPError
@@ -28,7 +27,7 @@ http://tv.nxog.top/m/111.php?ou=公众号欧歌	返回HTML(非JSON)
 http://tvbox.王二小放牛娃.top	返回HTML(非JSON)
 http://www.lyyytv.cn/yt/yt.json	HTTPError
 http://www.mpanso.com/小米/DEMO.json	HTTPError
-http://www.饭太硬.art/tv	HTTPError
+http://www.饭太硬.art/tv	返回HTML(非JSON)
 http://www.饭太硬.cc/tv	返回HTML(非JSON)
 http://www.饭太硬.com/tv	ConnectionError
 http://www.饭太硬.net/tv	返回HTML(非JSON)
@@ -41,7 +40,6 @@ http://我不是.摸鱼儿.com	返回HTML(非JSON)
 http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
 http://肥猫.com	ConnectTimeout
-http://肥猫.net/tv	JSON解析失败(Expecting property name enclosed in double quotes: line 124 column 1 (char 2785))
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
 https://3043.kstore.space/bhvip/bh/bh2.json	返回HTML(非JSON)
@@ -96,8 +94,8 @@ https://xn--jory77o.v.nxog.top/m/	SSLError
 https://ym.wya6.cn/	HTTPError
 https://yydsys.top/duo	ConnectionError
 https://z.qiqiv.cn/666	返回HTML(非JSON)
-https://zthaa.top/th/api.json	ConnectionError
-https://zthaa.top/thzx/th.json	ConnectionError
+https://zthaa.top/th/api.json	ConnectTimeout
+https://zthaa.top/thzx/th.json	ConnectTimeout
 https://乐哥.xyz/TV/Zy.json	ConnectTimeout
 https://乐哥.xyz/Ting/Tshu.json	ConnectTimeout
 https://乐哥.xyz/dj.json	ConnectTimeout
