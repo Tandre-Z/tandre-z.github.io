@@ -28,6 +28,8 @@ http://tv.nxog.top/m/111.php?ou=公众号欧歌	返回HTML(非JSON)
 http://tvbox.王二小放牛娃.top	返回HTML(非JSON)
 http://www.lyyytv.cn/yt/yt.json	HTTPError
 http://www.mpanso.com/小米/DEMO.json	HTTPError
+http://www.小不点.com	ConnectionError
+http://www.英格里希嗷呜.top/tv	返回HTML(非JSON)
 http://www.饭太硬.art/tv	返回HTML(非JSON)
 http://www.饭太硬.cc/tv	返回HTML(非JSON)
 http://www.饭太硬.com/tv	ConnectionError
@@ -42,12 +44,16 @@ http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
 http://肥猫.com	ConnectTimeout
 http://肥猫.net	返回HTML(非JSON)
+http://肥猫.net/tv	HTTPError
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
+https://16151.kstore.space	返回HTML(非JSON)
 https://3043.kstore.space/bhvip/bh/bh2.json	返回HTML(非JSON)
 https://4708.kstore.space/svip/svip.json	HTTPError
 https://6492.kstore.space/xnf/xnf.json	HTTPError
+https://8815.kstore.vip/tvbox/wmz	返回HTML(非JSON)
 https://9877.kstore.space/AnotherD/api.json	HTTPError
+https://9877.kstore.space/one.json	HTTPError
 https://9877.kstore.space/sun.json	HTTPError
 https://api.hgyx.vip/hgyx.json	JSON解析失败(Expecting value: line 7 column 4 (char 655))
 https://bitbucket.org/xduo/duoapi/raw/master/xpg.json	HTTPError
@@ -71,7 +77,6 @@ https://git.acwing.com/lkq0379/zjys/-/raw/main/zjys.json	HTTPError
 https://git.acwing.com/lw0704/66/-/raw/master/jjzx.json	HTTPError
 https://gitee.com/lukei7/lib/raw/Luck/%E8%87%AA%E5%BB%BA.json	HTTPError
 https://gitee.com/yiwu369/6758/raw/master/%E9%9D%92%E9%BE%99/1.json	HTTPError
-https://github.catvod.com/raw.githubusercontent.com/tushen6/Tomorrow/master/lmw.json	HTTPError
 https://github.moeyy.xyz/https://raw.githubusercontent.com/liu673cn/box/main/m.json	ConnectionError
 https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json	ConnectionError
 https://gitlab.com/duomv/dzhipy/-/raw/main/index.json	HTTPError
@@ -83,10 +88,13 @@ https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json	HTTPError
 https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer	HTTPError
 https://qu.ax/uanw.json	返回HTML(非JSON)
 https://tv.菜妮丝.top	返回HTML(非JSON)
+https://www.iyouhun.com/tv/dc	返回HTML(非JSON)
+https://www.tangsan.fun/tv	ConnectTimeout
 https://www.wya6.cn/tv/yc.json	HTTPError
+https://www.饭太硬.cc/tv	返回HTML(非JSON)
 https://xn--8owq8u.com/tv/	ConnectionError
 https://xn--biib-rp5imh.v.nxog.top/apitv.php	SSLError
-https://yydsys.top/duo	HTTPError
+https://yydsys.top/duo	返回HTML(非JSON)
 https://z.qiqiv.cn/666	返回HTML(非JSON)
 https://zthaa.top/th/api.json	ConnectionError
 https://zthaa.top/thzx/th.json	ConnectionError
