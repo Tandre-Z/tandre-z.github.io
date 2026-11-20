@@ -103,22 +103,36 @@ HTML_BLACKLIST = re.compile(
 )
 
 
-# 精简接口（single-lite.json）保留的采集站主机：从投影仪实测能直连、搜索能秒回的源。
-# 只留主机名，站点条目仍从聚合结果里取，所以内容随每周的聚合自动更新。
+# 精简接口（single-lite.json）保留的采集站主机。
+# 来由：single.json 里 85 个 maccms 主机全测过一遍（搜索命中 + 返回有效 JSON），
+# 能返回结果的有 28 个；同源站（暴风/最大/非凡/360 各有多个域名）去重后剩这 25 个。
+# 只记主机名，站点条目仍取自每周聚合结果，所以源挂掉会自然掉出名单。
 LITE_HOSTS = [
-    "bf.xoxowin86cisyap.com",   # 暴风资源2  32ms
-    "cj.rycjapi.com",           # 如意资源   31ms
-    "jszyapi.com",              # 极速资源
-    "cj.lziapi.com",            # 量子资源
-    "api.zuidapi.com",          # 最大资源
-    "api.ffzyapi.com",          # 非凡资源
-    "www.hongniuzy2.com",       # 红牛资源
-    "api.ukuapi88.com",         # U酷资源
-    "api.maoyanapi.top",        # 猫眼资源
-    "360zy.com",                # 360资源
-    "iqiyizyapi.com",           # 爱奇艺资源
-    "api.apibdzy.com",          # 百度资源
-    "www.mdzyapi.com",          # 魔都资源
+    "bf.xoxowin86cisyap.com",   # 暴风     32ms
+    "cj.rycjapi.com",           # 如意     31ms
+    "jszyapi.com",              # 极速
+    "cj.lziapi.com",            # 量子
+    "api.zuidapi.com",          # 最大
+    "api.ffzyapi.com",          # 非凡
+    "hongniuzy2.com",           # 红牛
+    "api.ukuapi88.com",         # U酷
+    "api.maoyanapi.top",        # 猫眼
+    "360zy.com",                # 360
+    "iqiyizyapi.com",           # 爱奇艺
+    "api.apibdzy.com",          # 百度
+    "mdzyapi.com",              # 魔都
+    "lovedan.net",              # 爱蛋
+    "hhzyapi.com",              # 花花
+    "jyzyapi.com",              # 金鹰
+    "api.guangsuapi.com",       # 光束
+    "api.wujinapi.com",         # 无尽
+    "api.xinlangapi.com",       # 新浪
+    "ikunzyapi.com",            # ikun
+    "subocaiji.com",            # subo
+    "ys.cxkjg.cn",              # 影视资源
+    "huyaapi.com",              # 虎牙
+    "caiji.dyttzyapi.com",      # 电影天堂
+    "api.okzyw.net",            # OK资源
 ]
 
 
