@@ -103,6 +103,25 @@ HTML_BLACKLIST = re.compile(
 )
 
 
+# 精简接口（single-lite.json）保留的采集站主机：从投影仪实测能直连、搜索能秒回的源。
+# 只留主机名，站点条目仍从聚合结果里取，所以内容随每周的聚合自动更新。
+LITE_HOSTS = [
+    "bf.xoxowin86cisyap.com",   # 暴风资源2  32ms
+    "cj.rycjapi.com",           # 如意资源   31ms
+    "jszyapi.com",              # 极速资源
+    "cj.lziapi.com",            # 量子资源
+    "api.zuidapi.com",          # 最大资源
+    "api.ffzyapi.com",          # 非凡资源
+    "www.hongniuzy2.com",       # 红牛资源
+    "api.ukuapi88.com",         # U酷资源
+    "api.maoyanapi.top",        # 猫眼资源
+    "360zy.com",                # 360资源
+    "iqiyizyapi.com",           # 爱奇艺资源
+    "api.apibdzy.com",          # 百度资源
+    "www.mdzyapi.com",          # 魔都资源
+]
+
+
 def http_get(url, timeout=TIMEOUT, retries=1):
     """抓取 URL，优先 UTF-8，失败回退 GBK/GB18030。超时重试一次，降低偶发抖动误判。"""
     last = None
@@ -341,6 +360,50 @@ def build_single(leaves):
     return result
 
 
+def build_lite(single):
+    """精简接口：从合并单仓里只挑出实测能秒回的采集站（每主机一条），给投影仪/低配盒子用。
+
+    投影仪（843MB、32 位）一次搜索会把 sites 全打一遍，1500 个站点必然卡死；
+    这版只留十来个 maccms 采集站，搜索结果照样覆盖主流片源。
+    """
+    lite_sites = []
+    picked = {}
+    for site in single.get("sites") or []:
+        host = urlparse(str(site.get("api") or "")).netloc.lower()
+        if not host:
+            continue
+        if not any(host == h or host.endswith("." + h) for h in LITE_HOSTS):
+            continue
+        # www 与裸域算同一个站
+        key = host[4:] if host.startswith("www.") else host
+        # 同一主机只留一条，优先留 maccms JSON（type=1）那条
+        cur = picked.get(key)
+        if cur is None or (site.get("type") == 1 and cur.get("type") != 1):
+            picked[key] = site
+    # 按 LITE_HOSTS 顺序输出，最终结果稳定
+    def _base(h):
+        return h[4:] if h.startswith("www.") else h
+
+    order = [_base(h) for h in LITE_HOSTS]
+    lite_sites = sorted(
+        picked.values(),
+        key=lambda s: order.index(_base(urlparse(str(s.get("api") or "")).netloc.lower()))
+        if _base(urlparse(str(s.get("api") or "")).netloc.lower()) in order
+        else len(order),
+    )
+
+    result = {
+        "spider": single.get("spider", ""),
+        "sites": lite_sites,
+        "lives": single.get("lives") or [],
+        "parses": single.get("parses") or [],
+        "flags": single.get("flags") or [],
+    }
+    if single.get("wallpaper"):
+        result["wallpaper"] = single["wallpaper"]
+    return result
+
+
 def main():
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     out_dir = os.path.join(here, "public", "tvbox")
@@ -358,12 +421,17 @@ def main():
 
     # 扁平多仓
     muti = {"urls": [{"url": v["url"], "name": v["name"]} for v in unique.values()]}
+    # 把自己的精简接口也挂进多仓列表，影视仓里直接多一条「精简」线路
+    muti["urls"].append({"url": "https://tandre.cn/tvbox/single-lite.json", "name": "精简·投影仪"})
 
     # 合并单仓
     single = build_single(unique)
+    # 精简单仓（投影仪/低配上用，只留十来个采集站）
+    lite = build_lite(single)
 
     json_path = os.path.join(out_dir, "muti.json")
     single_path = os.path.join(out_dir, "single.json")
+    lite_path = os.path.join(out_dir, "single-lite.json")
     txt_path = os.path.join(out_dir, "muti.txt")
     dead_path = os.path.join(out_dir, "dead.txt")
 
@@ -371,6 +439,8 @@ def main():
         json.dump(muti, f, ensure_ascii=False, indent=2)
     with open(single_path, "w", encoding="utf-8") as f:
         json.dump(single, f, ensure_ascii=False, indent=2)
+    with open(lite_path, "w", encoding="utf-8") as f:
+        json.dump(lite, f, ensure_ascii=False, indent=2)
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write("\n".join(v["url"] for v in unique.values()) + "\n")
     with open(dead_path, "w", encoding="utf-8") as f:
@@ -382,10 +452,12 @@ def main():
     print(f"失效/非单仓：{len(dead)} 个（详见 public/tvbox/dead.txt）")
     print(f"已写入 public/tvbox/muti.json   （扁平多仓）")
     print(f"已写入 public/tvbox/single.json （合并单仓）")
+    print(f"已写入 public/tvbox/single-lite.json（精简单仓，{len(lite['sites'])} 个采集站）")
     print(f"已写入 public/tvbox/muti.txt    （纯 URL 列表）")
     print("\n订阅地址（tandre.cn）：")
     print("  扁平多仓：https://tandre.cn/tvbox/muti.json")
     print("  合并单仓：https://tandre.cn/tvbox/single.json")
+    print("  精简单仓：https://tandre.cn/tvbox/single-lite.json")
 
 
 if __name__ == "__main__":
