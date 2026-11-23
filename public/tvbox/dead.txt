@@ -1,7 +1,6 @@
 http://2883.kstore.space/nzk/nzk0722.json	HTTPError
-http://52pan.top:81/api/v3/file/get/174964/%E5%90%BE%E7%88%B1%E8%AF%84%E6%B5%8B.m3u?sign=rPssLoffquDXszCARt6UNF8MobSa1FA27XomzOluJBY%3D%3A0	ConnectionError
+http://52pan.top:81/api/v3/file/get/174964/%E5%90%BE%E7%88%B1%E8%AF%84%E6%B5%8B.m3u?sign=rPssLoffquDXszCARt6UNF8MobSa1FA27XomzOluJBY%3D%3A0	ConnectTimeout
 http://74.120.175.78/JK/XYQTVBox/dj.json	ConnectTimeout
-http://box.ufuzi.com/tv/qq/短剧频道/api.json	ConnectTimeout
 http://bp.tvbox.cam	返回HTML(非JSON)
 http://cdn.qiaoji8.com/tvbox.json	ConnectionError
 http://dp.sxtv.top:88/img	ConnectionError
@@ -32,7 +31,7 @@ http://www.小不点.com	ConnectionError
 http://www.英格里希嗷呜.top/tv	返回HTML(非JSON)
 http://www.饭太硬.art/tv	返回HTML(非JSON)
 http://www.饭太硬.cc/tv	返回HTML(非JSON)
-http://www.饭太硬.com/tv	ConnectionError
+http://www.饭太硬.com/tv	返回HTML(非JSON)
 http://www.饭太硬.net/tv	返回HTML(非JSON)
 http://xhztv.top	返回HTML(非JSON)
 http://xn--b9w.l5.ca/	ConnectTimeout
@@ -44,11 +43,13 @@ http://我不是.摸鱼儿.top	返回HTML(非JSON)
 http://我不是.肥猫.live/接口禁止贩卖	HTTPError
 http://肥猫.com	ConnectTimeout
 http://肥猫.net	返回HTML(非JSON)
-http://肥猫.net/tv	HTTPError
+http://肥猫.net/tv	返回HTML(非JSON)
+https://0.wudaozhe.net/5/x4all.json	返回HTML(非JSON)
 https://100km.top/0	ConnectionError
 https://12586.kstore.space/123.json	JSON 无 urls 也无 sites
 https://16151.kstore.space	返回HTML(非JSON)
 https://3043.kstore.space/bhvip/bh/bh2.json	返回HTML(非JSON)
+https://3043.kstore.space/bhvip/bh/box.json	返回HTML(非JSON)
 https://4708.kstore.space/svip/svip.json	HTTPError
 https://6492.kstore.space/xnf/xnf.json	HTTPError
 https://8815.kstore.vip/tvbox/wmz	返回HTML(非JSON)
@@ -103,4 +104,5 @@ https://乐哥.xyz/Ting/Tshu.json	ConnectionError
 https://乐哥.xyz/dj.json	ConnectionError
 https://欧歌.v.nxog.top/m/	SSLError
 https://毒盒.com/tv	ConnectionError
+https://盒子迷.top/禁止贩卖	ConnectTimeout
 https://龙伊.top	返回HTML(非JSON)
